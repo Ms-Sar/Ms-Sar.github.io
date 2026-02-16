@@ -1165,7 +1165,7 @@ body::after {
   
   /* Scale down main paragraph text */
   .typewriter-content p {
-    font-size: 16px; /* Up from 13.5px */
+    font-size: 17px; /* Up from 13.5px */
     line-height: 1.5;
   }
   
@@ -1188,11 +1188,11 @@ body::after {
   }
   
   .link-title {
-    font-size: 15px; /* Slightly smaller from 14px */
+    font-size: 16px; /* Slightly smaller from 14px */
   }
   
   .link-desc {
-    font-size: 13px; /* Half of 22px */
+    font-size: 14px; /* Half of 22px */
   }
   
   .sticky-sidebar {
@@ -1247,7 +1247,7 @@ body::after {
   }
   
   .typewriter-content p {
-    font-size: 13px; /* Adjusted proportionally */
+    font-size: 14px; /* Adjusted proportionally */
   }
   
   .inline-gif {
