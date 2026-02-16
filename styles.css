@@ -606,10 +606,9 @@ body {
 
 .preview-img {
   position: fixed;
-  left: auto;
-  right: 390px;
+  left: 65%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   width: 220px;
   height: auto;
   max-width: 300px;
