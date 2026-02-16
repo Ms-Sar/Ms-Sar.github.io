@@ -1096,6 +1096,13 @@ body::after {
     padding: 20px;
   }
   
+    /* Scale down ASCII art and adjust letter spacing */
+  .ascii-art {
+    font-size: 5px;
+    line-height: 5px;
+    letter-spacing: 0.5px; /* Add spacing between characters */
+  }
+  
   .sticky-sidebar {
     position: fixed;
     top: 0;
