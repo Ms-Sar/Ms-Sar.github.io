@@ -138,11 +138,13 @@ const asciiArtLines = [
   "   ╚══════╝···╚═╝···╚═╝··╚═╝╚═╝·····╚═╝·╚═════╝·╚═════╝·╚══════╝"
 ];
 
-// Typewriter effect - character by character for ASCII art with cursor
+// Typewriter effect - character by character for ASCII art with cursor (FAST)
 function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
   let lineIndex = 0;
   let charIndex = 0;
   let currentText = '';
+  let lastTime = performance.now();
+  let accumulated = 0;
   
   // Create cursor element
   const cursor = document.createElement('span');
@@ -152,26 +154,35 @@ function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
   element.style.opacity = '1';
   element.appendChild(cursor);
   
-  function typeChar() {
-    if (lineIndex < lines.length) {
+  function typeChar(currentTime) {
+    const deltaTime = currentTime - lastTime;
+    lastTime = currentTime;
+    accumulated += deltaTime;
+    
+    // Type multiple characters per frame if needed
+    while (accumulated >= charSpeed && lineIndex < lines.length) {
       const currentLine = lines[lineIndex];
       
       if (charIndex < currentLine.length) {
         // Type next character
         currentText += currentLine[charIndex];
-        element.innerText = currentText;
-        element.appendChild(cursor);
         charIndex++;
-        setTimeout(typeChar, charSpeed);
+        accumulated -= charSpeed;
       } else {
         // Line complete, move to next line
         currentText += '\n';
-        element.innerText = currentText;
-        element.appendChild(cursor);
         lineIndex++;
         charIndex = 0;
-        setTimeout(typeChar, lineDelay);
+        accumulated -= lineDelay;
+        break; // Wait for line delay
       }
+    }
+    
+    element.innerText = currentText;
+    element.appendChild(cursor);
+    
+    if (lineIndex < lines.length) {
+      requestAnimationFrame(typeChar);
     } else {
       // All lines complete
       if (callback) {
@@ -180,23 +191,38 @@ function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
     }
   }
   
-  typeChar();
+  requestAnimationFrame(typeChar);
 }
 
-// Typewriter for paragraphs with moving cursor
+// Typewriter for paragraphs with moving cursor (FAST)
 function typeWriter(element, text, speed, cursor, callback) {
   let i = 0;
+  let lastTime = performance.now();
+  let accumulated = 0;
+  
   element.textContent = '';
   element.style.opacity = '1';
   element.appendChild(cursor);
   
-  function type() {
-    if (i < text.length) {
-      const currentText = text.substring(0, i + 1);
+  function type(currentTime) {
+    const deltaTime = currentTime - lastTime;
+    lastTime = currentTime;
+    accumulated += deltaTime;
+    
+    // Type multiple characters per frame if needed
+    while (accumulated >= speed && i < text.length) {
+      i++;
+      accumulated -= speed;
+    }
+    
+    if (i > 0) {
+      const currentText = text.substring(0, i);
       element.textContent = currentText;
       element.appendChild(cursor);
-      i++;
-      setTimeout(type, speed);
+    }
+    
+    if (i < text.length) {
+      requestAnimationFrame(type);
     } else {
       // Remove cursor when done
       cursor.remove();
@@ -205,8 +231,10 @@ function typeWriter(element, text, speed, cursor, callback) {
       }
     }
   }
-  type();
+  
+  requestAnimationFrame(type);
 }
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   const title = document.getElementById('ascii-title');
@@ -230,13 +258,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     title.classList.add('typing');
     
     // Type out ASCII art character by character
-    typeWriterASCII(title, asciiArtLines, 1, 5, (cursor) => {
+    typeWriterASCII(title, asciiArtLines, 5, 20, (cursor) => {
       // ASCII art done, move cursor to paragraph
       setTimeout(() => {
         paragraph.style.opacity = '1';
         
         // Move cursor to paragraph and start typing
-        typeWriter(paragraph, paragraphText, 1.25, cursor, () => {
+        typeWriter(paragraph, paragraphText, 2.25, cursor, () => {
           
           // Show first section (My Work)
           setTimeout(() => {
