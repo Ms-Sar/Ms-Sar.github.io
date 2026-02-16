@@ -42,11 +42,24 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
         const li = document.createElement("li");
         
         if (hasTracks) {
+          // Track with variations
           const trackHeader = document.createElement("div");
           trackHeader.className = "track-header";
-          trackHeader.textContent = `${item.name} - ${item.id}`;
+          
+          const trackText = document.createTextNode(`${item.name} - ${item.id}`);
+          trackHeader.appendChild(trackText);
+          
+          if (item.preview) {
+            const img = document.createElement("img");
+            img.src = item.preview;
+            img.className = "preview-img";
+            img.alt = item.name;
+            trackHeader.appendChild(img);
+          }
+          
           li.appendChild(trackHeader);
           
+          // Variations list
           if (item.variations && item.variations.length > 0) {
             const variationsList = document.createElement("ul");
             variationsList.className = "variations-list";
@@ -54,18 +67,40 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
             item.variations.forEach(variation => {
               const varLi = document.createElement("li");
               varLi.className = "variation-item";
-              varLi.textContent = `${variation.name} - ${variation.id}`;
+              
+              const varText = document.createTextNode(`${variation.name} - ${variation.id}`);
+              varLi.appendChild(varText);
+              
+              if (variation.preview) {
+                const varImg = document.createElement("img");
+                varImg.src = variation.preview;
+                varImg.className = "preview-img";
+                varImg.alt = variation.name;
+                varLi.appendChild(varImg);
+              }
+              
               variationsList.appendChild(varLi);
             });
             
             li.appendChild(variationsList);
           }
           
+          // Toggle variations on click
           trackHeader.addEventListener("click", () => {
             li.classList.toggle("expanded");
           });
         } else {
-          li.textContent = `${item.name} - ${item.id}`;
+          // Vehicle (no variations)
+          const vehicleText = document.createTextNode(`${item.name} - ${item.id}`);
+          li.appendChild(vehicleText);
+          
+          if (item.preview) {
+            const img = document.createElement("img");
+            img.src = item.preview;
+            img.className = "preview-img";
+            img.alt = item.name;
+            li.appendChild(img);
+          }
         }
 
         list.appendChild(li);

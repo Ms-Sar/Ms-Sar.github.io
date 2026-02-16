@@ -435,27 +435,17 @@ const embedClose = document.querySelector('.embed-close');
 const embedCode = document.getElementById('embedCode');
 const copyEmbedBtn = document.getElementById('copyEmbedBtn');
 const copyFeedback = document.getElementById('copyFeedback');
-const themeButtons = document.querySelectorAll('.theme-btn');
 
-let currentTheme = 'green';
-
-const embedCodes = {
-  green: `<iframe src="https://ms-sar.github.io/baggy-embed-green.html" 
+const embedCodeText = `<iframe src="https://ms-sar.github.io/baggy-embed-green.html" 
   width="400" height="600" 
   style="border: 2px solid #00ff41; border-radius: 8px; box-shadow: 0 0 20px rgba(0,255,65,0.3);"
   title="Baggy - Wreckfest Modding Companion">
-</iframe>`,
-  orange: `<iframe src="https://ms-sar.github.io/baggy-embed-orange.html" 
-  width="400" height="600" 
-  style="border: 2px solid #ff8800; border-radius: 8px; box-shadow: 0 0 20px rgba(255,136,0,0.3);"
-  title="Baggy - Wreckfest Modding Companion">
-</iframe>`
-};
+</iframe>`;
 
 // Open modal
 embedBtn.addEventListener('click', () => {
   embedModal.style.display = 'block';
-  embedCode.value = embedCodes[currentTheme];
+  embedCode.value = embedCodeText;
 });
 
 // Close modal
@@ -469,16 +459,6 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Theme selection
-themeButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    themeButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentTheme = btn.dataset.theme;
-    embedCode.value = embedCodes[currentTheme];
-  });
-});
-
 // Copy to clipboard
 copyEmbedBtn.addEventListener('click', () => {
   embedCode.select();
@@ -489,3 +469,4 @@ copyEmbedBtn.addEventListener('click', () => {
     copyFeedback.classList.remove('show');
   }, 2000);
 });
+

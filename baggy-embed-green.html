@@ -238,6 +238,46 @@ body {
   border-left-color: #00ff41;
   color: #00ff41;
 }
+/* Preview images */
+.preview-img {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: auto;
+  max-width: 280px;
+  background: #000;
+  border: 3px solid #00ff41;
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 255, 65, 0.4);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.dynamic-list li:hover > .preview-img {
+  opacity: 1;
+}
+
+.track-header {
+  position: relative;
+}
+
+.track-header:hover > .preview-img {
+  opacity: 1;
+}
+
+.variation-item:hover > .preview-img {
+  opacity: 1;
+}
+
+.dynamic-list li.expanded > .track-header:hover > .preview-img {
+  opacity: 0;
+}
+
 </style>
 </head>
 <body>
