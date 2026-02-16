@@ -1157,7 +1157,7 @@ body::after {
   
   /* Scale down main paragraph text */
   .typewriter-content p {
-    font-size: 15px; /* Up from 13.5px */
+    font-size: 16px; /* Up from 13.5px */
     line-height: 1.5;
   }
   
@@ -1180,11 +1180,11 @@ body::after {
   }
   
   .link-title {
-    font-size: 13px; /* Slightly smaller from 14px */
+    font-size: 15px; /* Slightly smaller from 14px */
   }
   
   .link-desc {
-    font-size: 11px; /* Half of 22px */
+    font-size: 13px; /* Half of 22px */
   }
   
   .sticky-sidebar {
