@@ -157,7 +157,7 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
   });
 });
 
-// ASCII Art stored in JS - using array to preserve exact spacing
+// ASCII Art for desktop
 const asciiArtLines = [
   "   ███████╗████████╗██████╗·███╗···███╗·██████╗·██████╗·███████╗",
   "   ██╔════╝╚══██╔══╝██╔══██╗████╗·████║██╔═══██╗██╔══██╗██╔════╝",
@@ -166,6 +166,17 @@ const asciiArtLines = [
   "   ███████║···██║···██║··██║██║·╚═╝·██║╚██████╔╝██████╔╝███████║",
   "   ╚══════╝···╚═╝···╚═╝··╚═╝╚═╝·····╚═╝·╚═════╝·╚═════╝·╚══════╝"
 ];
+
+// ASCII Art for mobile - with extra spacing
+const asciiArtLinesMobile = [
+  "   ███████╗████████╗██████╗··███╗····███╗··██████╗··██████╗··███████╗",
+  "   ██╔════╝╚══██╔══╝██╔══██╗████╗··████║██╔═══██╗██╔══██╗██╔════╝",
+  "   ███████╗···██║····██████╔╝██╔████╔██║██║····██║██║···██║███████╗",
+  "   ╚════██║···██║····██╔══██╗██║╚██╔╝██║██║····██║██║···██║╚════██║",
+  "   ███████║···██║····██║···██║██║··╚═╝··██║╚██████╔╝██████╔╝███████║",
+  "   ╚══════╝···╚═╝····╚═╝···╚═╝╚═╝······╚═╝··╚═════╝··╚═════╝··╚══════╝"
+];
+
 
 // Typewriter effect - character by character for ASCII art with cursor (FAST)
 function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
