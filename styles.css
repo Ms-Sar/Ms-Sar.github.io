@@ -1135,9 +1135,104 @@ body::after {
   }
 }
 
+@media (max-width: 768px) {
+  .mobile-baggy-btn {
+    display: flex;
+  }
+  
+  .page-wrapper {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Scale down ASCII art */
+  .ascii-art {
+    font-size: 4px; /* 40% of 10px */
+    line-height: 4px; /* 40% of 10px */
+  }
+  
+  /* Scale down main paragraph text */
+  .typewriter-content p {
+    font-size: 13.5px; /* 75% of 18px */
+    line-height: 1.5;
+  }
+  
+  /* Scale down main link buttons */
+  .main-link {
+    padding: 12px;
+    min-height: auto;
+  }
+  
+  .link-icon-img {
+    width: 32px; /* Half of 64px */
+    height: 32px;
+  }
+  
+  .link-title {
+    font-size: 14px; /* Half of 28px */
+  }
+  
+  .link-desc {
+    font-size: 11px; /* Half of 22px */
+  }
+  
+  .sticky-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    max-width: 400px;
+    height: 100vh;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .sticky-sidebar.mobile-open {
+    right: 0;
+  }
+  
+  /* Hide button when sidebar is open */
+  .mobile-baggy-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Close button inside sidebar on mobile */
+  .sticky-sidebar::before {
+    content: '✕ Close';
+    display: block;
+    position: sticky;
+    top: 0;
+    background: #001400;
+    color: #00ff00;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 2px solid #00ff00;
+    z-index: 10;
+  }
+}
+
 @media (max-width: 480px) {
   .main-content {
     padding: 15px;
+  }
+  
+  /* Even smaller ASCII on very small screens */
+  .ascii-art {
+    font-size: 3px;
+    line-height: 3px;
+  }
+  
+  .typewriter-content p {
+    font-size: 12px;
   }
   
   .sticky-sidebar {
@@ -1155,4 +1250,5 @@ body::after {
     height: 35px;
   }
 }
+
 
