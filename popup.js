@@ -175,9 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         title.style.borderRight = 'none';
         
-        // Start typing paragraph
+        // Start typing paragraph - FASTER NOW (5ms per character)
         paragraph.style.opacity = '1';
-        typeWriter(paragraph, paragraphText, 15, () => {
+        typeWriter(paragraph, paragraphText, 5, () => {
           
           // Show first section (My Work)
           setTimeout(() => {

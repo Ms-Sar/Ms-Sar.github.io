@@ -606,9 +606,9 @@ body {
 
 .preview-img {
   position: fixed;
-  left: 50%;
+  right: calc(360px + 20px);
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   width: 200px;
   height: auto;
   max-width: 300px;
@@ -638,6 +638,7 @@ body {
 .dynamic-list li.expanded > .track-header:hover > .preview-img {
   opacity: 0;
 }
+
 
 /* ============================================
    FOOTER
