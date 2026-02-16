@@ -157,7 +157,7 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
   });
 });
 
-// ASCII Art for desktop
+// ASCII Art stored in JS - using array to preserve exact spacing
 const asciiArtLines = [
   "   ███████╗████████╗██████╗·███╗···███╗·██████╗·██████╗·███████╗",
   "   ██╔════╝╚══██╔══╝██╔══██╗████╗·████║██╔═══██╗██╔══██╗██╔════╝",
@@ -166,17 +166,6 @@ const asciiArtLines = [
   "   ███████║···██║···██║··██║██║·╚═╝·██║╚██████╔╝██████╔╝███████║",
   "   ╚══════╝···╚═╝···╚═╝··╚═╝╚═╝·····╚═╝·╚═════╝·╚═════╝·╚══════╝"
 ];
-
-// ASCII Art for mobile - with extra spacing
-const asciiArtLinesMobile = [
-  "   ███████╗████████╗██████╗··███╗····███╗··██████╗··██████╗··███████╗",
-  "   ██╔════╝╚══██╔══╝██╔══██╗████╗··████║██╔═══██╗██╔══██╗██╔════╝",
-  "   ███████╗····██║····██████╔╝██╔████╔██║██║····██║██║···██║███████╗",
-  "   ╚════██║····██║····██╔══██╗██║╚██╔╝██║██║····██║██║···██║╚════██║",
-  "   ███████║····██║····██║···██║██║··╚═╝··██║╚██████╔╝██████╔╝███████║",
-  "   ╚══════╝····╚═╝····╚═╝···╚═╝╚═╝······╚═╝··╚═════╝··╚═════╝··╚══════╝"
-];
-
 
 // Typewriter effect - character by character for ASCII art with cursor (FAST)
 function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
@@ -341,14 +330,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const sections = content.querySelectorAll('section');
   const links = content.querySelectorAll('.main-link');
   
-  // Use same ASCII for both
-  const isMobile = window.innerWidth <= 768;
-  const artLines = asciiArtLines; // Just use desktop version
+// Get HTML content without the image
+const paragraphHTML = paragraph.innerHTML.replace(/<img[^>]*>/g, '').trim();
 
-  
-  // Get HTML content without the image
-  const paragraphHTML = paragraph.innerHTML.replace(/<img[^>]*>/g, '').trim();
-  
   // Hide everything initially
   title.style.opacity = '0';
   content.style.opacity = '1';
@@ -361,8 +345,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     title.style.opacity = '1';
     title.classList.add('typing');
     
-    // Type out ASCII art character by character - use artLines instead of asciiArtLines
-    typeWriterASCII(title, artLines, 5, 20, (cursor) => {
+    // Type out ASCII art character by character
+    typeWriterASCII(title, asciiArtLines, 5, 20, (cursor) => {
       // ASCII art done, move cursor to paragraph
       setTimeout(() => {
         paragraph.style.opacity = '1';
@@ -400,7 +384,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }, 900); // Start typing after CRT effect (900ms)
 });
-
 
 // ========== MOBILE BAGGY TOGGLE ==========
 const mobileBaggyBtn = document.getElementById('mobileBaggyBtn');
