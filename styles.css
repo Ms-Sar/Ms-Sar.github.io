@@ -1143,7 +1143,7 @@ body::after {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-baggy-btn {
     display: flex;
   }
@@ -1242,8 +1242,8 @@ body::after {
   
   /* Even smaller ASCII on very small screens */
   .ascii-art {
-    font-size: 4px; /* Up from 3px */
-    line-height: 4px;
+    font-size: 3px; /* Up from 3px */
+    line-height: 3px;
   }
   
   .typewriter-content p {
