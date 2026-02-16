@@ -1,54 +1,435 @@
-/* PAGE LAYOUT - Sidebar on right, sticky on scroll */
-.page-wrapper {
-  display: flex;
-  min-height: 100vh;
+/* ============================================
+   PAGE LAYOUT - Sidebar on right, sticky
+   ============================================ */
+
+* { box-sizing: border-box; }
+
+html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  color: #eee;
+  background: var(--bg);
+  height: 100%;
+  overflow: hidden;
+}
+
+:root {
+  --bg: #101010;
+  --panel: #181818;
+  --muted: #8f96a0;
+  --accent: #ff7b3a;
+  --accent-glow: rgba(255, 125, 50, 0.3);
+  --btn: #202020;
+  --btn-hover: #2a2a2a;
+}
+
+.page-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .main-content {
   flex: 1;
   padding: 40px;
-  background: var(--bg);
-  max-width: calc(100% - 360px);
+  background: #1a1a1a;
   overflow-y: auto;
+  color: #eee;
 }
 
 .main-content h1 {
   color: var(--accent);
   margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+.main-content h2 {
+  color: #ddd;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .main-content section {
   margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.main-content ul {
+  line-height: 1.8;
 }
 
 .sticky-sidebar {
   width: 360px;
   height: 100vh;
-  position: sticky;
-  top: 0;
-  right: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   background: var(--bg);
   border-left: 1px solid #000;
-  box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
 }
 
 .sidebar-content {
   padding: 0 12px 12px 12px;
 }
 
-/* Responsive: Stack on smaller screens */
+/* ============================================
+   SIDEBAR CONTENT STYLES
+   ============================================ */
+
+.fadein {
+  animation: fadein 0.25s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadein {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: linear-gradient(180deg, #1a1a1a, #101010);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title-group .title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+}
+
+.title-group .subtitle {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.search {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 10px 0 14px;
+  border-radius: 6px;
+  background: #131313;
+  border: 1px solid #000;
+  color: #ccc;
+  transition: all 0.2s ease;
+}
+
+.search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.card {
+  background: var(--panel);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.card-title {
+  margin: 0 0 8px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.glow {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+}
+
+.icon-img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0.9);
+}
+
+/* ============================================
+   HOVER-TO-EXPAND PANELS
+   ============================================ */
+
+.hover-group {
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.hover-panel {
+  display: none;
+  margin-top: 10px;
+  padding: 8px;
+  background: #161616;
+  border-radius: 6px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease 0.5s, max-height 0.3s ease 0.5s;
+}
+
+.hover-group:hover .hover-panel {
+  display: block;
+  opacity: 1;
+  max-height: 350px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.sublink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ddd;
+  transition: all 0.15s ease;
+}
+
+.sublink:hover {
+  background: #222;
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+/* ============================================
+   INFO SECTIONS - Click to toggle
+   ============================================ */
+
+.info-card .info-title {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.info-card .info-title:hover {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+.info-panel {
+  display: none;
+  margin-top: 10px;
+  padding: 8px;
+  background: #161616;
+  border-radius: 6px;
+  max-height: 0;
+  opacity: 0;
+  overflow: visible;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.info-card.open .info-panel {
+  display: block;
+  max-height: none;
+  opacity: 1;
+}
+
+.info-subtoggle {
+  width: 100%;
+  background: #272727;
+  padding: 6px;
+  border-radius: 4px;
+  margin-top: 6px;
+  text-align: left;
+  color: #ddd;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.info-subtoggle:hover {
+  background: #2f2f2f;
+  border-color: #333;
+  transform: translateX(2px);
+}
+
+.dynamic-list {
+  list-style: none;
+  padding-left: 10px;
+  margin: 5px 0 10px;
+  display: none;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.dynamic-list li {
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+  z-index: 1;
+  overflow: visible;
+}
+
+.dynamic-list li:hover {
+  background: #222;
+  transform: translateX(2px);
+  z-index: 999998;
+}
+
+/* ============================================
+   TRACK HEADERS AND VARIATIONS
+   ============================================ */
+
+.track-header {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.track-header:hover {
+  z-index: 100;
+}
+
+.track-header::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 5px;
+  transition: transform 0.2s ease;
+}
+
+.dynamic-list li.expanded .track-header::before {
+  transform: rotate(90deg);
+}
+
+.dynamic-list li.expanded .track-header {
+  z-index: 1;
+}
+
+.variations-list {
+  list-style: none;
+  padding-left: 20px;
+  margin: 5px 0 0 0;
+  max-height: 0;
+  overflow: visible;
+  transition: max-height 0.3s ease;
+  display: none;
+  position: relative;
+  z-index: 100;
+}
+
+.dynamic-list li.expanded .variations-list {
+  max-height: none;
+  margin-top: 5px;
+  display: block;
+}
+
+.variation-item {
+  padding: 3px 6px;
+  font-size: 12px;
+  color: #bbb;
+  border-left: 2px solid #333;
+  margin: 2px 0;
+  transition: all 0.15s ease;
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+
+.variation-item:hover {
+  background: #1a1a1a;
+  border-left-color: var(--accent);
+  color: #fff;
+  transform: translateX(3px);
+  z-index: 100;
+}
+
+/* ============================================
+   HOVER IMAGE PREVIEW
+   ============================================ */
+
+.preview-img {
+  position: fixed !important;
+  left: auto !important;
+  right: 380px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 140px;
+  background: #000;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  display: none;
+  padding: 6px;
+  z-index: 2147483647 !important;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+.dynamic-list > li:hover > .preview-img,
+.track-header:hover > .preview-img,
+.variation-item:hover > .preview-img {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+.dynamic-list li.expanded .track-header:hover > .preview-img {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  text-align: center;
+  padding: 8px;
+  color: #666;
+}
+
+/* ============================================
+   RESPONSIVE LAYOUT
+   ============================================ */
+
 @media (max-width: 1024px) {
   .page-wrapper {
     flex-direction: column;
   }
-  
+
   .main-content {
     max-width: 100%;
   }
-  
+
   .sticky-sidebar {
     width: 100%;
     height: auto;
@@ -56,10 +437,8 @@
     border-left: none;
     border-top: 1px solid #000;
   }
-}
 
-/* Keep body/html full width */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
+  .preview-img {
+    right: 20px !important;
+  }
 }
