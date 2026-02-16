@@ -606,10 +606,11 @@ body {
 
 .preview-img {
   position: fixed;
-  right: calc(360px + 20px);
+  left: auto;
+  right: 390px;
   top: 50%;
   transform: translateY(-50%);
-  width: 200px;
+  width: 220px;
   height: auto;
   max-width: 300px;
   background: #000;
@@ -638,6 +639,7 @@ body {
 .dynamic-list li.expanded > .track-header:hover > .preview-img {
   opacity: 0;
 }
+
 
 
 /* ============================================
