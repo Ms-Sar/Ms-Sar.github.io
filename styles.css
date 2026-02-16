@@ -46,7 +46,7 @@ body {
 
 .main-content {
   flex: 1;
-  padding: 40px;
+  padding: 60px 80px;
   background: #1a1a1a;
   overflow-y: auto;
   color: #eee;
@@ -54,24 +54,144 @@ body {
 
 .main-content h1 {
   color: var(--accent);
-  margin-bottom: 20px;
-  font-size: 2.5em;
+  margin-bottom: 30px;
+  font-size: 3em;
+  font-weight: 700;
 }
 
 .main-content h2 {
   color: #ddd;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
 }
 
 .main-content section {
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.main-content ul {
+  margin-bottom: 50px;
   line-height: 1.8;
 }
+
+.main-content p {
+  font-size: 1.1em;
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   TYPEWRITER ANIMATION
+   ============================================ */
+
+.typewriter-title {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+  border-right: 3px solid var(--accent);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+  width: 0;
+}
+
+.typewriter-title.typing {
+  animation: typing 1.5s steps(20, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+.typewriter-content {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.typewriter-content.typing {
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   MAIN PAGE LINKS
+   ============================================ */
+
+.main-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.main-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--panel);
+  border: 1px solid #000;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #eee;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.main-link:hover {
+  background: #202020;
+  border-color: var(--accent);
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(255, 123, 58, 0.2);
+}
+
+.link-icon {
+  font-size: 2em;
+  filter: grayscale(0.3);
+}
+
+.link-details {
+  flex: 1;
+}
+
+.link-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.link-desc {
+  font-size: 0.95em;
+  color: var(--muted);
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
 
 .sticky-sidebar {
   width: 360px;
@@ -181,31 +301,36 @@ body {
 }
 
 /* ============================================
-   HOVER-TO-EXPAND PANELS
+   CLICK-TO-EXPAND PANELS (for Links, Tools, SteamDB)
    ============================================ */
 
-.hover-group {
-  position: relative;
-  transition: all 0.25s ease;
+.click-card .click-title {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
 }
 
-.hover-panel {
+.click-card .click-title:hover {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+.click-panel {
   display: none;
   margin-top: 10px;
   padding: 8px;
   background: #161616;
   border-radius: 6px;
-  opacity: 0;
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: opacity 0.3s ease 0.5s, max-height 0.3s ease 0.5s;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-.hover-group:hover .hover-panel {
+.click-card.open .click-panel {
   display: block;
-  opacity: 1;
   max-height: 350px;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+  opacity: 1;
 }
 
 .sublink {
@@ -373,7 +498,7 @@ body {
 }
 
 /* ============================================
-   HOVER IMAGE PREVIEW - FIXED VERSION
+   HOVER IMAGE PREVIEW
    ============================================ */
 
 .preview-img {
@@ -430,20 +555,4 @@ body {
     flex-direction: column;
   }
 
-  .main-content {
-    max-width: 100%;
-  }
-
-  .sticky-sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    border-left: none;
-    border-top: 1px solid #000;
-  }
-
-  .preview-img {
-    left: 50%;
-    top: 50%;
-  }
-}
+  .main-conte

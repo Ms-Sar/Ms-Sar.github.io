@@ -5,6 +5,14 @@ document.getElementById("search").addEventListener("keydown", e => {
   }
 });
 
+// Click to toggle click-card sections (Useful Links, Tools, SteamDB)
+document.querySelectorAll(".click-card").forEach(card => {
+  const title = card.querySelector(".click-title");
+  title.addEventListener("click", () => {
+    card.classList.toggle("open");
+  });
+});
+
 // Click to toggle WF1/WF2 info cards
 document.querySelectorAll(".info-card").forEach(card => {
   const title = card.querySelector(".info-title");
@@ -57,7 +65,6 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
             img.src = item.preview;
             img.className = "preview-img";
             img.alt = item.name;
-            console.log("Created track image:", img.src); // DEBUG
             trackHeader.appendChild(img);
           }
           
@@ -80,7 +87,6 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
                 varImg.src = variation.preview;
                 varImg.className = "preview-img";
                 varImg.alt = variation.name;
-                console.log("Created variation image:", varImg.src); // DEBUG
                 varLi.appendChild(varImg);
               }
               
@@ -104,7 +110,6 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
             img.src = item.preview;
             img.className = "preview-img";
             img.alt = item.name;
-            console.log("Created vehicle image:", img.src); // DEBUG
             li.appendChild(img);
           }
         }
@@ -116,23 +121,31 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
       list.style.display = "block";
       btn.textContent = btn.textContent.replace("⏳", "▴");
       
-      // DEBUG: Check first li after loading
-      setTimeout(() => {
-        const firstLi = list.querySelector('li');
-        if (firstLi) {
-          const img = firstLi.querySelector('.preview-img');
-          console.log("First li:", firstLi);
-          console.log("First img:", img);
-          if (img) {
-            console.log("Image computed opacity:", window.getComputedStyle(img).opacity);
-            console.log("Image computed display:", window.getComputedStyle(img).display);
-          }
-        }
-      }, 100);
-      
     } catch (error) {
       console.error("Failed to load JSON:", error);
       btn.textContent = btn.textContent.replace("⏳", "▾ (Error)");
     }
   });
+});
+
+// Typewriter effect for main content
+document.addEventListener('DOMContentLoaded', () => {
+  const title = document.querySelector('.typewriter-title');
+  const content = document.querySelector('.typewriter-content');
+  
+  // Start hidden
+  title.style.opacity = '0';
+  content.style.opacity = '0';
+  
+  // Animate title first
+  setTimeout(() => {
+    title.style.opacity = '1';
+    title.classList.add('typing');
+  }, 300);
+  
+  // Then animate content
+  setTimeout(() => {
+    content.style.opacity = '1';
+    content.classList.add('typing');
+  }, 2000);
 });

@@ -3,38 +3,52 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Wreckfest Modding Resources</title>
+<title>STRmods - Wreckfest Modding Resources</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="page-wrapper">
     <!-- MAIN CONTENT AREA -->
     <main class="main-content">
-      <h1>Wreckfest Modding Resources</h1>
-      <p>Welcome to my Wreckfest modding resource hub. Use the sidebar on the right to access tools, wikis, and track/vehicle information.</p>
+      <h1 class="typewriter-title">STRmods.GitHub.io</h1>
       
-      <!-- Add your main page content here -->
-      <section>
-        <h2>About This Site</h2>
-        <p>This site provides quick access to essential Wreckfest modding resources, including:</p>
-        <ul>
-          <li>Modding wiki and documentation</li>
-          <li>Community tools and utilities</li>
-          <li>Track and vehicle databases</li>
-          <li>SteamDB information</li>
-        </ul>
-      </section>
+      <div class="typewriter-content">
+        <p>Welcome to my corner of the internet! Here you'll find a collection of my modding projects, tools I've developed, and curated resources from the Wreckfest community. Whether you're looking for custom vehicles, texture packs, or modding utilities, you'll find links to everything I've worked on. I've also gathered some of the most useful references and tools from fellow modders that I think you'll find valuable. Feel free to explore, download, and don't hesitate to reach out if you have questions or suggestions!</p>
 
-      <!-- Add more content sections as needed -->
-      <section>
-        <h2>Getting Started</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </section>
+        <section>
+          <h2>My Work</h2>
+          <div class="main-links">
+            <a href="https://www.nexusmods.com/profile/STRm0ds/mods" target="_blank" class="main-link">
+              <span class="link-icon">🎮</span>
+              <div class="link-details">
+                <div class="link-title">Nexus Mods Profile</div>
+                <div class="link-desc">Browse my published mods and downloads</div>
+              </div>
+            </a>
+            
+            <a href="https://steamcommunity.com/id/STRmods/myworkshopfiles/" target="_blank" class="main-link">
+              <span class="link-icon">⚙️</span>
+              <div class="link-details">
+                <div class="link-title">Steam Workshop</div>
+                <div class="link-desc">Check out my Workshop creations</div>
+              </div>
+            </a>
+            
+            <a href="https://www.youtube.com/STRmods" target="_blank" class="main-link">
+              <span class="link-icon">📺</span>
+              <div class="link-details">
+                <div class="link-title">YouTube Channel</div>
+                <div class="link-desc">Tutorials, showcases, and gameplay</div>
+              </div>
+            </a>
+          </div>
+        </section>
 
-      <section>
-        <h2>Latest Updates</h2>
-        <p>Check the sidebar for the latest tools and resources.</p>
-      </section>
+        <section>
+          <h2>About the Sidebar</h2>
+          <p>Use the companion panel on the right to quickly access essential Wreckfest modding resources, including the community wiki, tools, SteamDB tracking, and complete vehicle and track databases for both WF1 and WF2. Hover over any vehicle or track name to see a preview image!</p>
+        </section>
+      </div>
     </main>
 
     <!-- STICKY SIDEBAR -->
@@ -53,12 +67,12 @@
           <input id="search" class="search" name="search" placeholder="Search WF modding wiki" />
         </form>
 
-        <!-- MAIN LINKS -->
-        <section class="card glow hover-group">
-          <h2 class="card-title">
+        <!-- MAIN LINKS - Changed to click to expand -->
+        <section class="card glow click-card" data-section="links">
+          <h2 class="card-title click-title">
             <img class="icon-img" src="assets/wiki.png"> Useful Links
           </h2>
-          <div class="hover-panel">
+          <div class="click-panel">
             <a class="sublink" href="https://tads.me.uk/wfwiki/index.php?title=Main_Page" target="_blank">
               <img class="icon-img" src="assets/wiki.png"> Wreckfest Modding Wiki
             </a>
@@ -72,11 +86,11 @@
         </section>
 
         <!-- TOOLS -->
-        <section class="card glow hover-group">
-          <h2 class="card-title">
+        <section class="card glow click-card" data-section="tools">
+          <h2 class="card-title click-title">
             🛠️ Tools
           </h2>
-          <div class="hover-panel">
+          <div class="click-panel">
             <a class="sublink" href="https://github.com/gmazy/wreckfest_toolbox" target="_blank">
               <img class="icon-img" src="assets/toolbox.png"> Wreckfest Toolbox
             </a>
@@ -96,11 +110,11 @@
         </section>
 
         <!-- STEAMDB PAGES -->
-        <section class="card glow hover-group">
-          <h2 class="card-title">
+        <section class="card glow click-card" data-section="steamdb">
+          <h2 class="card-title click-title">
             <img class="icon-img" src="assets/steamdb.png"> SteamDB Pages
           </h2>
-          <div class="hover-panel">
+          <div class="click-panel">
             <a class="sublink" href="https://steamdb.info/app/228380/patchnotes/" target="_blank">📋 WF1 Patch Notes</a>
             <a class="sublink" href="https://steamdb.info/depot/228381/manifests/" target="_blank">📦 WF1 Manifests</a>
             <a class="sublink" href="https://steamdb.info/depot/361581/manifests/" target="_blank">🖥️ WF1 Server Manifests</a>
