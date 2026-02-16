@@ -385,3 +385,36 @@ const paragraphHTML = paragraph.innerHTML.replace(/<img[^>]*>/g, '').trim();
   }, 900); // Start typing after CRT effect (900ms)
 });
 
+// ========== MOBILE BAGGY TOGGLE ==========
+const mobileBaggyBtn = document.getElementById('mobileBaggyBtn');
+const sidebar = document.querySelector('.sticky-sidebar');
+
+// Create overlay
+const overlay = document.createElement('div');
+overlay.className = 'sidebar-overlay';
+document.body.appendChild(overlay);
+
+// Open sidebar
+mobileBaggyBtn.addEventListener('click', () => {
+  sidebar.classList.add('mobile-open');
+  overlay.classList.add('active');
+  mobileBaggyBtn.classList.add('hidden');
+});
+
+// Close sidebar - click overlay
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('mobile-open');
+  overlay.classList.remove('active');
+  mobileBaggyBtn.classList.remove('hidden');
+});
+
+// Close sidebar - click close button (::before pseudo-element)
+sidebar.addEventListener('click', (e) => {
+  const rect = sidebar.getBoundingClientRect();
+  if (e.clientY < rect.top + 50) { // Close button area (top 50px)
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('active');
+    mobileBaggyBtn.classList.remove('hidden');
+  }
+});
+

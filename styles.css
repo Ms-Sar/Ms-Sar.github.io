@@ -90,7 +90,7 @@ body::after {
   background: radial-gradient(
     ellipse at center,
     transparent 0%,
-    transparent 50%,
+    transparent 45%,
     rgba(0, 0, 0, 0.3) 100%
   );
 }
@@ -1025,3 +1025,134 @@ body::after {
     top: 50%;
   }
 }
+
+/* ========== MOBILE STYLES ========== */
+.mobile-baggy-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(0, 20, 0, 0.95);
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.mobile-baggy-btn:hover {
+  background: rgba(0, 30, 0, 1);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.mobile-baggy-btn img {
+  display: block;
+  image-rendering: pixelated;
+}
+
+.mobile-baggy-btn span {
+  color: #00ff00;
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  white-space: nowrap;
+}
+
+/* Overlay for mobile sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .mobile-baggy-btn {
+    display: flex;
+  }
+  
+  .page-wrapper {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .sticky-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    max-width: 400px;
+    height: 100vh;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .sticky-sidebar.mobile-open {
+    right: 0;
+  }
+  
+  /* Hide button when sidebar is open */
+  .mobile-baggy-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Close button inside sidebar on mobile */
+  .sticky-sidebar::before {
+    content: '✕ Close';
+    display: block;
+    position: sticky;
+    top: 0;
+    background: #001400;
+    color: #00ff00;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 2px solid #00ff00;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 15px;
+  }
+  
+  .sticky-sidebar {
+    width: 95%;
+  }
+  
+  .mobile-baggy-btn {
+    top: 15px;
+    right: 15px;
+    padding: 8px;
+  }
+  
+  .mobile-baggy-btn img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
