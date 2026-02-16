@@ -128,7 +128,26 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
   });
 });
 
-// Typewriter effect for main content
+// Typewriter effect - line by line for ASCII art
+function typeWriterLines(element, lines, speed, callback) {
+  let i = 0;
+  element.innerText = '';
+  element.style.opacity = '1';
+  
+  function typeLine() {
+    if (i < lines.length) {
+      element.innerText += lines[i] + (i < lines.length - 1 ? '\n' : '');
+      i++;
+      setTimeout(typeLine, speed);
+    } else if (callback) {
+      callback();
+    }
+  }
+  typeLine();
+}
+
+
+// Regular typewriter for paragraphs
 function typeWriter(element, text, speed, callback) {
   let i = 0;
   element.textContent = '';
@@ -146,15 +165,17 @@ function typeWriter(element, text, speed, callback) {
   type();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const title = document.querySelector('.typewriter-title');
+document.addEventListener('DOMContentLoaded', async () => {
+  const title = document.getElementById('ascii-title');
   const content = document.querySelector('.typewriter-content');
   const paragraph = content.querySelector('p');
   const sections = content.querySelectorAll('section');
   const links = content.querySelectorAll('.main-link');
   
-  // Store original text
-  const titleText = title.textContent;
+  // Load ASCII art from file
+  const response = await fetch('ascii-logo.txt');
+  const asciiArt = await response.text();
+  const titleLines = asciiArt.split('\n');
   const paragraphText = paragraph.textContent;
   
   // Hide everything initially
@@ -169,13 +190,13 @@ document.addEventListener('DOMContentLoaded', () => {
     title.style.opacity = '1';
     title.classList.add('typing');
     
-    // Type out title
-    typeWriter(title, titleText, 80, () => {
+    // Type out ASCII art line by line
+    typeWriterLines(title, titleLines, 100, () => {
       // Remove cursor after title is done
       setTimeout(() => {
         title.style.borderRight = 'none';
         
-        // Start typing paragraph - EVEN FASTER (2.5ms per character)
+        // Start typing paragraph
         paragraph.style.opacity = '1';
         typeWriter(paragraph, paragraphText, 2.5, () => {
           
@@ -209,3 +230,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, 300);
 });
+
