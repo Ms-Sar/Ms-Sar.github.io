@@ -128,58 +128,81 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
   });
 });
 
-// Typewriter effect - line by line for ASCII art with cursor at end of current line
-function typeWriterLines(element, lines, speed, callback) {
-  let i = 0;
-  element.innerText = '';
-  element.style.opacity = '1';
+// ASCII Art stored in JS - using array to preserve exact spacing
+const asciiArtLines = [
+  "   ███████╗████████╗██████╗·███╗···███╗·██████╗·██████╗·███████╗",
+  "   ██╔════╝╚══██╔══╝██╔══██╗████╗·████║██╔═══██╗██╔══██╗██╔════╝",
+  "   ███████╗···██║···██████╔╝██╔████╔██║██║···██║██║··██║███████╗",
+  "   ╚════██║···██║···██╔══██╗██║╚██╔╝██║██║···██║██║··██║╚════██║",
+  "   ███████║···██║···██║··██║██║·╚═╝·██║╚██████╔╝██████╔╝███████║",
+  "   ╚══════╝···╚═╝···╚═╝··╚═╝╚═╝·····╚═╝·╚═════╝·╚═════╝·╚══════╝"
+];
+
+// Typewriter effect - character by character for ASCII art with cursor
+function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
+  let lineIndex = 0;
+  let charIndex = 0;
+  let currentText = '';
   
   // Create cursor element
   const cursor = document.createElement('span');
   cursor.className = 'typing-cursor';
-  cursor.style.display = 'inline-block';
   
-  function typeLine() {
-    if (i < lines.length) {
-      // Remove cursor
-      const cursorElements = element.querySelectorAll('.typing-cursor');
-      cursorElements.forEach(c => c.remove());
+  element.innerText = '';
+  element.style.opacity = '1';
+  element.appendChild(cursor);
+  
+  function typeChar() {
+    if (lineIndex < lines.length) {
+      const currentLine = lines[lineIndex];
       
-      // Add new line
-      element.innerText += lines[i] + (i < lines.length - 1 ? '\n' : '');
-      
-      // Add cursor at the end
-      element.appendChild(cursor.cloneNode(true));
-      
-      i++;
-      setTimeout(typeLine, speed);
+      if (charIndex < currentLine.length) {
+        // Type next character
+        currentText += currentLine[charIndex];
+        element.innerText = currentText;
+        element.appendChild(cursor);
+        charIndex++;
+        setTimeout(typeChar, charSpeed);
+      } else {
+        // Line complete, move to next line
+        currentText += '\n';
+        element.innerText = currentText;
+        element.appendChild(cursor);
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(typeChar, lineDelay);
+      }
     } else {
-      // Remove cursor when done
-      const cursorElements = element.querySelectorAll('.typing-cursor');
-      cursorElements.forEach(c => c.remove());
+      // All lines complete
       if (callback) {
-        callback();
+        callback(cursor);
       }
     }
   }
-  typeLine();
+  
+  typeChar();
 }
 
-
-
-// Regular typewriter for paragraphs
-function typeWriter(element, text, speed, callback) {
+// Typewriter for paragraphs with moving cursor
+function typeWriter(element, text, speed, cursor, callback) {
   let i = 0;
   element.textContent = '';
   element.style.opacity = '1';
+  element.appendChild(cursor);
   
   function type() {
     if (i < text.length) {
-      element.textContent += text.charAt(i);
+      const currentText = text.substring(0, i + 1);
+      element.textContent = currentText;
+      element.appendChild(cursor);
       i++;
       setTimeout(type, speed);
-    } else if (callback) {
-      callback();
+    } else {
+      // Remove cursor when done
+      cursor.remove();
+      if (callback) {
+        callback();
+      }
     }
   }
   type();
@@ -192,10 +215,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const sections = content.querySelectorAll('section');
   const links = content.querySelectorAll('.main-link');
   
-  // Load ASCII art from file
-  const response = await fetch('ascii-logo.txt');
-  const asciiArt = await response.text();
-  const titleLines = asciiArt.split('\n');
   const paragraphText = paragraph.textContent;
   
   // Hide everything initially
@@ -210,15 +229,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     title.style.opacity = '1';
     title.classList.add('typing');
     
-    // Type out ASCII art line by line
-    typeWriterLines(title, titleLines, 100, () => {
-      // Remove cursor after title is done
+    // Type out ASCII art character by character
+    typeWriterASCII(title, asciiArtLines, 1, 5, (cursor) => {
+      // ASCII art done, move cursor to paragraph
       setTimeout(() => {
-        title.style.borderRight = 'none';
-        
-        // Start typing paragraph
         paragraph.style.opacity = '1';
-        typeWriter(paragraph, paragraphText, 2.5, () => {
+        
+        // Move cursor to paragraph and start typing
+        typeWriter(paragraph, paragraphText, 1.25, cursor, () => {
           
           // Show first section (My Work)
           setTimeout(() => {
@@ -246,8 +264,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
           }, 300);
         });
-      }, 500);
+      }, 300);
     });
   }, 300);
 });
-
