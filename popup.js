@@ -48,12 +48,15 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
           // Track with variations
           const trackHeader = document.createElement("div");
           trackHeader.className = "track-header";
-          trackHeader.textContent = `${item.name} - ${item.id}`;
+          
+          const trackText = document.createTextNode(`${item.name} - ${item.id}`);
+          trackHeader.appendChild(trackText);
           
           if (item.preview) {
             const img = document.createElement("img");
             img.src = item.preview;
             img.className = "preview-img";
+            img.alt = item.name;
             trackHeader.appendChild(img);
           }
           
@@ -67,12 +70,15 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
             item.variations.forEach(variation => {
               const varLi = document.createElement("li");
               varLi.className = "variation-item";
-              varLi.textContent = `${variation.name} - ${variation.id}`;
+              
+              const varText = document.createTextNode(`${variation.name} - ${variation.id}`);
+              varLi.appendChild(varText);
               
               if (variation.preview) {
                 const varImg = document.createElement("img");
                 varImg.src = variation.preview;
                 varImg.className = "preview-img";
+                varImg.alt = variation.name;
                 varLi.appendChild(varImg);
               }
               
@@ -88,12 +94,14 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
           });
         } else {
           // Vehicle (no variations)
-          li.textContent = `${item.name} - ${item.id}`;
+          const vehicleText = document.createTextNode(`${item.name} - ${item.id}`);
+          li.appendChild(vehicleText);
           
           if (item.preview) {
             const img = document.createElement("img");
             img.src = item.preview;
             img.className = "preview-img";
+            img.alt = item.name;
             li.appendChild(img);
           }
         }
