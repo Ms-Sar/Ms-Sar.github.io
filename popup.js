@@ -57,6 +57,7 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
             img.src = item.preview;
             img.className = "preview-img";
             img.alt = item.name;
+            console.log("Created track image:", img.src); // DEBUG
             trackHeader.appendChild(img);
           }
           
@@ -79,6 +80,7 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
                 varImg.src = variation.preview;
                 varImg.className = "preview-img";
                 varImg.alt = variation.name;
+                console.log("Created variation image:", varImg.src); // DEBUG
                 varLi.appendChild(varImg);
               }
               
@@ -102,6 +104,7 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
             img.src = item.preview;
             img.className = "preview-img";
             img.alt = item.name;
+            console.log("Created vehicle image:", img.src); // DEBUG
             li.appendChild(img);
           }
         }
@@ -112,6 +115,21 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
       list.dataset.loaded = "true";
       list.style.display = "block";
       btn.textContent = btn.textContent.replace("⏳", "▴");
+      
+      // DEBUG: Check first li after loading
+      setTimeout(() => {
+        const firstLi = list.querySelector('li');
+        if (firstLi) {
+          const img = firstLi.querySelector('.preview-img');
+          console.log("First li:", firstLi);
+          console.log("First img:", img);
+          if (img) {
+            console.log("Image computed opacity:", window.getComputedStyle(img).opacity);
+            console.log("Image computed display:", window.getComputedStyle(img).display);
+          }
+        }
+      }, 100);
+      
     } catch (error) {
       console.error("Failed to load JSON:", error);
       btn.textContent = btn.textContent.replace("⏳", "▾ (Error)");
