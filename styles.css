@@ -1060,6 +1060,7 @@ body::after {
   color: #00ff00;
   font-size: 11px;
   font-weight: bold;
+  font-family: 'Terminal', monospace; /* Add this line */
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
   white-space: nowrap;
 }
