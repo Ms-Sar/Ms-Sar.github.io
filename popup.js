@@ -1,3 +1,32 @@
+// CRT Power-on effect
+window.addEventListener('load', () => {
+  // Page starts with black background, hide content
+  document.body.style.visibility = 'hidden';
+  
+  // Create power-on overlay
+  const powerup = document.createElement('div');
+  powerup.className = 'crt-powerup';
+  document.body.appendChild(powerup);
+  
+  // Create boot scanline
+  const scanline = document.createElement('div');
+  scanline.className = 'crt-scanline-boot';
+  document.body.appendChild(scanline);
+  
+  // Show content and switch to normal background
+  setTimeout(() => {
+    document.body.style.visibility = 'visible';
+    document.body.classList.add('powered-on');
+  }, 400);
+  
+  // Remove CRT elements
+  setTimeout(() => {
+    powerup.remove();
+    scanline.remove();
+  }, 1000);
+});
+
+
 // Search form submit
 document.getElementById("search").addEventListener("keydown", e => {
   if (e.key === "Enter") {
@@ -194,14 +223,28 @@ function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
   requestAnimationFrame(typeChar);
 }
 
-// Typewriter for paragraphs with moving cursor (FAST)
-function typeWriter(element, text, speed, cursor, callback) {
+// Typewriter for paragraphs with moving cursor (FAST) - preserves images and HTML
+function typeWriter(element, html, speed, cursor, callback) {
   let i = 0;
   let lastTime = performance.now();
   let accumulated = 0;
   
+  // Store the image if it exists
+  const img = element.querySelector('img');
+  
+  // Create a temporary div to parse HTML
+  const temp = document.createElement('div');
+  temp.innerHTML = html;
+  const textContent = temp.textContent || temp.innerText;
+  
   element.textContent = '';
   element.style.opacity = '1';
+  
+  // Re-add the image if it existed
+  if (img) {
+    element.appendChild(img);
+  }
+  
   element.appendChild(cursor);
   
   function type(currentTime) {
@@ -210,30 +253,74 @@ function typeWriter(element, text, speed, cursor, callback) {
     accumulated += deltaTime;
     
     // Type multiple characters per frame if needed
-    while (accumulated >= speed && i < text.length) {
+    while (accumulated >= speed && i < textContent.length) {
       i++;
       accumulated -= speed;
     }
     
     if (i > 0) {
-      const currentText = text.substring(0, i);
-      element.textContent = currentText;
+      const currentText = textContent.substring(0, i);
+      
+      // Clear and rebuild with image and HTML
+      element.innerHTML = '';
+      if (img) {
+        element.appendChild(img);
+      }
+      
+      // Replace line breaks in the typed portion
+      const htmlText = html.substring(0, findHTMLPosition(html, i));
+      const span = document.createElement('span');
+      span.innerHTML = htmlText;
+      element.appendChild(span);
       element.appendChild(cursor);
     }
     
-    if (i < text.length) {
+    if (i < textContent.length) {
       requestAnimationFrame(type);
     } else {
-      // Remove cursor when done
+      // Remove cursor when done, set final HTML
       cursor.remove();
+      element.innerHTML = '';
+      if (img) {
+        element.appendChild(img);
+      }
+      const span = document.createElement('span');
+      span.innerHTML = html;
+      element.appendChild(span);
+      
       if (callback) {
         callback();
       }
     }
   }
   
+  // Helper to find HTML position based on text position
+  function findHTMLPosition(html, textPos) {
+    let textCount = 0;
+    let htmlPos = 0;
+    let inTag = false;
+    
+    while (htmlPos < html.length && textCount < textPos) {
+      if (html[htmlPos] === '<') {
+        inTag = true;
+      } else if (html[htmlPos] === '>') {
+        inTag = false;
+        htmlPos++;
+        continue;
+      }
+      
+      if (!inTag) {
+        textCount++;
+      }
+      htmlPos++;
+    }
+    
+    return htmlPos;
+  }
+  
   requestAnimationFrame(type);
 }
+
 
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -243,8 +330,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const sections = content.querySelectorAll('section');
   const links = content.querySelectorAll('.main-link');
   
-  const paragraphText = paragraph.textContent;
-  
+// Get HTML content without the image
+const paragraphHTML = paragraph.innerHTML.replace(/<img[^>]*>/g, '').trim();
+
   // Hide everything initially
   title.style.opacity = '0';
   content.style.opacity = '1';
@@ -252,7 +340,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   sections.forEach(s => s.style.opacity = '0');
   links.forEach(l => l.style.opacity = '0');
   
-  // Start animation sequence
+  // Start animation sequence - delayed to let CRT effect finish
   setTimeout(() => {
     title.style.opacity = '1';
     title.classList.add('typing');
@@ -264,7 +352,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         paragraph.style.opacity = '1';
         
         // Move cursor to paragraph and start typing
-        typeWriter(paragraph, paragraphText, 2.25, cursor, () => {
+        typeWriter(paragraph, paragraphHTML, 2.25, cursor, () => {
           
           // Show first section (My Work)
           setTimeout(() => {
@@ -294,5 +382,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
       }, 300);
     });
-  }, 300);
+  }, 900); // Start typing after CRT effect (900ms)
 });
+
