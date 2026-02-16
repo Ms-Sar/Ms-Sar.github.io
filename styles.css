@@ -377,44 +377,39 @@ body {
    ============================================ */
 
 .preview-img {
-  position: fixed !important;
-  left: auto !important;
-  right: 380px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+  position: fixed;
+  left: auto;
+  right: 380px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 140px;
   height: auto;
   background: #000;
   border: 2px solid var(--accent);
   border-radius: 8px;
   padding: 6px;
-  z-index: 2147483647 !important;
+  z-index: 2147483647;
   pointer-events: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+  display: block;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
-.dynamic-list > li:hover > .preview-img,
-.track-header:hover > .preview-img,
-.variation-item:hover > .preview-img {
+.dynamic-list > li:hover .preview-img {
   opacity: 1;
-  visibility: visible;
 }
 
-.dynamic-list li.expanded .track-header:hover > .preview-img {
-  opacity: 0 !important;
-  visibility: hidden !important;
+.track-header:hover .preview-img {
+  opacity: 1;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.variation-item:hover .preview-img {
+  opacity: 1;
+}
+
+.dynamic-list li.expanded .track-header:hover .preview-img {
+  opacity: 0;
 }
 
 /* ============================================
@@ -449,6 +444,6 @@ body {
   }
 
   .preview-img {
-    right: 20px !important;
+    right: 20px;
   }
 }
