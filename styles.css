@@ -1,0 +1,65 @@
+/* PAGE LAYOUT - Sidebar on right, sticky on scroll */
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: var(--bg);
+  max-width: calc(100% - 360px);
+  overflow-y: auto;
+}
+
+.main-content h1 {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.main-content section {
+  margin-bottom: 40px;
+}
+
+.sticky-sidebar {
+  width: 360px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  right: 0;
+  overflow-y: auto;
+  background: var(--bg);
+  border-left: 1px solid #000;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+}
+
+.sidebar-content {
+  padding: 0 12px 12px 12px;
+}
+
+/* Responsive: Stack on smaller screens */
+@media (max-width: 1024px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    max-width: 100%;
+  }
+  
+  .sticky-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-left: none;
+    border-top: 1px solid #000;
+  }
+}
+
+/* Keep body/html full width */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}

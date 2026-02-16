@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Wreckfest Modding Toolbar",
+  "version": "1.0",
+  "description": "Quick access to Wreckfest modding resources.",
+  "action": {
+    "default_title": "Wreckfest Modding",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "96": "icon96.png"
+  }
+}
