@@ -1270,4 +1270,147 @@ body::after {
   }
 }
 
+/* Embed button */
+.embed-btn {
+  margin-top: 10px;
+  background: #0a2800;
+  color: #00ff41;
+  border: 1px solid #0a4000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Terminal', monospace;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.embed-btn:hover {
+  background: #0d3500;
+  border-color: #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+}
+
+/* Embed modal */
+.embed-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.embed-modal-content {
+  background: #0a2800;
+  margin: 5% auto;
+  padding: 30px;
+  border: 2px solid #00ff41;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 40px rgba(0, 255, 65, 0.5);
+}
+
+.embed-modal-content h2 {
+  color: #00ff41;
+  margin: 0 0 20px 0;
+  font-size: 1.8em;
+}
+
+.embed-modal-content p {
+  color: #0f0;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.embed-close {
+  color: #0f0;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.embed-close:hover {
+  color: #00ff41;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
+}
+
+.theme-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  flex: 1;
+  background: #051800;
+  color: #0f0;
+  border: 2px solid #0a4000;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Terminal', monospace;
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+  background: #0d3500;
+  border-color: #00ff41;
+}
+
+.theme-btn.active {
+  background: #0d3500;
+  border-color: #00ff41;
+  color: #00ff41;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+#embedCode {
+  width: 100%;
+  height: 150px;
+  background: #051800;
+  color: #0f0;
+  border: 1px solid #0a4000;
+  border-radius: 4px;
+  padding: 12px;
+  font-family: 'Terminal', monospace;
+  font-size: 0.85em;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+
+.copy-btn {
+  width: 100%;
+  background: #0a2800;
+  color: #00ff41;
+  border: 1px solid #0a4000;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Terminal', monospace;
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: #0d3500;
+  border-color: #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+}
+
+.copy-feedback {
+  text-align: center;
+  color: #00ff41;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.copy-feedback.show {
+  opacity: 1;
+}
 

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Baggy - WF Modding Companion</title>
+<style>
+@font-face {
+  font-family: 'Terminal';
+  src: url('https://ms-sar.github.io/assets/terminal.ttf') format('truetype');
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Terminal', 'Courier New', monospace;
+  background: #072000;
+  color: #eee;
+  font-size: 14px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.baggy-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #072000;
+  border: 2px solid #00ff41;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: linear-gradient(180deg, #0a2800, #072000);
+  border-bottom: 1px solid #0a4000;
+}
+
+#logo {
+  width: 32px;
+  height: 32px;
+}
+
+.title-group .title {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #00ff41;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+.title-group .subtitle {
+  font-size: 0.85em;
+  color: #0f0;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: #031200;
+  border: 1px solid #0a4000;
+  color: #00ff41;
+  font-family: 'Terminal', monospace;
+  font-size: 0.95em;
+}
+
+.search::placeholder { color: #0a5000; }
+
+.search:focus {
+  outline: none;
+  border-color: #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+}
+
+.card {
+  background: #0a2800;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #0a4000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-title:hover {
+  color: #00ff41;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+.icon-img {
+  width: 16px;
+  height: 16px;
+}
+
+.click-panel, .info-panel {
+  display: none;
+  margin-top: 8px;
+  padding: 8px;
+  background: #051800;
+  border-radius: 4px;
+  border: 1px solid #062000;
+}
+
+.card.open .click-panel,
+.card.open .info-panel {
+  display: block;
+}
+
+.sublink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #0f0;
+  font-size: 0.9em;
+  transition: all 0.15s ease;
+}
+
+.sublink:hover {
+  background: #0d3500;
+  color: #00ff41;
+  transform: translateX(2px);
+}
+
+.info-subtoggle {
+  width: 100%;
+  background: #0a2800;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+  text-align: left;
+  color: #0f0;
+  border: 1px solid #0a4000;
+  cursor: pointer;
+  font-family: 'Terminal', monospace;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-subtoggle:hover {
+  background: #0d3500;
+  border-color: #00ff41;
+}
+
+.dynamic-list {
+  list-style: none;
+  padding-left: 10px;
+  margin: 4px 0;
+  display: none;
+}
+
+.dynamic-list li {
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #0f0;
+  font-size: 0.85em;
+}
+
+.dynamic-list li:hover {
+  background: #0d3500;
+  color: #00ff41;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  color: #0f0;
+  font-size: 0.85em;
+  border-top: 1px solid #0a4000;
+  background: #051800;
+}
+
+.footer a {
+  color: #00ff41;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+.sidebar-content::-webkit-scrollbar { width: 8px; }
+.sidebar-content::-webkit-scrollbar-track { background: #051800; }
+.sidebar-content::-webkit-scrollbar-thumb { background: #0a4000; border-radius: 4px; }
+.sidebar-content::-webkit-scrollbar-thumb:hover { background: #00ff41; }
+
+.track-header { cursor: pointer; }
+.track-header::before {
+  content: "▶";
+  margin-right: 5px;
+  color: #00ff41;
+  transition: transform 0.2s;
+}
+.dynamic-list li.expanded .track-header::before { transform: rotate(90deg); }
+.variations-list {
+  list-style: none;
+  padding-left: 15px;
+  margin: 4px 0 0 0;
+  display: none;
+}
+.dynamic-list li.expanded .variations-list { display: block; }
+.variation-item {
+  padding: 3px 6px;
+  font-size: 0.8em;
+  color: #0f0;
+  border-left: 2px solid #0a4000;
+  margin: 2px 0;
+}
+.variation-item:hover {
+  background: #0d3500;
+  border-left-color: #00ff41;
+  color: #00ff41;
+}
+</style>
+</head>
+<body>
+  <div class="baggy-container">
+    <header class="header">
+      <img id="logo" src="https://ms-sar.github.io/assets/Baggy.png" alt="Baggy">
+      <div class="title-group">
+        <div class="title">Baggy</div>
+        <div class="subtitle">WF modding companion</div>
+      </div>
+    </header>
+
+    <div class="sidebar-content">
+      <form id="wikiSearchForm" action="https://tads.me.uk/wfwiki/index.php" method="get" target="_blank">
+        <input class="search" name="search" placeholder="Search WF modding wiki" />
+      </form>
+
+      <section class="card click-card" data-section="links">
+        <h2 class="card-title click-title">
+          <img class="icon-img" src="https://ms-sar.github.io/assets/wiki.png"> Useful Links
+        </h2>
+        <div class="click-panel">
+          <a class="sublink" href="https://tads.me.uk/wfwiki/index.php?title=Main_Page" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/wiki.png"> Wreckfest Modding Wiki
+          </a>
+          <a class="sublink" href="https://mazay.fi/wf/" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/mazay.png"> Mazay's Site
+          </a>
+          <a class="sublink" href="https://docs.google.com/spreadsheets/d/18-g1-I68g1B-9bumvV1HxUVcuD41DBczCyUGH3rdNiQ" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/WFchronicle.png"> Wreckfest Chronicle
+          </a>
+        </div>
+      </section>
+
+      <section class="card click-card" data-section="tools">
+        <h2 class="card-title click-title">
+          <img class="icon-img" src="https://ms-sar.github.io/assets/Tools.png"> Tools
+        </h2>
+        <div class="click-panel">
+          <a class="sublink" href="https://github.com/gmazy/wreckfest_toolbox" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/toolbox.png"> Wreckfest Toolbox
+          </a>
+          <a class="sublink" href="https://github.com/gmazy/bag-decompress" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/bagdecompress.png"> BagDecompress
+          </a>
+          <a class="sublink" href="https://github.com/MaxxWyndham/Breckfest" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/breckfest.png"> Breckfest
+          </a>
+          <a class="sublink" href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/strtelem.png"> WF2 Blender Telemetry
+          </a>
+        </div>
+      </section>
+
+      <section class="card click-card" data-section="steamdb">
+        <h2 class="card-title click-title">
+          <img class="icon-img" src="https://ms-sar.github.io/assets/steamdb.png"> SteamDB Pages
+        </h2>
+        <div class="click-panel">
+          <a class="sublink" href="https://steamdb.info/app/228380/patchnotes/" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/PatchNotes.png"> WF1 Patch Notes
+          </a>
+          <a class="sublink" href="https://steamdb.info/depot/228381/manifests/" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/Manifests.png"> WF1 Manifests
+          </a>
+          <a class="sublink" href="https://steamdb.info/depot/361581/manifests/" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/ServerManifests.png"> WF1 Server Manifests
+          </a>
+          <a class="sublink" href="https://steamdb.info/app/1203190/patchnotes/" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/PatchNotes.png"> WF2 Patch Notes
+          </a>
+          <a class="sublink" href="https://steamdb.info/depot/1203191/manifests/" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/Manifests.png"> WF2 Manifests
+          </a>
+          <a class="sublink" href="https://steamdb.info/depot/3519391/manifests/" target="_blank">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/ServerManifests.png"> WF2 Server Manifests
+          </a>
+        </div>
+      </section>
+
+      <section class="card info-card" data-info="wf1">
+        <h2 class="card-title info-title">
+          <img class="icon-img" src="https://ms-sar.github.io/assets/wf1.png"> WF1 Info
+        </h2>
+        <div class="info-panel">
+          <button class="info-subtoggle" data-json="wf1_vehicles.json">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/VehicleList.png"> Vehicle List ▾
+          </button>
+          <ul class="dynamic-list"></ul>
+          <button class="info-subtoggle" data-json="wf1_tracks.json">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/TrackList.png"> Track List ▾
+          </button>
+          <ul class="dynamic-list"></ul>
+        </div>
+      </section>
+
+      <section class="card info-card" data-info="wf2">
+        <h2 class="card-title info-title">
+          <img class="icon-img" src="https://ms-sar.github.io/assets/wf2.png"> WF2 Info
+        </h2>
+        <div class="info-panel">
+          <button class="info-subtoggle" data-json="wf2_vehicles.json">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/VehicleList.png"> Vehicle List ▾
+          </button>
+          <ul class="dynamic-list"></ul>
+          <button class="info-subtoggle" data-json="wf2_tracks.json">
+            <img class="icon-img" src="https://ms-sar.github.io/assets/TrackList.png"> Track List ▾
+          </button>
+          <ul class="dynamic-list"></ul>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <small>Created by STRmods</small><br>
+      <a href="https://strmods.github.io/" target="_blank">Visit STRmods.github.io →</a>
+    </footer>
+  </div>
+
+<script src="https://ms-sar.github.io/baggy-embed.js"></script>
+</body>
+</html>
