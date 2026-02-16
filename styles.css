@@ -1151,14 +1151,21 @@ body::after {
   
   /* Scale down ASCII art */
   .ascii-art {
-    font-size: 4px; /* 40% of 10px */
-    line-height: 4px; /* 40% of 10px */
+    font-size: 5px; /* Up from 4px */
+    line-height: 5px;
   }
   
   /* Scale down main paragraph text */
   .typewriter-content p {
-    font-size: 13.5px; /* 75% of 18px */
+    font-size: 15px; /* Up from 13.5px */
     line-height: 1.5;
+  }
+  
+  /* Scale down hackermans gif */
+  .inline-gif {
+    width: 35%; /* 35% of original size */
+    height: auto;
+    max-width: 100px; /* Cap it so it doesn't get too big */
   }
   
   /* Scale down main link buttons */
@@ -1173,7 +1180,7 @@ body::after {
   }
   
   .link-title {
-    font-size: 14px; /* Half of 28px */
+    font-size: 13px; /* Slightly smaller from 14px */
   }
   
   .link-desc {
@@ -1227,12 +1234,16 @@ body::after {
   
   /* Even smaller ASCII on very small screens */
   .ascii-art {
-    font-size: 3px;
-    line-height: 3px;
+    font-size: 4px; /* Up from 3px */
+    line-height: 4px;
   }
   
   .typewriter-content p {
-    font-size: 12px;
+    font-size: 13px; /* Adjusted proportionally */
+  }
+  
+  .inline-gif {
+    max-width: 80px;
   }
   
   .sticky-sidebar {
