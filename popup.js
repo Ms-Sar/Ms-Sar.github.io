@@ -341,9 +341,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const sections = content.querySelectorAll('section');
   const links = content.querySelectorAll('.main-link');
   
-  // Detect mobile and use appropriate ASCII art
+  // Use same ASCII for both
   const isMobile = window.innerWidth <= 768;
-  const artLines = isMobile ? asciiArtLinesMobile : asciiArtLines;
+  const artLines = asciiArtLines; // Just use desktop version
+
   
   // Get HTML content without the image
   const paragraphHTML = paragraph.innerHTML.replace(/<img[^>]*>/g, '').trim();
