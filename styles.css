@@ -205,17 +205,38 @@ body::after {
 .typewriter-title {
   opacity: 0;
   transition: opacity 0.3s ease;
-  overflow: hidden;
-  border-right: 3px solid var(--accent);
-  white-space: nowrap;
+  overflow: visible;
+  border-right: none;
+  white-space: pre;
   margin: 0 auto;
-  letter-spacing: 0.1em;
-  width: 0;
+  letter-spacing: 0.05em;
+  width: auto;
+  display: inline-block;
 }
 
 .typewriter-title.typing {
-  animation: typing 2s steps(30, end) forwards, blink-caret 0.75s step-end 6;
+  /* No animation on the container itself */
 }
+
+.typing-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background: var(--accent);
+  margin-left: 5px;
+  animation: blink-caret 0.75s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink-cursor {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 
 .typewriter-content {
   opacity: 0;

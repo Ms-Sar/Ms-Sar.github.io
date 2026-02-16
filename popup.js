@@ -128,23 +128,43 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
   });
 });
 
-// Typewriter effect - line by line for ASCII art
+// Typewriter effect - line by line for ASCII art with cursor at end of current line
 function typeWriterLines(element, lines, speed, callback) {
   let i = 0;
   element.innerText = '';
   element.style.opacity = '1';
   
+  // Create cursor element
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  cursor.style.display = 'inline-block';
+  
   function typeLine() {
     if (i < lines.length) {
+      // Remove cursor
+      const cursorElements = element.querySelectorAll('.typing-cursor');
+      cursorElements.forEach(c => c.remove());
+      
+      // Add new line
       element.innerText += lines[i] + (i < lines.length - 1 ? '\n' : '');
+      
+      // Add cursor at the end
+      element.appendChild(cursor.cloneNode(true));
+      
       i++;
       setTimeout(typeLine, speed);
-    } else if (callback) {
-      callback();
+    } else {
+      // Remove cursor when done
+      const cursorElements = element.querySelectorAll('.typing-cursor');
+      cursorElements.forEach(c => c.remove());
+      if (callback) {
+        callback();
+      }
     }
   }
   typeLine();
 }
+
 
 
 // Regular typewriter for paragraphs
