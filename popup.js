@@ -129,23 +129,83 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
 });
 
 // Typewriter effect for main content
+function typeWriter(element, text, speed, callback) {
+  let i = 0;
+  element.textContent = '';
+  element.style.opacity = '1';
+  
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else if (callback) {
+      callback();
+    }
+  }
+  type();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const title = document.querySelector('.typewriter-title');
   const content = document.querySelector('.typewriter-content');
+  const paragraph = content.querySelector('p');
+  const sections = content.querySelectorAll('section');
+  const links = content.querySelectorAll('.main-link');
   
-  // Start hidden
+  // Store original text
+  const titleText = title.textContent;
+  const paragraphText = paragraph.textContent;
+  
+  // Hide everything initially
   title.style.opacity = '0';
-  content.style.opacity = '0';
+  content.style.opacity = '1';
+  paragraph.style.opacity = '0';
+  sections.forEach(s => s.style.opacity = '0');
+  links.forEach(l => l.style.opacity = '0');
   
-  // Animate title first
+  // Start animation sequence
   setTimeout(() => {
     title.style.opacity = '1';
     title.classList.add('typing');
+    
+    // Type out title
+    typeWriter(title, titleText, 80, () => {
+      // Remove cursor after title is done
+      setTimeout(() => {
+        title.style.borderRight = 'none';
+        
+        // Start typing paragraph
+        paragraph.style.opacity = '1';
+        typeWriter(paragraph, paragraphText, 15, () => {
+          
+          // Show first section (My Work)
+          setTimeout(() => {
+            sections[0].style.opacity = '1';
+            sections[0].style.animation = 'fadeInTerminal 0.3s ease forwards';
+            
+            // Glitch in the links
+            setTimeout(() => {
+              links[0].style.animation = 'glitchIn 0.6s ease forwards';
+            }, 200);
+            
+            setTimeout(() => {
+              links[1].style.animation = 'glitchIn 0.6s ease forwards';
+            }, 400);
+            
+            setTimeout(() => {
+              links[2].style.animation = 'glitchIn 0.6s ease forwards';
+            }, 600);
+            
+            // Show second section (About the Sidebar)
+            setTimeout(() => {
+              sections[1].style.opacity = '1';
+              sections[1].style.animation = 'fadeInTerminal 0.3s ease forwards';
+            }, 1000);
+            
+          }, 300);
+        });
+      }, 500);
+    });
   }, 300);
-  
-  // Then animate content
-  setTimeout(() => {
-    content.style.opacity = '1';
-    content.classList.add('typing');
-  }, 2000);
 });
