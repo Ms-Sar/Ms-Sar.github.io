@@ -5,17 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Baggy - WF Modding Companion</title>
 <style>
-@font-face {
-  font-family: 'Terminal';
-  src: url('https://ms-sar.github.io/assets/terminal.ttf') format('truetype');
-}
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Terminal', 'Courier New', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: #1a1a1a;
-  color: #eee;
+  color: #fff;
   font-size: 14px;
   height: 100vh;
   overflow: hidden;
@@ -29,6 +24,7 @@ body {
   background: #1a1a1a;
   border: 2px solid #ff8800;
   box-shadow: 0 0 20px rgba(255, 136, 0, 0.3);
+  position: relative;
 }
 
 .header {
@@ -54,13 +50,14 @@ body {
 
 .title-group .subtitle {
   font-size: 0.85em;
-  color: #ff9944;
+  color: #ddd;
 }
 
 .sidebar-content {
   flex: 1;
   overflow-y: auto;
   padding: 12px;
+  position: relative;
 }
 
 .search {
@@ -70,12 +67,12 @@ body {
   border-radius: 4px;
   background: #111;
   border: 1px solid #333;
-  color: #ff8800;
-  font-family: 'Terminal', monospace;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.95em;
 }
 
-.search::placeholder { color: #555; }
+.search::placeholder { color: #666; }
 
 .search:focus {
   outline: none;
@@ -99,7 +96,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ff9944;
+  color: #fff;
   cursor: pointer;
   user-select: none;
 }
@@ -135,7 +132,7 @@ body {
   padding: 6px 8px;
   border-radius: 4px;
   text-decoration: none;
-  color: #ff9944;
+  color: #fff;
   font-size: 0.9em;
   transition: all 0.15s ease;
 }
@@ -153,10 +150,10 @@ body {
   border-radius: 4px;
   margin-top: 6px;
   text-align: left;
-  color: #ff9944;
+  color: #fff;
   border: 1px solid #333;
   cursor: pointer;
-  font-family: 'Terminal', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 0.9em;
   display: flex;
   align-items: center;
@@ -166,6 +163,7 @@ body {
 .info-subtoggle:hover {
   background: #333;
   border-color: #ff8800;
+  color: #ff8800;
 }
 
 .dynamic-list {
@@ -179,8 +177,9 @@ body {
   padding: 4px 6px;
   border-radius: 4px;
   cursor: pointer;
-  color: #ff9944;
+  color: #fff;
   font-size: 0.85em;
+  position: relative;
 }
 
 .dynamic-list li:hover {
@@ -191,7 +190,7 @@ body {
 .footer {
   text-align: center;
   padding: 10px;
-  color: #ff9944;
+  color: #fff;
   font-size: 0.85em;
   border-top: 1px solid #333;
   background: #1a1a1a;
@@ -211,40 +210,50 @@ body {
 .sidebar-content::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 .sidebar-content::-webkit-scrollbar-thumb:hover { background: #ff8800; }
 
-.track-header { cursor: pointer; }
+.track-header { 
+  cursor: pointer;
+  position: relative;
+}
+
 .track-header::before {
   content: "▶";
   margin-right: 5px;
   color: #ff8800;
   transition: transform 0.2s;
 }
+
 .dynamic-list li.expanded .track-header::before { transform: rotate(90deg); }
+
 .variations-list {
   list-style: none;
   padding-left: 15px;
   margin: 4px 0 0 0;
   display: none;
 }
+
 .dynamic-list li.expanded .variations-list { display: block; }
+
 .variation-item {
   padding: 3px 6px;
   font-size: 0.8em;
-  color: #ff9944;
+  color: #fff;
   border-left: 2px solid #333;
   margin: 2px 0;
+  position: relative;
 }
+
 .variation-item:hover {
   background: #333;
   border-left-color: #ff8800;
   color: #ff8800;
 }
 
-/* Preview images */
+/* Preview images - overlay the list */
 .preview-img {
-  position: fixed;
-  left: 50%;
+  position: absolute;
+  left: 0;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   width: 200px;
   height: auto;
   max-width: 280px;
@@ -259,18 +268,8 @@ body {
   transition: opacity 0.15s ease;
 }
 
-.dynamic-list li:hover > .preview-img {
-  opacity: 1;
-}
-
-.track-header {
-  position: relative;
-}
-
-.track-header:hover > .preview-img {
-  opacity: 1;
-}
-
+.dynamic-list li:hover > .preview-img,
+.track-header:hover > .preview-img,
 .variation-item:hover > .preview-img {
   opacity: 1;
 }
@@ -278,6 +277,8 @@ body {
 .dynamic-list li.expanded > .track-header:hover > .preview-img {
   opacity: 0;
 }
+
+
 </style>
 </head>
 <body>
