@@ -428,10 +428,6 @@ sidebar.addEventListener('click', (e) => {
   }
 });
 
-// Close on bottom close button
-const closeModalBtn = document.getElementById('closeModalBtn');
-closeModalBtn.addEventListener('click', closeModal);
-
 
 // ========== BAGGY EMBED MODAL ==========
 const embedBtn = document.getElementById('embedBtn');
@@ -441,9 +437,14 @@ const embedModalContent = document.querySelector('.embed-modal-content');
 const embedCode = document.getElementById('embedCode');
 const copyEmbedBtn = document.getElementById('copyEmbedBtn');
 const copyFeedback = document.getElementById('copyFeedback');
+const closeModalBtn = document.getElementById('closeModalBtn');
 const themeButtons = document.querySelectorAll('.theme-btn');
 
+// Move modal to body to escape stacking context
+document.body.appendChild(embedModal);
+
 let currentTheme = 'green';
+
 
 const embedCodes = {
   green: `<iframe src="https://ms-sar.github.io/baggy-embed-green.html" 
@@ -458,23 +459,25 @@ const embedCodes = {
 </iframe>`
 };
 
+// Close modal function
+function closeModal() {
+  embedModal.style.display = 'none';
+}
+
 // Open modal
 embedBtn.addEventListener('click', () => {
   embedModal.style.display = 'block';
   embedCode.value = embedCodes[currentTheme];
 });
 
-// Close modal function
-function closeModal() {
-  embedModal.style.display = 'none';
-}
-
 // Close on X button
 embedClose.addEventListener('click', closeModal);
 
+// Close on bottom close button
+closeModalBtn.addEventListener('click', closeModal);
+
 // Close when clicking outside the modal content
 embedModal.addEventListener('click', (e) => {
-  // Only close if clicking directly on the modal background, not the content
   if (e.target === embedModal) {
     closeModal();
   }
@@ -511,4 +514,12 @@ copyEmbedBtn.addEventListener('click', () => {
   setTimeout(() => {
     copyFeedback.classList.remove('show');
   }, 2000);
+});
+
+// Close when clicking outside the modal content
+embedModal.addEventListener('click', (e) => {
+  console.log('Modal clicked!', e.target, e.target === embedModal);
+  if (e.target === embedModal) {
+    closeModal();
+  }
 });
