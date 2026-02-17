@@ -1218,14 +1218,16 @@ body::after {
   }
   
   .footer {
-    padding: 10px 8px; /* Reduced padding */
-    font-size: 0.9em; /* Slightly smaller */
+    padding: 10px 8px;
+    font-size: 0.9em;
+    margin-bottom: 60px; /* Add space at bottom for scrolling */
   }
   
   .embed-btn {
-    font-size: 0.85em; /* Smaller button text */
-    padding: 6px 12px; /* Reduced padding */
+    font-size: 0.85em;
+    padding: 6px 12px;
     margin-top: 8px;
+    margin-bottom: 20px; /* Extra space below button */
   }
 }
 
@@ -1401,12 +1403,14 @@ body::after {
   .footer {
     padding: 8px 6px;
     font-size: 0.85em;
+    margin-bottom: 80px; /* More space on smaller screens */
   }
   
   .embed-btn {
     font-size: 0.8em;
     padding: 5px 10px;
     margin-top: 6px;
+    margin-bottom: 30px;
   }
 }
 
