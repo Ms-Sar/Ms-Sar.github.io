@@ -2,89 +2,89 @@
   {
     "id": "track04",
     "name": "Cannonhill",
-    "preview": "track04.png",
+    "preview": "wf2/tracks/track04.png",
     "variations": [
-      { "id": "track04_1", "name": "Main Circuit", "preview": "track04_1.png" },
-      { "id": "track04_1_rev", "name": "Main Circuit Reverse", "preview": "track04_1_rev.png" }
+      { "id": "track04_1", "name": "Main Circuit", "preview": "wf2/tracks/track04_1.png" },
+      { "id": "track04_1_rev", "name": "Main Circuit Reverse", "preview": "wf2/tracks/track04_1_rev.png" }
     ]
   },
   {
     "id": "track10",
     "name": "Crash Canyon",
-    "preview": "track10.png",
+    "preview": "wf2/tracks/track10.png",
     "variations": [
-      { "id": "track10_2", "name": "Main Route", "preview": "track10_2.png" }
+      { "id": "track10_2", "name": "Main Route", "preview": "wf2/tracks/track10_2.png" }
     ]
   },
   {
     "id": "track05",
     "name": "European Rallycross 1",
-    "preview": "track05.png",
+    "preview": "wf2/tracks/track05.png",
     "variations": [
-      { "id": "track05_1", "name": "Main Circuit", "preview": "track05_1.png" },
-      { "id": "track05_1_rev", "name": "Main Circuit Reverse", "preview": "track05_1_rev.png" }
+      { "id": "track05_1", "name": "Main Circuit", "preview": "wf2/tracks/track05_1.png" },
+      { "id": "track05_1_rev", "name": "Main Circuit Reverse", "preview": "wf2/tracks/track05_1_rev.png" }
     ]
   },
   {
     "id": "track01",
     "name": "Finncross",
-    "preview": "track01.png",
+    "preview": "wf2/tracks/track01.png",
     "variations": [
-      { "id": "track01_1", "name": "Main Circuit", "preview": "track01_1.png" },
-      { "id": "track01_1_rev", "name": "Main Circuit Reverse", "preview": "track01_1_rev.png" }
+      { "id": "track01_1", "name": "Main Circuit", "preview": "wf2/tracks/track01_1.png" },
+      { "id": "track01_1_rev", "name": "Main Circuit Reverse", "preview": "wf2/tracks/track01_1_rev.png" }
     ]
   },
   {
     "id": "track02",
     "name": "Savolax Sandpit",
-    "preview": "track02.png",
+    "preview": "wf2/tracks/track02.png",
     "variations": [
-      { "id": "track02_1", "name": "Main Circuit", "preview": "track02_1.png" },
-      { "id": "track02_1_rev", "name": "Main Circuit Reverse", "preview": "track02_1_rev.png" },
-      { "id": "track02_2", "name": "Short Circuit", "preview": "track02_2.png" },
-      { "id": "track02_2_rev", "name": "Short Circuit Reverse", "preview": "track02_2_rev.png" }
+      { "id": "track02_1", "name": "Main Circuit", "preview": "wf2/tracks/track02_1.png" },
+      { "id": "track02_1_rev", "name": "Main Circuit Reverse", "preview": "wf2/tracks/track02_1_rev.png" },
+      { "id": "track02_2", "name": "Short Circuit", "preview": "wf2/tracks/track02_2.png" },
+      { "id": "track02_2_rev", "name": "Short Circuit Reverse", "preview": "wf2/tracks/track02_2_rev.png" }
     ]
   },
   {
     "id": "track07",
     "name": "Scrapyard",
-    "preview": "track07.png",
+    "preview": "wf2/tracks/track07.png",
     "variations": [
-      { "id": "track07_1", "name": "Main Route", "preview": "track07_1.png" },
-      { "id": "track07_1_rev", "name": "Main Route Reverse", "preview": "track07_1_rev.png" },
-      { "id": "track07_2", "name": "Demolition Arena", "preview": "track07_2.png" },
-      { "id": "track07_3", "name": "Bonebreaker", "preview": "track07_3.png" },
-      { "id": "track07_4", "name": "Speedbowl", "preview": "track07_4.png" },
-      { "id": "track07_5", "name": "Figure 8", "preview": "track07_5.png" }
+      { "id": "track07_1", "name": "Main Route", "preview": "wf2/tracks/track07_1.png" },
+      { "id": "track07_1_rev", "name": "Main Route Reverse", "preview": "wf2/tracks/track07_1_rev.png" },
+      { "id": "track07_2", "name": "Demolition Arena", "preview": "wf2/tracks/track07_2.png" },
+      { "id": "track07_3", "name": "Bonebreaker", "preview": "wf2/tracks/track07_3.png" },
+      { "id": "track07_4", "name": "Speedbowl", "preview": "wf2/tracks/track07_4.png" },
+      { "id": "track07_5", "name": "Figure 8", "preview": "wf2/tracks/track07_5.png" }
     ]
   },
   {
     "id": "track06",
     "name": "Speedway",
-    "preview": "track06.png",
+    "preview": "wf2/tracks/track06.png",
     "variations": [
-      { "id": "track06_1", "name": "Outer Oval", "preview": "track06_1.png" },
-      { "id": "track06_2", "name": "Derby", "preview": "track06_2.png" },
-      { "id": "track06_3", "name": "Inner Oval", "preview": "track06_3.png" },
-      { "id": "track06_4", "name": "Figure 8", "preview": "track06_4.png" }
+      { "id": "track06_1", "name": "Outer Oval", "preview": "wf2/tracks/track06_1.png" },
+      { "id": "track06_2", "name": "Derby", "preview": "wf2/tracks/track06_2.png" },
+      { "id": "track06_3", "name": "Inner Oval", "preview": "wf2/tracks/track06_3.png" },
+      { "id": "track06_4", "name": "Figure 8", "preview": "wf2/tracks/track06_4.png" }
     ]
   },
   {
     "id": "track08",
     "name": "Testing Grounds",
-    "preview": "track08.png",
+    "preview": "wf2/tracks/track08.png",
     "variations": [
-      { "id": "track08_1", "name": "Testing Grounds", "preview": "track08_1.png" }
+      { "id": "track08_1", "name": "Testing Grounds", "preview": "wf2/tracks/track08_1.png" }
     ]
   },
   {
     "id": "track09",
     "name": "UK Banger 1",
-    "preview": "track09.png",
+    "preview": "wf2/tracks/track09.png",
     "variations": [
-      { "id": "track09_1", "name": "Oval", "preview": "track09_1.png" },
-      { "id": "track09_2", "name": "Figure 8", "preview": "track09_2.png" },
-      { "id": "track09_3", "name": "Derby", "preview": "track09_3.png" }
+      { "id": "track09_1", "name": "Oval", "preview": "wf2/tracks/track09_1.png" },
+      { "id": "track09_2", "name": "Figure 8", "preview": "wf2/tracks/track09_2.png" },
+      { "id": "track09_3", "name": "Derby", "preview": "wf2/tracks/track09_3.png" }
     ]
   }
 ]
