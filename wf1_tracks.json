@@ -71,7 +71,7 @@
   {
     "id": "loop",
     "name": "Deathloop",
-    "preview": "wf1/tracks/loop.png",
+    "preview": "wf1/tracks/deathloop.png",
     "variations": [
       { "id": "loop", "name": "Main Circuit", "preview": "wf1/tracks/loop.png" }
     ]
@@ -192,7 +192,7 @@
   {
     "id": "urban06",
     "name": "Hellride",
-    "preview": "wf1/tracks/urban06.png",
+    "preview": "wf1/tracks/hellride.png",
     "variations": [
       { "id": "urban06", "name": "Main Circuit", "preview": "wf1/tracks/urban06.png" }
     ]
@@ -375,7 +375,7 @@
   {
     "id": "urban07",
     "name": "Thunderbowl",
-    "preview": "wf1/tracks/urban07.png",
+    "preview": "wf1/tracks/thunderbowl.png",
     "variations": [
       { "id": "urban07", "name": "Demolition Arena", "preview": "wf1/tracks/urban07.png" }
     ]
