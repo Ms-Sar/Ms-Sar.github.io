@@ -183,18 +183,24 @@
 			<button id="embedBtn" class="embed-btn">📦 Baggy Embed</button>
 		</footer>
 
-		<!-- Embed Modal -->
+<!-- Embed Modal -->
 		<div id="embedModal" class="embed-modal">
 			<div class="embed-modal-content">
 				<span class="embed-close">&times;</span>
 				<h2>Embed Baggy on Your Site</h2>
-				<p>Copy the code below to embed Baggy:</p>
+				<p>Choose a theme and copy the code below:</p>
+    
+				<div class="theme-selector">
+				<button class="theme-btn active" data-theme="green">🟢 Green Theme</button>
+				<button class="theme-btn" data-theme="orange">🟠 Orange Theme</button>
+				</div>
     
 				<textarea id="embedCode" readonly></textarea>
 				<button id="copyEmbedBtn" class="copy-btn">📋 Copy to Clipboard</button>
 				<p class="copy-feedback" id="copyFeedback">Copied!</p>
 			</div>
 		</div>
+
 
 
       </div>
