@@ -1220,14 +1220,33 @@ body::after {
   .footer {
     padding: 10px 8px;
     font-size: 0.9em;
-    margin-bottom: 60px; /* Add space at bottom for scrolling */
+    margin-bottom: 30px; /* Reduced from 60px */
   }
   
   .embed-btn {
     font-size: 0.85em;
     padding: 6px 12px;
     margin-top: 8px;
-    margin-bottom: 20px; /* Extra space below button */
+    margin-bottom: 10px; /* Reduced from 20px */
+  }
+  
+  /* Dark green overlay behind Baggy on mobile */
+  .sticky-sidebar::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(7, 32, 0, 0.75); /* Dark green 75% opacity */
+    z-index: -1; /* Behind the sidebar */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .sticky-sidebar.mobile-open::after {
+    opacity: 1;
   }
 }
 
@@ -1403,14 +1422,14 @@ body::after {
   .footer {
     padding: 8px 6px;
     font-size: 0.85em;
-    margin-bottom: 80px; /* More space on smaller screens */
+    margin-bottom: 40px; /* Reduced from 80px */
   }
   
   .embed-btn {
     font-size: 0.8em;
     padding: 5px 10px;
     margin-top: 6px;
-    margin-bottom: 30px;
+    margin-bottom: 15px; /* Reduced from 30px */
   }
 }
 
