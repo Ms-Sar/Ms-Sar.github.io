@@ -1146,6 +1146,15 @@ body::after {
   }
 }
 
+@media (max-width: 600px) {
+    /* Scale down ASCII art and adjust letter spacing */
+  .ascii-art {
+    font-size: 4px;
+    line-height: 4px;
+   /* letter-spacing: 0.5px;  Add spacing between characters */
+  }
+}
+
 @media (max-width: 1024px) {
   .mobile-baggy-btn {
     display: flex;
