@@ -1435,3 +1435,22 @@ body::after {
   opacity: 1;
 }
 
+.close-modal-btn {
+  width: 100%;
+  background: #051800;
+  color: #00ff41;
+  border: 1px solid #0a4000;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Terminal', monospace;
+  font-size: 1em;
+  margin-top: 15px;
+  transition: all 0.2s ease;
+}
+
+.close-modal-btn:hover {
+  background: #0a2800;
+  border-color: #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+}

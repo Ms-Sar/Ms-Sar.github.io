@@ -428,10 +428,16 @@ sidebar.addEventListener('click', (e) => {
   }
 });
 
+// Close on bottom close button
+const closeModalBtn = document.getElementById('closeModalBtn');
+closeModalBtn.addEventListener('click', closeModal);
+
+
 // ========== BAGGY EMBED MODAL ==========
 const embedBtn = document.getElementById('embedBtn');
 const embedModal = document.getElementById('embedModal');
 const embedClose = document.querySelector('.embed-close');
+const embedModalContent = document.querySelector('.embed-modal-content');
 const embedCode = document.getElementById('embedCode');
 const copyEmbedBtn = document.getElementById('copyEmbedBtn');
 const copyFeedback = document.getElementById('copyFeedback');
@@ -458,14 +464,31 @@ embedBtn.addEventListener('click', () => {
   embedCode.value = embedCodes[currentTheme];
 });
 
-// Close modal
-embedClose.addEventListener('click', () => {
+// Close modal function
+function closeModal() {
   embedModal.style.display = 'none';
+}
+
+// Close on X button
+embedClose.addEventListener('click', closeModal);
+
+// Close when clicking outside the modal content
+embedModal.addEventListener('click', (e) => {
+  // Only close if clicking directly on the modal background, not the content
+  if (e.target === embedModal) {
+    closeModal();
+  }
 });
 
-window.addEventListener('click', (e) => {
-  if (e.target === embedModal) {
-    embedModal.style.display = 'none';
+// Prevent clicks inside modal content from closing
+embedModalContent.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+// Close with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && embedModal.style.display === 'block') {
+    closeModal();
   }
 });
 
@@ -489,5 +512,3 @@ copyEmbedBtn.addEventListener('click', () => {
     copyFeedback.classList.remove('show');
   }, 2000);
 });
-
-
