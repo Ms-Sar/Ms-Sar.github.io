@@ -2,7 +2,7 @@
   {
     "id": "speedway2",
     "name": "Big Valley Speedway",
-    "preview": "wf1/tracks/speedway2.png",
+    "preview": "wf1/tracks/speedway2.webp",
     "variations": [
       { "id": "speedway2_classic_arena", "name": "Open Demolition Arena", "preview": "wf1/tracks/speedway2_classic_arena.png" },
       { "id": "speedway2_demolition_arena", "name": "Demolition Arena", "preview": "wf1/tracks/speedway2_demolition_arena.png" },
@@ -15,7 +15,7 @@
   {
     "id": "crm01",
     "name": "Bleak City",
-    "preview": "wf1/tracks/crm01.png",
+    "preview": "wf1/tracks/crm01.webp",
     "variations": [
       { "id": "crm01_1", "name": "Race Track", "preview": "wf1/tracks/crm01_1.png" },
       { "id": "crm01_5", "name": "Race Track Reverse", "preview": "wf1/tracks/crm01_5.png" },
@@ -26,7 +26,7 @@
   {
     "id": "dirt_speedway",
     "name": "Bloomfield Speedway",
-    "preview": "wf1/tracks/dirt_speedway.png",
+    "preview": "wf1/tracks/dirt_speedway.webp",
     "variations": [
       { "id": "dirt_speedway_dirt_oval", "name": "Dirt Oval", "preview": "wf1/tracks/dirt_speedway_dirt_oval.png" },
       { "id": "dirt_speedway_figure_8", "name": "Figure 8", "preview": "wf1/tracks/dirt_speedway_figure_8.png" }
@@ -35,7 +35,7 @@
   {
     "id": "bonebreaker_valley",
     "name": "Bonebreaker Valley",
-    "preview": "wf1/tracks/bonebreaker_valley.png",
+    "preview": "wf1/tracks/bonebreaker_valley.webp",
     "variations": [
       { "id": "bonebreaker_valley_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/bonebreaker_valley_main_circuit.png" }
     ]
@@ -43,7 +43,7 @@
   {
     "id": "sandpit3",
     "name": "Boulder Bank Circuit",
-    "preview": "wf1/tracks/sandpit3.png",
+    "preview": "wf1/tracks/sandpit3.webp",
     "variations": [
       { "id": "sandpit3_long_loop", "name": "Main Route", "preview": "wf1/tracks/sandpit3_long_loop.png" },
       { "id": "sandpit3_long_loop_rev", "name": "Main Route Reverse", "preview": "wf1/tracks/sandpit3_long_loop_rev.png" },
@@ -54,7 +54,7 @@
   {
     "id": "mixed9",
     "name": "Clayridge Circuit",
-    "preview": "wf1/tracks/mixed9.png",
+    "preview": "wf1/tracks/mixed9.webp",
     "variations": [
       { "id": "mixed9_r1", "name": "Main Circuit", "preview": "wf1/tracks/mixed9_r1.png" },
       { "id": "mixed9_r1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed9_r1_rev.png" }
@@ -63,7 +63,7 @@
   {
     "id": "crash_canyon",
     "name": "Crash Canyon",
-    "preview": "wf1/tracks/crash_canyon.png",
+    "preview": "wf1/tracks/crash_canyon.webp",
     "variations": [
       { "id": "crash_canyon_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/crash_canyon_main_circuit.png" }
     ]
@@ -71,7 +71,7 @@
   {
     "id": "loop",
     "name": "Deathloop",
-    "preview": "wf1/tracks/deathloop.png",
+    "preview": "wf1/tracks/deathloop.webp",
     "variations": [
       { "id": "loop", "name": "Main Circuit", "preview": "wf1/tracks/loop.png" }
     ]
@@ -79,7 +79,7 @@
   {
     "id": "crm02",
     "name": "Devil's Canyon",
-    "preview": "wf1/tracks/crm02.png",
+    "preview": "wf1/tracks/crm02.webp",
     "variations": [
       { "id": "crm02_1", "name": "Race Track", "preview": "wf1/tracks/crm02_1.png" },
       { "id": "crm02_2", "name": "Free Roam", "preview": "wf1/tracks/crm02_2.png" }
@@ -88,7 +88,7 @@
   {
     "id": "triangle",
     "name": "Dirt Devil Stadium",
-    "preview": "wf1/tracks/triangle.png",
+    "preview": "wf1/tracks/triangle.webp",
     "variations": [
       { "id": "triangle_r1", "name": "Dirt Speedway", "preview": "wf1/tracks/triangle_r1.png" },
       { "id": "triangle_r2", "name": "Demolition Arena", "preview": "wf1/tracks/triangle_r2.png" }
@@ -97,7 +97,7 @@
   {
     "id": "fields08",
     "name": "Drytown Desert",
-    "preview": "wf1/tracks/fields08.png",
+    "preview": "wf1/tracks/fields08.webp",
     "variations": [
       { "id": "fields08_1", "name": "Main Circuit", "preview": "wf1/tracks/fields08_1.png" },
       { "id": "fields08_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/fields08_1_rev.png" }
@@ -106,7 +106,7 @@
   {
     "id": "fields13",
     "name": "Eagles Peak Motorpark",
-    "preview": "wf1/tracks/fields13.png",
+    "preview": "wf1/tracks/fields13.webp",
     "variations": [
       { "id": "fields13_1", "name": "Racing Track", "preview": "wf1/tracks/fields13_1.png" },
       { "id": "fields13_1_rev", "name": "Racing Track Reverse", "preview": "wf1/tracks/fields13_1_rev.png" },
@@ -116,7 +116,7 @@
   {
     "id": "tarmac3",
     "name": "Espedalen Raceway",
-    "preview": "wf1/tracks/tarmac3.png",
+    "preview": "wf1/tracks/tarmac3.webp",
     "variations": [
       { "id": "tarmac3_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/tarmac3_main_circuit.png" },
       { "id": "tarmac3_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/tarmac3_main_circuit_rev.png" },
@@ -127,7 +127,7 @@
   {
     "id": "smallstadium",
     "name": "Fairfield County",
-    "preview": "wf1/tracks/smallstadium.png",
+    "preview": "wf1/tracks/smallstadium.webp",
     "variations": [
       { "id": "smallstadium_demolition_arena", "name": "Demolition Arena", "preview": "wf1/tracks/smallstadium_demolition_arena.png" }
     ]
@@ -135,7 +135,7 @@
   {
     "id": "grass_arena",
     "name": "Fairfield Grass Arena",
-    "preview": "wf1/tracks/grass_arena.png",
+    "preview": "wf1/tracks/grass_arena.webp",
     "variations": [
       { "id": "grass_arena_demolition_arena", "name": "Demolition Arena", "preview": "wf1/tracks/grass_arena_demolition_arena.png" }
     ]
@@ -143,7 +143,7 @@
   {
     "id": "mudpit",
     "name": "Fairfield Mudpit",
-    "preview": "wf1/tracks/mudpit.png",
+    "preview": "wf1/tracks/mudpit.webp",
     "variations": [
       { "id": "mudpit_demolition_arena", "name": "Demolition Arena", "preview": "wf1/tracks/mudpit_demolition_arena.png" }
     ]
@@ -151,7 +151,7 @@
   {
     "id": "mixed1",
     "name": "Finncross Circuit",
-    "preview": "wf1/tracks/mixed1.png",
+    "preview": "wf1/tracks/mixed1.webp",
     "variations": [
       { "id": "mixed1_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/mixed1_main_circuit.png" },
       { "id": "mixed1_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed1_main_circuit_rev.png" }
@@ -160,7 +160,7 @@
   {
     "id": "tarmac1",
     "name": "Fire Rock Raceway",
-    "preview": "wf1/tracks/tarmac1.png",
+    "preview": "wf1/tracks/tarmac1.webp",
     "variations": [
       { "id": "tarmac1_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/tarmac1_main_circuit.png" },
       { "id": "tarmac1_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/tarmac1_main_circuit_rev.png" },
@@ -171,7 +171,7 @@
   {
     "id": "mixed7",
     "name": "Firwood Motocenter",
-    "preview": "wf1/tracks/mixed7.png",
+    "preview": "wf1/tracks/mixed7.webp",
     "variations": [
       { "id": "mixed7_r1", "name": "Main Circuit", "preview": "wf1/tracks/mixed7_r1.png" },
       { "id": "mixed7_r1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed7_r1_rev.png" },
@@ -184,7 +184,7 @@
   {
     "id": "field_derby",
     "name": "Glendale Countryside",
-    "preview": "wf1/tracks/field_derby.png",
+    "preview": "wf1/tracks/field_derby.webp",
     "variations": [
       { "id": "field_derby_arena", "name": "Field Arena", "preview": "wf1/tracks/field_derby_arena.png" }
     ]
@@ -192,7 +192,7 @@
   {
     "id": "urban06",
     "name": "Hellride",
-    "preview": "wf1/tracks/hellride.png",
+    "preview": "wf1/tracks/hellride.webp",
     "variations": [
       { "id": "urban06", "name": "Main Circuit", "preview": "wf1/tracks/urban06.png" }
     ]
@@ -200,7 +200,7 @@
   {
     "id": "urban08",
     "name": "Hillstreet Circuit",
-    "preview": "wf1/tracks/urban08.png",
+    "preview": "wf1/tracks/urban08.webp",
     "variations": [
       { "id": "urban08_1", "name": "Race Track", "preview": "wf1/tracks/urban08_1.png" },
       { "id": "urban08_1_rev", "name": "Race Track Reverse", "preview": "wf1/tracks/urban08_1_rev.png" }
@@ -209,7 +209,7 @@
   {
     "id": "speedway1",
     "name": "Hilltop Stadium",
-    "preview": "wf1/tracks/speedway1.png",
+    "preview": "wf1/tracks/speedway1.webp",
     "variations": [
       { "id": "speedway1_figure_8", "name": "Figure 8", "preview": "wf1/tracks/speedway1_figure_8.png" },
       { "id": "speedway1_oval", "name": "Oval", "preview": "wf1/tracks/speedway1_oval.png" }
@@ -218,7 +218,7 @@
   {
     "id": "fields12",
     "name": "Kingston Raceway",
-    "preview": "wf1/tracks/fields12.png",
+    "preview": "wf1/tracks/fields12.webp",
     "variations": [
       { "id": "fields12_1", "name": "Asphalt Oval", "preview": "wf1/tracks/fields12_1.png" },
       { "id": "fields12_1_rev", "name": "Asphalt Oval Reverse", "preview": "wf1/tracks/fields12_1_rev.png" },
@@ -228,7 +228,7 @@
   {
     "id": "mixed2",
     "name": "Maasten Motocenter",
-    "preview": "wf1/tracks/mixed2.png",
+    "preview": "wf1/tracks/mixed2.webp",
     "variations": [
       { "id": "mixed2_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/mixed2_main_circuit.png" },
       { "id": "mixed2_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed2_main_circuit_rev.png" }
@@ -237,7 +237,7 @@
   {
     "id": "bigstadium",
     "name": "Madman Stadium",
-    "preview": "wf1/tracks/bigstadium.png",
+    "preview": "wf1/tracks/bigstadium.webp",
     "variations": [
       { "id": "bigstadium_demolition_arena", "name": "Demolition Arena", "preview": "wf1/tracks/bigstadium_demolition_arena.png" },
       { "id": "bigstadium_figure_8", "name": "Figure 8", "preview": "wf1/tracks/bigstadium_figure_8.png" }
@@ -246,7 +246,7 @@
   {
     "id": "gravel1",
     "name": "Midwest Motocenter",
-    "preview": "wf1/tracks/gravel1.png",
+    "preview": "wf1/tracks/gravel1.webp",
     "variations": [
       { "id": "gravel1_main_loop", "name": "Main Circuit", "preview": "wf1/tracks/gravel1_main_loop.png" },
       { "id": "gravel1_main_loop_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/gravel1_main_loop_rev.png" }
@@ -255,7 +255,7 @@
   {
     "id": "tarmac2",
     "name": "Motorcity Circuit",
-    "preview": "wf1/tracks/tarmac2.png",
+    "preview": "wf1/tracks/tarmac2.webp",
     "variations": [
       { "id": "tarmac2_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/tarmac2_main_circuit.png" },
       { "id": "tarmac2_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/tarmac2_main_circuit_rev.png" },
@@ -265,7 +265,7 @@
   {
     "id": "fields10",
     "name": "Mudford Motorpark",
-    "preview": "wf1/tracks/fields10.png",
+    "preview": "wf1/tracks/fields10.webp",
     "variations": [
       { "id": "fields10_1", "name": "Mud Oval", "preview": "wf1/tracks/fields10_1.png" },
       { "id": "fields10_2", "name": "Mud Pit", "preview": "wf1/tracks/fields10_2.png" }
@@ -274,7 +274,7 @@
   {
     "id": "mixed8",
     "name": "Nothfolk Ring",
-    "preview": "wf1/tracks/mixed8.png",
+    "preview": "wf1/tracks/mixed8.webp",
     "variations": [
       { "id": "mixed8_r1", "name": "Main Circuit", "preview": "wf1/tracks/mixed8_r1.png" },
       { "id": "mixed8_r2", "name": "Open Circuit", "preview": "wf1/tracks/mixed8_r2.png" },
@@ -284,7 +284,7 @@
   {
     "id": "mixed5",
     "name": "Northland Raceway",
-    "preview": "wf1/tracks/mixed5.png",
+    "preview": "wf1/tracks/mixed5.webp",
     "variations": [
       { "id": "mixed5_outer_loop", "name": "Outer Route", "preview": "wf1/tracks/mixed5_outer_loop.png" },
       { "id": "mixed5_outer_loop_rev", "name": "Outer Route Reverse", "preview": "wf1/tracks/mixed5_outer_loop_rev.png" },
@@ -296,7 +296,7 @@
   {
     "id": "mixed3",
     "name": "Pinehills Raceway",
-    "preview": "wf1/tracks/mixed3.png",
+    "preview": "wf1/tracks/mixed3.webp",
     "variations": [
       { "id": "mixed3_long_loop", "name": "Main Circuit", "preview": "wf1/tracks/mixed3_long_loop.png" },
       { "id": "mixed3_long_loop_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed3_long_loop_rev.png" },
@@ -309,7 +309,7 @@
   {
     "id": "rt01",
     "name": "Rally Trophy",
-    "preview": "wf1/tracks/rt01.png",
+    "preview": "wf1/tracks/rt01.webp",
     "variations": [
       { "id": "rt01_1", "name": "Special Stage", "preview": "wf1/tracks/rt01_1.png" }
     ]
@@ -317,7 +317,7 @@
   {
     "id": "fields14",
     "name": "Rattlesnake Racepark",
-    "preview": "wf1/tracks/fields14.png",
+    "preview": "wf1/tracks/fields14.webp",
     "variations": [
       { "id": "fields14_1", "name": "Main Circuit", "preview": "wf1/tracks/fields14_1.png" },
       { "id": "fields14_2", "name": "Main Circuit Reverse", "preview": "wf1/tracks/fields14_2.png" }
@@ -326,7 +326,7 @@
   {
     "id": "fields09",
     "name": "Rockfield Roughspot",
-    "preview": "wf1/tracks/fields09.png",
+    "preview": "wf1/tracks/fields09.webp",
     "variations": [
       { "id": "fields09_1", "name": "Dirt Oval", "preview": "wf1/tracks/fields09_1.png" }
     ]
@@ -334,7 +334,7 @@
   {
     "id": "mixed4",
     "name": "Rosenheim Raceway",
-    "preview": "wf1/tracks/mixed4.png",
+    "preview": "wf1/tracks/mixed4.webp",
     "variations": [
       { "id": "mixed4_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/mixed4_main_circuit.png" },
       { "id": "mixed4_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed4_main_circuit_rev.png" }
@@ -343,7 +343,7 @@
   {
     "id": "sandpit1",
     "name": "Sandstone Raceway",
-    "preview": "wf1/tracks/sandpit1.png",
+    "preview": "wf1/tracks/sandpit1.webp",
     "variations": [
       { "id": "sandpit1_long_loop", "name": "Main Route", "preview": "wf1/tracks/sandpit1_long_loop.png" },
       { "id": "sandpit1_long_loop_rev", "name": "Main Route Reverse", "preview": "wf1/tracks/sandpit1_long_loop_rev.png" },
@@ -356,7 +356,7 @@
   {
     "id": "sandpit2",
     "name": "Savolax Sandpit",
-    "preview": "wf1/tracks/sandpit2.png",
+    "preview": "wf1/tracks/sandpit2.webp",
     "variations": [
       { "id": "sandpit2_full_circuit", "name": "Main Route", "preview": "wf1/tracks/sandpit2_full_circuit.png" },
       { "id": "sandpit2_full_circuit_rev", "name": "Main Route Reverse", "preview": "wf1/tracks/sandpit2_full_circuit_rev.png" },
@@ -367,7 +367,7 @@
   {
     "id": "fields11",
     "name": "The Maw",
-    "preview": "wf1/tracks/fields11.png",
+    "preview": "wf1/tracks/fields11.webp",
     "variations": [
       { "id": "fields11_1", "name": "Demolition Arena", "preview": "wf1/tracks/fields11_1.png" }
     ]
@@ -375,7 +375,7 @@
   {
     "id": "urban07",
     "name": "Thunderbowl",
-    "preview": "wf1/tracks/thunderbowl.png",
+    "preview": "wf1/tracks/thunderbowl.webp",
     "variations": [
       { "id": "urban07", "name": "Demolition Arena", "preview": "wf1/tracks/urban07.png" }
     ]
@@ -383,7 +383,7 @@
   {
     "id": "forest13",
     "name": "Torsdalen Circuit",
-    "preview": "wf1/tracks/forest13.png",
+    "preview": "wf1/tracks/forest13.webp",
     "variations": [
       { "id": "forest13_1", "name": "Main Circuit", "preview": "wf1/tracks/forest13_1.png" },
       { "id": "forest13_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/forest13_1_rev.png" },
@@ -394,7 +394,7 @@
   {
     "id": "forest12",
     "name": "Tribend Speedway",
-    "preview": "wf1/tracks/forest12.png",
+    "preview": "wf1/tracks/forest12.webp",
     "variations": [
       { "id": "forest12_1", "name": "Main Circuit", "preview": "wf1/tracks/forest12_1.png" },
       { "id": "forest12_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/forest12_1_rev.png" },
@@ -404,7 +404,7 @@
   {
     "id": "forest11",
     "name": "Vale Falls",
-    "preview": "wf1/tracks/forest11.png",
+    "preview": "wf1/tracks/forest11.webp",
     "variations": [
       { "id": "forest11_1", "name": "Main Circuit", "preview": "wf1/tracks/forest11_1.png" },
       { "id": "forest11_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/forest11_1_rev.png" },
@@ -415,7 +415,7 @@
   {
     "id": "urban09",
     "name": "Wrecknado",
-    "preview": "wf1/tracks/urban09.png",
+    "preview": "wf1/tracks/urban09.webp",
     "variations": [
       { "id": "urban09_1", "name": "Racing Track", "preview": "wf1/tracks/urban09_1.png" },
       { "id": "urban09_2", "name": "Demolition Arena", "preview": "wf1/tracks/urban09_2.png" }
@@ -424,7 +424,7 @@
   {
     "id": "wrecker01",
     "name": "Wrecking Playground",
-    "preview": "wf1/tracks/wrecker01.png",
+    "preview": "wf1/tracks/wrecker01.webp",
     "variations": [
       { "id": "wrecker01_1", "name": "Main Area", "preview": "wf1/tracks/wrecker01_1.png" }
     ]
