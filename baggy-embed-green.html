@@ -308,14 +308,36 @@ body {
   </div>
 
 <script src="https://ms-sar.github.io/baggy-config.js"></script>
+<script src="https://ms-sar.github.io/baggy-embed.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('baggy-menu-container');
     if (container) {
-      container.innerHTML = buildBaggyMenu(true, 'green');
+      container.innerHTML = buildBaggyMenu(true, 'green'); // Change to 'orange' for orange embed
+      
+      // Initialize event listeners after menu is built
+      initializeEmbedMenu();
     }
   });
+  
+  function initializeEmbedMenu() {
+    // Click to toggle click-card sections
+    document.querySelectorAll(".click-card").forEach(card => {
+      const title = card.querySelector(".click-title");
+      title.addEventListener("click", () => {
+        card.classList.toggle("open");
+      });
+    });
+
+    // Click to toggle info cards
+    document.querySelectorAll(".info-card").forEach(card => {
+      const title = card.querySelector(".info-title");
+      title.addEventListener("click", () => {
+        card.classList.toggle("open");
+      });
+    });
+  }
 </script>
-<script src="https://ms-sar.github.io/baggy-embed.js"></script>
+
 </body>
 </html>
