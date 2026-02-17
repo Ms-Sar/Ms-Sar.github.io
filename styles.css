@@ -1078,7 +1078,7 @@ body::after {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 999;
+  z-index: 1000; /* Changed - below sidebar's 1001 */
 }
 
 .sidebar-overlay.active {
@@ -1117,10 +1117,11 @@ body::after {
     width: 90%;
     max-width: 400px;
     height: 100vh;
-    z-index: 1001;
+    z-index: 1001; /* Make sure this is higher than overlay */
     transition: right 0.3s ease;
     overflow-y: auto;
   }
+
   
   .sticky-sidebar.mobile-open {
     right: 0;
