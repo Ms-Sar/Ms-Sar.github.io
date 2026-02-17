@@ -7,31 +7,28 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<body>
   <!-- Mobile Baggy Button -->
   <button id="mobileBaggyBtn" class="mobile-baggy-btn">
     <img src="assets/Baggy.png" alt="Open Baggy" width="40" height="40">
     <span>Open Baggy</span>
   </button>
-  
+
   <div class="page-wrapper">
     <!-- MAIN CONTENT AREA -->
     <main class="main-content">
       <pre class="typewriter-title ascii-art" id="ascii-title"></pre>
       
       <div class="typewriter-content">
-<p><img src="assets/hackermans.gif" alt="Hackerman" class="inline-gif">The hackerman and breaker of all things to be broken...<br><br>Welcome to my GitHub.io page, here you'll find links to all of my content to see what I've been working on... Mostly Wreckfest related ofcourse. However there are other things!<br><br>Having said that... If you are here for Wreckfest related business, say hi to Baggy on the right. He has all you need for anything Wreckfest modding related. A direct search to find what you're looking for on the Wreckfest Modding Wiki... Then links to the wiki, Mazay's site, the Wreckfest Chronicle by EmDzei... Then there's direct tool links, Steam DB pages and info for both Wreckfest 1 & 2.<br><br>Below you'll find links to my profile on various platforms where I have content to see or download.</p>
-
-
+        <p><img src="assets/hackermans.gif" alt="Hackerman" class="inline-gif">The hackerman and breaker of all things to be broken... Welcome to my GitHub.io page, here you'll find links to all of my content sites to see what I've been working on... Mostly Wreckfest related ofcourse. However there is others!<br><br>If you are here for Wreckfest stuff however say hi to Baggy on the right. He has all you need for anything Wreckfest modding related. A direct search to find what you're looking for on the Wreckfest Modding Wiki... Then links to the wiki, Mazay's site, the Wreckfest Chronicle by EmDzei... Then there's direct tool links, Steam DB pages and info for the content in both Wreckfest 1 and 2.<br><br>Below you'll find links to my profile on various platforms where I have content to see or download.</p>
 
         <section>
-          <h2>My Links</h2>
+          <h2>My Work</h2>
           <div class="main-links">
             <a href="https://www.nexusmods.com/profile/STRm0ds/mods" target="_blank" class="main-link">
               <img src="assets/NexusMods.png" class="link-icon-img" alt="Nexus Mods">
               <div class="link-details">
                 <div class="link-title">Nexus Mods Profile</div>
-                <div class="link-desc">Browse my published mods</div>
+                <div class="link-desc">Browse my published mods and downloads</div>
               </div>
             </a>
             
@@ -47,7 +44,7 @@
               <img src="assets/YouTube.png" class="link-icon-img" alt="YouTube">
               <div class="link-details">
                 <div class="link-title">YouTube Channel</div>
-                <div class="link-desc">Mod showcases, tutorials, gameplay and more</div>
+                <div class="link-desc">Tutorials, showcases, and gameplay</div>
               </div>
             </a>
           </div>
@@ -76,137 +73,38 @@
           <input id="search" class="search" name="search" placeholder="Search WF modding wiki" />
         </form>
 
-        <!-- MAIN LINKS - Changed to click to expand -->
-        <section class="card glow click-card" data-section="links">
-          <h2 class="card-title click-title">
-            <img class="icon-img" src="assets/wiki.png"> Useful Links
-          </h2>
-          <div class="click-panel">
-            <a class="sublink" href="https://tads.me.uk/wfwiki/index.php?title=Main_Page" target="_blank">
-              <img class="icon-img" src="assets/wiki.png"> Wreckfest Modding Wiki
-            </a>
-            <a class="sublink" href="https://mazay.fi/wf/" target="_blank">
-              <img class="icon-img" src="assets/mazay.png"> Mazay's Site
-            </a>
-            <a class="sublink" href="https://docs.google.com/spreadsheets/d/18-g1-I68g1B-9bumvV1HxUVcuD41DBczCyUGH3rdNiQ" target="_blank">
-              <img class="icon-img" src="assets/WFchronicle.png"> Wreckfest Chronicle
-            </a>
-          </div>
-        </section>
+        <!-- Dynamic content will be inserted here -->
+        <div id="baggy-menu-container"></div>
 
-        <!-- TOOLS -->
-        <section class="card glow click-card" data-section="tools">
-          <h2 class="card-title click-title">
-            <img class="icon-img" src="assets/Tools.png"> Tools
-          </h2>
-          <div class="click-panel">
-            <a class="sublink" href="https://github.com/gmazy/wreckfest_toolbox" target="_blank">
-              <img class="icon-img" src="assets/toolbox.png"> Wreckfest Toolbox
-            </a>
-            <a class="sublink" href="https://github.com/gmazy/bag-decompress" target="_blank">
-              <img class="icon-img" src="assets/bagdecompress.png"> BagDecompress
-            </a>
-            <a class="sublink" href="https://github.com/MaxxWyndham/Breckfest" target="_blank">
-              <img class="icon-img" src="assets/breckfest.png"> Breckfest
-            </a>
-            <a class="sublink" href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
-              <img class="icon-img" src="assets/strtelem.png"> WF2 Blender Telemetry
-            </a>
-          </div>
-        </section>
-
-        <!-- STEAMDB PAGES -->
-        <section class="card glow click-card" data-section="steamdb">
-          <h2 class="card-title click-title">
-            <img class="icon-img" src="assets/steamdb.png"> SteamDB Pages
-          </h2>
-          <div class="click-panel">
-            <a class="sublink" href="https://steamdb.info/app/228380/patchnotes/" target="_blank">
-              <img class="icon-img" src="assets/PatchNotes.png"> WF1 Patch Notes
-            </a>
-            <a class="sublink" href="https://steamdb.info/depot/228381/manifests/" target="_blank">
-              <img class="icon-img" src="assets/Manifests.png"> WF1 Manifests
-            </a>
-            <a class="sublink" href="https://steamdb.info/depot/361581/manifests/" target="_blank">
-              <img class="icon-img" src="assets/ServerManifests.png"> WF1 Server Manifests
-            </a>
-            <a class="sublink" href="https://steamdb.info/app/1203190/patchnotes/" target="_blank">
-              <img class="icon-img" src="assets/PatchNotes.png"> WF2 Patch Notes
-            </a>
-            <a class="sublink" href="https://steamdb.info/depot/1203191/manifests/" target="_blank">
-              <img class="icon-img" src="assets/Manifests.png"> WF2 Manifests
-            </a>
-            <a class="sublink" href="https://steamdb.info/depot/3519391/manifests/" target="_blank">
-              <img class="icon-img" src="assets/ServerManifests.png"> WF2 Server Manifests
-            </a>
-          </div>
-        </section>
-
-        <!-- WF1 INFO -->
-        <section class="card glow info-card" data-info="wf1">
-          <h2 class="card-title info-title">
-            <img class="icon-img" src="assets/wf1.png"> WF1 Info
-          </h2>
-          <div class="info-panel">
-            <button class="info-subtoggle" data-json="wf1_vehicles.json">
-              <img class="icon-img" src="assets/VehicleList.png"> Vehicle List ▾
-            </button>
-            <ul class="dynamic-list"></ul>
-
-            <button class="info-subtoggle" data-json="wf1_tracks.json">
-              <img class="icon-img" src="assets/TrackList.png"> Track List ▾
-            </button>
-            <ul class="dynamic-list"></ul>
-          </div>
-        </section>
-
-        <!-- WF2 INFO -->
-        <section class="card glow info-card" data-info="wf2">
-          <h2 class="card-title info-title">
-            <img class="icon-img" src="assets/wf2.png"> WF2 Info
-          </h2>
-          <div class="info-panel">
-            <button class="info-subtoggle" data-json="wf2_vehicles.json">
-              <img class="icon-img" src="assets/VehicleList.png"> Vehicle List ▾
-            </button>
-            <ul class="dynamic-list"></ul>
-
-            <button class="info-subtoggle" data-json="wf2_tracks.json">
-              <img class="icon-img" src="assets/TrackList.png"> Track List ▾
-            </button>
-            <ul class="dynamic-list"></ul>
-          </div>
-        </section>
-
-		<footer class="footer">
-			<small>Created by STRmods</small><br>
-			<button id="embedBtn" class="embed-btn">📦 Baggy Embed</button>
-		</footer>
-
-<!-- Embed Modal -->
-<div id="embedModal" class="embed-modal">
-  <div class="embed-modal-content">
-    <span class="embed-close">&times;</span>
-    <h2>Embed Baggy on Your Site</h2>
-    <p>Choose a theme and copy the code below:</p>
-    
-    <div class="theme-selector">
-      <button class="theme-btn active" data-theme="green">🟢 Green Theme</button>
-      <button class="theme-btn" data-theme="orange">🟠 Orange Theme</button>
-    </div>
-    
-    <textarea id="embedCode" readonly></textarea>
-    <button id="copyEmbedBtn" class="copy-btn">📋 Copy to Clipboard</button>
-    <p class="copy-feedback" id="copyFeedback">Copied!</p>
-    
-    <button id="closeModalBtn" class="close-modal-btn">✕ Close</button>
-  </div>
-</div>
-
+        <footer class="footer">
+          <small>Created by STRmods</small><br>
+          <button id="embedBtn" class="embed-btn">📦 Baggy Embed</button>
+        </footer>
       </div>
     </aside>
   </div>
 
+  <!-- Embed Modal -->
+  <div id="embedModal" class="embed-modal">
+    <div class="embed-modal-content">
+      <span class="embed-close">&times;</span>
+      <h2>Embed Baggy on Your Site</h2>
+      <p>Choose a theme and copy the code below:</p>
+      
+      <div class="theme-selector">
+        <button class="theme-btn active" data-theme="green">🟢 Green Theme</button>
+        <button class="theme-btn" data-theme="orange">🟠 Orange Theme</button>
+      </div>
+      
+      <textarea id="embedCode" readonly></textarea>
+      <button id="copyEmbedBtn" class="copy-btn">📋 Copy to Clipboard</button>
+      <p class="copy-feedback" id="copyFeedback">Copied!</p>
+      
+      <button id="closeModalBtn" class="close-modal-btn">✕ Close</button>
+    </div>
+  </div>
+
+<script src="baggy-config.js"></script>
 <script src="popup.js"></script>
 </body>
 </html>

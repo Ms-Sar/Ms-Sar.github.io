@@ -281,7 +281,6 @@ body {
 .dynamic-list li.expanded > .track-header:hover > .preview-img {
   opacity: 0;
 }
-
 </style>
 </head>
 <body>
@@ -299,100 +298,7 @@ body {
         <input class="search" name="search" placeholder="Search WF modding wiki" />
       </form>
 
-      <section class="card click-card" data-section="links">
-        <h2 class="card-title click-title">
-          <img class="icon-img" src="https://ms-sar.github.io/assets/wiki.png"> Useful Links
-        </h2>
-        <div class="click-panel">
-          <a class="sublink" href="https://tads.me.uk/wfwiki/index.php?title=Main_Page" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/wiki.png"> Wreckfest Modding Wiki
-          </a>
-          <a class="sublink" href="https://mazay.fi/wf/" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/mazay.png"> Mazay's Site
-          </a>
-          <a class="sublink" href="https://docs.google.com/spreadsheets/d/18-g1-I68g1B-9bumvV1HxUVcuD41DBczCyUGH3rdNiQ" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/WFchronicle.png"> Wreckfest Chronicle
-          </a>
-        </div>
-      </section>
-
-      <section class="card click-card" data-section="tools">
-        <h2 class="card-title click-title">
-          <img class="icon-img" src="https://ms-sar.github.io/assets/Tools.png"> Tools
-        </h2>
-        <div class="click-panel">
-          <a class="sublink" href="https://github.com/gmazy/wreckfest_toolbox" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/toolbox.png"> Wreckfest Toolbox
-          </a>
-          <a class="sublink" href="https://github.com/gmazy/bag-decompress" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/bagdecompress.png"> BagDecompress
-          </a>
-          <a class="sublink" href="https://github.com/MaxxWyndham/Breckfest" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/breckfest.png"> Breckfest
-          </a>
-          <a class="sublink" href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/strtelem.png"> WF2 Blender Telemetry
-          </a>
-        </div>
-      </section>
-
-      <section class="card click-card" data-section="steamdb">
-        <h2 class="card-title click-title">
-          <img class="icon-img" src="https://ms-sar.github.io/assets/steamdb.png"> SteamDB Pages
-        </h2>
-        <div class="click-panel">
-          <a class="sublink" href="https://steamdb.info/app/228380/patchnotes/" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/PatchNotes.png"> WF1 Patch Notes
-          </a>
-          <a class="sublink" href="https://steamdb.info/depot/228381/manifests/" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/Manifests.png"> WF1 Manifests
-          </a>
-          <a class="sublink" href="https://steamdb.info/depot/361581/manifests/" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/ServerManifests.png"> WF1 Server Manifests
-          </a>
-          <a class="sublink" href="https://steamdb.info/app/1203190/patchnotes/" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/PatchNotes.png"> WF2 Patch Notes
-          </a>
-          <a class="sublink" href="https://steamdb.info/depot/1203191/manifests/" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/Manifests.png"> WF2 Manifests
-          </a>
-          <a class="sublink" href="https://steamdb.info/depot/3519391/manifests/" target="_blank">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/ServerManifests.png"> WF2 Server Manifests
-          </a>
-        </div>
-      </section>
-
-      <section class="card info-card" data-info="wf1">
-        <h2 class="card-title info-title">
-          <img class="icon-img" src="https://ms-sar.github.io/assets/wf1.png"> WF1 Info
-        </h2>
-        <div class="info-panel">
-          <button class="info-subtoggle" data-json="wf1_vehicles.json">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/VehicleList.png"> Vehicle List ▾
-          </button>
-          <ul class="dynamic-list"></ul>
-          <button class="info-subtoggle" data-json="wf1_tracks.json">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/TrackList.png"> Track List ▾
-          </button>
-          <ul class="dynamic-list"></ul>
-        </div>
-      </section>
-
-      <section class="card info-card" data-info="wf2">
-        <h2 class="card-title info-title">
-          <img class="icon-img" src="https://ms-sar.github.io/assets/wf2.png"> WF2 Info
-        </h2>
-        <div class="info-panel">
-          <button class="info-subtoggle" data-json="wf2_vehicles.json">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/VehicleList.png"> Vehicle List ▾
-          </button>
-          <ul class="dynamic-list"></ul>
-          <button class="info-subtoggle" data-json="wf2_tracks.json">
-            <img class="icon-img" src="https://ms-sar.github.io/assets/TrackList.png"> Track List ▾
-          </button>
-          <ul class="dynamic-list"></ul>
-        </div>
-      </section>
+      <div id="baggy-menu-container"></div>
     </div>
 
     <footer class="footer">
@@ -401,6 +307,15 @@ body {
     </footer>
   </div>
 
+<script src="https://ms-sar.github.io/baggy-config.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('baggy-menu-container');
+    if (container) {
+      container.innerHTML = buildBaggyMenu(true, 'green');
+    }
+  });
+</script>
 <script src="https://ms-sar.github.io/baggy-embed.js"></script>
 </body>
 </html>
