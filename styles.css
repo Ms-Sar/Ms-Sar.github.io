@@ -1193,6 +1193,29 @@ body::after {
     padding: 10px;
     font-size: 0.9em;
   }
+  
+  .header {
+    padding: 12px; /* Reduced from 18px */
+    gap: 10px; /* Reduced from 14px */
+  }
+  
+  #logo {
+    width: 32px; /* Reduced from 48px */
+    height: 32px;
+  }
+  
+  .title-group .title {
+    font-size: 1.1em; /* Reduced from 1.4em */
+  }
+  
+  .title-group .subtitle {
+    font-size: 0.85em; /* Reduced from 1em */
+  }
+  
+  .sticky-sidebar::before {
+    padding: 12px; /* Reduced from 15px */
+    font-size: 14px; /* Reduced from 16px */
+  }
 }
 
 @media (max-width: 600px) {
@@ -1345,6 +1368,23 @@ body::after {
   
   #embedCode {
     height: 80px;
+  }
+  
+  .header {
+    padding: 10px;
+  }
+  
+  #logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .title-group .title {
+    font-size: 1em;
+  }
+  
+  .title-group .subtitle {
+    font-size: 0.8em;
   }
 }
 
