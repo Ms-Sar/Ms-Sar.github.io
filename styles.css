@@ -1033,7 +1033,7 @@ body::after {
   top: 20px;
   right: 20px;
   z-index: 1000;
-  background: rgba(0, 20, 0, 0.95);
+  background: rgba(7, 40, 0, 0.75);
   border: 2px solid #00ff00;
   border-radius: 8px;
   padding: 10px;
@@ -1046,7 +1046,7 @@ body::after {
 }
 
 .mobile-baggy-btn:hover {
-  background: rgba(0, 30, 0, 1);
+  background: rgba(0, 52, 0, 1);
   box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
   transform: scale(1.05);
 }
@@ -1085,6 +1085,9 @@ body::after {
 @media (max-width: 768px) {
   .mobile-baggy-btn {
     display: flex;
+	top: 13px;
+    right: 15px;
+    padding: 8px;
   }
   
   .page-wrapper {
@@ -1100,7 +1103,7 @@ body::after {
   .ascii-art {
     font-size: 5px;
     line-height: 5px;
-    letter-spacing: 0.5px; /* Add spacing between characters */
+   /* letter-spacing: 0.5px;  Add spacing between characters */
   }
   
   .sticky-sidebar {
@@ -1146,6 +1149,9 @@ body::after {
 @media (max-width: 1024px) {
   .mobile-baggy-btn {
     display: flex;
+	top: 14px;
+    right: 15px;
+    padding: 8px;
   }
   
   .page-wrapper {
@@ -1242,8 +1248,8 @@ body::after {
   
   /* Even smaller ASCII on very small screens */
   .ascii-art {
-    font-size: 3px; /* Up from 3px */
-    line-height: 3px;
+    font-size: 4px; /* Up from 3px */
+    line-height: 4px;
   }
   
   .typewriter-content p {
@@ -1259,14 +1265,14 @@ body::after {
   }
   
   .mobile-baggy-btn {
-    top: 15px;
+    top: 8px;
     right: 15px;
     padding: 8px;
   }
   
   .mobile-baggy-btn img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 }
 
