@@ -313,9 +313,9 @@ body {
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('baggy-menu-container');
     if (container) {
-      container.innerHTML = buildBaggyMenu(true, 'green'); // Change to 'orange' for orange embed
+      container.innerHTML = buildBaggyMenu(true, 'green');
       
-      // Initialize event listeners after menu is built
+      // Initialize all event listeners after menu is built
       initializeEmbedMenu();
     }
   });
@@ -336,8 +336,137 @@ body {
         card.classList.toggle("open");
       });
     });
+
+    // Load JSON when a sub-toggle is clicked
+    document.querySelectorAll(".info-subtoggle").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const jsonFile = 'https://ms-sar.github.io/' + btn.dataset.json;
+        const list = btn.nextElementSibling;
+
+        // Store the icon and base text
+        const icon = btn.querySelector('.icon-img');
+        const iconClone = icon ? icon.cloneNode(true) : null;
+        
+        let textWithoutIcon = '';
+        btn.childNodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            textWithoutIcon += node.textContent;
+          }
+        });
+        const baseText = textWithoutIcon.replace(/[▾▴⏳]/g, '').trim();
+
+        // If already loaded, just toggle visibility
+        if (list.dataset.loaded === "true") {
+          const isVisible = list.style.display === "block";
+          list.style.display = isVisible ? "none" : "block";
+          
+          btn.innerHTML = '';
+          if (iconClone) btn.appendChild(iconClone);
+          btn.appendChild(document.createTextNode(' ' + baseText + (isVisible ? ' ▾' : ' ▴')));
+          return;
+        }
+
+        // Show loading state
+        btn.innerHTML = '';
+        if (iconClone) btn.appendChild(iconClone);
+        btn.appendChild(document.createTextNode(' ' + baseText + ' ⏳'));
+        
+        try {
+          const res = await fetch(jsonFile);
+          const data = await res.json();
+
+          list.innerHTML = "";
+
+          // Check if this is a tracks JSON (has variations)
+          const hasTracks = data.some(item => item.variations);
+
+          data.forEach(item => {
+            const li = document.createElement("li");
+            
+            if (hasTracks) {
+              // Track with variations
+              const trackHeader = document.createElement("div");
+              trackHeader.className = "track-header";
+              
+              const trackText = document.createTextNode(`${item.name} - ${item.id}`);
+              trackHeader.appendChild(trackText);
+              
+              if (item.preview) {
+                const img = document.createElement("img");
+                img.src = item.preview;
+                img.className = "preview-img";
+                img.alt = item.name;
+                trackHeader.appendChild(img);
+              }
+              
+              li.appendChild(trackHeader);
+              
+              // Variations list
+              if (item.variations && item.variations.length > 0) {
+                const variationsList = document.createElement("ul");
+                variationsList.className = "variations-list";
+                
+                item.variations.forEach(variation => {
+                  const varLi = document.createElement("li");
+                  varLi.className = "variation-item";
+                  
+                  const varText = document.createTextNode(`${variation.name} - ${variation.id}`);
+                  varLi.appendChild(varText);
+                  
+                  if (variation.preview) {
+                    const varImg = document.createElement("img");
+                    varImg.src = variation.preview;
+                    varImg.className = "preview-img";
+                    varImg.alt = variation.name;
+                    varLi.appendChild(varImg);
+                  }
+                  
+                  variationsList.appendChild(varLi);
+                });
+                
+                li.appendChild(variationsList);
+              }
+              
+              // Toggle variations on click
+              trackHeader.addEventListener("click", () => {
+                li.classList.toggle("expanded");
+              });
+            } else {
+              // Vehicle (no variations)
+              const vehicleText = document.createTextNode(`${item.name} - ${item.id}`);
+              li.appendChild(vehicleText);
+              
+              if (item.preview) {
+                const img = document.createElement("img");
+                img.src = item.preview;
+                img.className = "preview-img";
+                img.alt = item.name;
+                li.appendChild(img);
+              }
+            }
+
+            list.appendChild(li);
+          });
+
+          list.dataset.loaded = "true";
+          list.style.display = "block";
+          
+          btn.innerHTML = '';
+          if (iconClone) btn.appendChild(iconClone);
+          btn.appendChild(document.createTextNode(' ' + baseText + ' ▴'));
+          
+        } catch (error) {
+          console.error("Failed to load JSON:", error);
+          
+          btn.innerHTML = '';
+          if (iconClone) btn.appendChild(iconClone);
+          btn.appendChild(document.createTextNode(' ' + baseText + ' ▾ (Error)'));
+        }
+      });
+    });
   }
 </script>
+
 
 </body>
 </html>
