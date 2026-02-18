@@ -394,7 +394,7 @@ body::after {
 .ascii-art {
   font-family: monospace;
   font-size: 1em;
-  line-height: 1;
+ /* line-height: 1;*/
   margin: 0 0 30px 0;
   white-space: pre;
   overflow-x: auto;
@@ -1627,6 +1627,9 @@ body::after {
   font-family: 'Terminal', monospace;
   font-size: 0.9em;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .embed-btn:hover {
@@ -1634,6 +1637,12 @@ body::after {
   border-color: #00ff41;
   box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
 }
+
+.embed-btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
 
 /* Embed modal */
 .embed-modal {
@@ -1739,6 +1748,34 @@ body::after {
   margin-bottom: 15px;
   resize: vertical;
 }
+
+/* Custom scrollbar for embed code textarea */
+#embedCode::-webkit-scrollbar {
+  width: 12px;
+}
+
+#embedCode::-webkit-scrollbar-track {
+  background: #051800;
+  border-left: 1px solid #0a4000;
+}
+
+#embedCode::-webkit-scrollbar-thumb {
+  background: #0a4000;
+  border-radius: 4px;
+  border: 2px solid #051800;
+}
+
+#embedCode::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Firefox scrollbar */
+#embedCode {
+  scrollbar-width: thin;
+  scrollbar-color: #0a4000 #051800;
+}
+
 
 .copy-btn {
   width: 100%;

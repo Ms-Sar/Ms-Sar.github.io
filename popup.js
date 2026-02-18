@@ -467,12 +467,12 @@ const embedCodes = {
   green: `<iframe src="https://ms-sar.github.io/baggy-embed-green.html" 
   width="400" height="600" 
   style="border: 2px solid #00ff41; border-radius: 8px; box-shadow: 0 0 20px rgba(0,255,65,0.3);"
-  title="Baggy - Wreckfest Modding Companion">
+  title="STRmods: Baggy - WF Modding Companion">
 </iframe>`,
   orange: `<iframe src="https://ms-sar.github.io/baggy-embed-orange.html" 
   width="400" height="600" 
   style="border: 2px solid #ff8800; border-radius: 8px; box-shadow: 0 0 20px rgba(255,136,0,0.3);"
-  title="Baggy - Wreckfest Modding Companion">
+  title="STRmods: Baggy - WF Modding Companion">
 </iframe>`
 };
 
