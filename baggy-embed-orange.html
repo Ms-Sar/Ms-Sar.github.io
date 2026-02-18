@@ -277,6 +277,40 @@ body {
 .dynamic-list li.expanded > .track-header:hover > .preview-img {
   opacity: 0;
 }
+
+/* Loading animation */
+.loader {
+  --w: 10ch;
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  letter-spacing: var(--w);
+  width: var(--w);
+  overflow: hidden;
+  white-space: nowrap;
+  color: #0000;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 
+    calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,
+    calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff;
+  animation: l20 2s infinite linear;
+}
+.loader:before { content: "Loading..."; }
+@keyframes l20 {
+  9.09% {text-shadow: calc(0*var(--w)) -10px #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  18.18% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) -10px #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  27.27% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) -10px #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  36.36% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) -10px #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  45.45% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) -10px #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  54.54% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) -10px #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  63.63% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) -10px #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  72.72% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) -10px #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  81.81% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) -10px #fff,calc(-9*var(--w)) 0 #fff}
+  90.90% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) -10px #fff}
+}
+
 </style>
 </head>
 <body>
@@ -362,10 +396,13 @@ body {
           return;
         }
 
-        // Show loading state
-        btn.innerHTML = '';
-        if (iconClone) btn.appendChild(iconClone);
-        btn.appendChild(document.createTextNode(' ' + baseText + ' ⏳'));
+		// Show loading state
+		btn.innerHTML = '';
+		if (iconClone) btn.appendChild(iconClone);
+		btn.appendChild(document.createTextNode(' ' + baseText + ' '));
+		const loader = document.createElement('span');
+		loader.className = 'loader';
+		btn.appendChild(loader);
         
         try {
           const res = await fetch(jsonFile);

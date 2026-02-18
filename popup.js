@@ -59,10 +59,15 @@ document.querySelectorAll(".info-subtoggle").forEach(btn => {
       return;
     }
 
-    // Show loading state
-    btn.innerHTML = '';
-    if (iconClone) btn.appendChild(iconClone);
-    btn.appendChild(document.createTextNode(' ' + baseText + ' ⏳'));
+	// Show loading state
+	btn.innerHTML = '';
+	if (iconClone) btn.appendChild(iconClone);
+	btn.appendChild(document.createTextNode(' ' + baseText + ' '));
+	const loader = document.createElement('span');
+	loader.className = 'loader';
+	btn.appendChild(loader);
+
+
     
     try {
       const res = await fetch(jsonFile);

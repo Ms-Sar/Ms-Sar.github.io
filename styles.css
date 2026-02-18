@@ -393,8 +393,8 @@ body::after {
 
 .ascii-art {
   font-family: monospace;
-  font-size: 1.2em;
-  line-height: 1.2;
+  font-size: 1em;
+  line-height: 1;
   margin: 0 0 30px 0;
   white-space: pre;
   overflow-x: auto;
@@ -420,6 +420,188 @@ body::after {
     font-size: 0.8em;
   }
 }
+
+.inline-gif {
+  float: right;
+  width: 200px;
+  height: auto;
+  margin: 0 0 20px 30px;
+  border: 3px solid var(--accent);
+  border-radius: 8px;
+  box-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow);
+  filter: none;
+  transition: transform 0.3s ease; /* Add transition */
+}
+
+.inline-gif:hover {
+  transform: scale(1.05); /* Slight grow on hover */
+}
+
+/* Loading animation for Baggy lists */
+.loader {
+  --w: 10ch;
+  font-weight: bold;
+  font-family: 'Terminal', 'Courier New', monospace;
+  font-size: 0.9em; /* Match info-subtoggle font size */
+  line-height: 1.4em;
+  letter-spacing: var(--w);
+  width: var(--w);
+  overflow: hidden;
+  white-space: nowrap;
+  color: #0000;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 
+    calc(0*var(--w)) 0 #0f0,
+    calc(-1*var(--w)) 0 #0f0,
+    calc(-2*var(--w)) 0 #0f0,
+    calc(-3*var(--w)) 0 #0f0,
+    calc(-4*var(--w)) 0 #0f0,
+    calc(-5*var(--w)) 0 #0f0,
+    calc(-6*var(--w)) 0 #0f0,
+    calc(-7*var(--w)) 0 #0f0,
+    calc(-8*var(--w)) 0 #0f0,
+    calc(-9*var(--w)) 0 #0f0;
+  animation: l20 2s infinite linear;
+}
+
+.loader:before {
+  content: "Loading...";
+}
+
+@keyframes l20 {
+  9.09% {
+    text-shadow: 
+      calc(0*var(--w)) -10px #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  18.18% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) -10px #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  27.27% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) -10px #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  36.36% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) -10px #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  45.45% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) -10px #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  54.54% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) -10px #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  63.63% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) -10px #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  72.72% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) -10px #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  81.81% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) -10px #0f0,
+      calc(-9*var(--w)) 0 #0f0
+  }
+  90.90% {
+    text-shadow: 
+      calc(0*var(--w)) 0 #0f0,
+      calc(-1*var(--w)) 0 #0f0,
+      calc(-2*var(--w)) 0 #0f0,
+      calc(-3*var(--w)) 0 #0f0,
+      calc(-4*var(--w)) 0 #0f0,
+      calc(-5*var(--w)) 0 #0f0,
+      calc(-6*var(--w)) 0 #0f0,
+      calc(-7*var(--w)) 0 #0f0,
+      calc(-8*var(--w)) 0 #0f0,
+      calc(-9*var(--w)) -10px #0f0
+  }
+}
+
 
 /* ============================================
    MAIN PAGE LINKS
