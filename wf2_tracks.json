@@ -35,6 +35,15 @@
     ]
   },
   {
+    "id": "track11",
+    "name": "Moorfeld",
+    "preview": "wf2/tracks/track11.webp",
+    "variations": [
+      { "id": "track11_1", "name": "Race Route", "preview": "wf2/tracks/track11_1.png" },
+      { "id": "track11_2", "name": "Crash Route", "preview": "wf2/tracks/track1_2.png" }
+    ]
+  },
+  {
     "id": "track02",
     "name": "Savolax Sandpit",
     "preview": "wf2/tracks/track02.webp",
