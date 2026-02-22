@@ -9,7 +9,7 @@
       { "id": "speedway2_figure_8", "name": "Figure 8", "preview": "wf1/tracks/speedway2_figure_8.webp" },
       { "id": "speedway2_inner_oval", "name": "Inner Oval", "preview": "wf1/tracks/speedway2_inner_oval.webp" },
       { "id": "speedway2_outer_oval", "name": "Outer Oval", "preview": "wf1/tracks/speedway2_outer_oval.webp" },
-      { "id": "speedway2_oval_loop", "name": "Outer Oval Loop", "preview": "wf1/tracks/speedway2_oval_loop.webp" }
+      { "id": "speedway2_oval_loop", "name": "Outer Oval Loop", "preview": "wf1/tracks/speedway2_oval_loop.webp" },
 	  { "id": "speedway2_time_trial1", "name": "Time Trial Circuit", "preview": "wf1/tracks/speedway2_time_trial1.webp" }
     ]
   },
