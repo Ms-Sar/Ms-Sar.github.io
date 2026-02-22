@@ -1,6 +1,6 @@
 function initializeEmbedMenu(theme = 'green') {
 
-  function previewSrc(path) {
+  function altVariationSrc(path) {
     const full = `https://ms-sar.github.io/${path}`;
     return theme === 'orange' ? full.replace('.webp', '-alt.webp') : full;
   }
@@ -68,7 +68,7 @@ function initializeEmbedMenu(theme = 'green') {
 
             if (item.preview) {
               const img = document.createElement("img");
-              img.src = previewSrc(item.preview);
+              img.src = `https://ms-sar.github.io/${item.preview}`;
               img.className = "preview-img";
               img.alt = item.name;
               const caption = document.createElement("span");
@@ -91,7 +91,7 @@ function initializeEmbedMenu(theme = 'green') {
 
                 if (variation.preview) {
                   const varImg = document.createElement("img");
-                  varImg.src = previewSrc(variation.preview);
+                  varImg.src = altVariationSrc(variation.preview);
                   varImg.className = "preview-img";
                   varImg.alt = variation.name;
                   const caption = document.createElement("span");
@@ -116,7 +116,7 @@ function initializeEmbedMenu(theme = 'green') {
 
             if (item.preview) {
               const img = document.createElement("img");
-              img.src = previewSrc(item.preview);
+              img.src = `https://ms-sar.github.io/${item.preview}`;
               img.className = "preview-img";
               img.alt = item.name;
               const caption = document.createElement("span");
