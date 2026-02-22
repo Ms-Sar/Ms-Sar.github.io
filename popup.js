@@ -71,8 +71,8 @@ function initializeBaggyMenu() {
             trackHeader.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
 
             if (item.preview) {
-              const wrap = document.createElement("div");
-              wrap.className = "preview-wrap";
+              const previewWrap = document.createElement("div");
+              previewWrap.className = "preview-wrap";
               const img = document.createElement("img");
               img.src = item.preview;
               img.className = "preview-img";
@@ -80,9 +80,9 @@ function initializeBaggyMenu() {
               const caption = document.createElement("span");
               caption.className = "preview-caption";
               caption.textContent = item.name;
-              wrap.appendChild(img);
-              wrap.appendChild(caption);
-              trackHeader.appendChild(wrap);
+              previewWrap.appendChild(img);
+              previewWrap.appendChild(caption);
+              trackHeader.appendChild(previewWrap);
             }
 
             li.appendChild(trackHeader);
@@ -97,8 +97,8 @@ function initializeBaggyMenu() {
                 varLi.appendChild(document.createTextNode(`${variation.name} - ${variation.id}`));
 
                 if (variation.preview) {
-                  const wrap = document.createElement("div");
-                  wrap.className = "preview-wrap";
+                  const previewWrap = document.createElement("div");
+                  previewWrap.className = "preview-wrap";
                   const varImg = document.createElement("img");
                   varImg.src = variation.preview;
                   varImg.className = "preview-img";
@@ -106,9 +106,9 @@ function initializeBaggyMenu() {
                   const caption = document.createElement("span");
                   caption.className = "preview-caption";
                   caption.textContent = variation.name;
-                  wrap.appendChild(varImg);
-                  wrap.appendChild(caption);
-                  varLi.appendChild(wrap);
+                  previewWrap.appendChild(varImg);
+                  previewWrap.appendChild(caption);
+                  varLi.appendChild(previewWrap);
                 }
 
                 variationsList.appendChild(varLi);
@@ -125,8 +125,8 @@ function initializeBaggyMenu() {
             li.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
 
             if (item.preview) {
-              const wrap = document.createElement("div");
-              wrap.className = "preview-wrap";
+              const previewWrap = document.createElement("div");
+              previewWrap.className = "preview-wrap";
               const img = document.createElement("img");
               img.src = item.preview;
               img.className = "preview-img";
@@ -134,9 +134,9 @@ function initializeBaggyMenu() {
               const caption = document.createElement("span");
               caption.className = "preview-caption";
               caption.textContent = item.name;
-              wrap.appendChild(img);
-              wrap.appendChild(caption);
-              li.appendChild(wrap);
+              previewWrap.appendChild(img);
+              previewWrap.appendChild(caption);
+              li.appendChild(previewWrap);
             }
           }
 
