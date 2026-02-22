@@ -252,7 +252,6 @@ body {
   color: #00ff41;
 }
 
-/* Preview images - overlay the list */
 .preview-img {
   position: absolute;
   left: 20%;
@@ -264,12 +263,13 @@ body {
   background: #072000;
   border: 3px solid #00ff41;
   border-radius: 8px;
-  padding: 8px;
+  padding: 8px 8px 26px 8px;
   z-index: 9999;
   pointer-events: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 255, 65, 0.4);
   opacity: 0;
   transition: opacity 0.15s ease;
+  display: block;
 }
 
 .preview-caption {
@@ -277,19 +277,22 @@ body {
   left: 20%;
   top: calc(50% + 45px);
   width: 200px;
+  padding: 0 8px;
   text-align: center;
   font-size: 0.75em;
-  color: #00ff41; /* #ff8800 for orange */
-  font-family: 'Terminal', 'Courier New', monospace; /* sans-serif for orange */
-  text-shadow: 0 0 6px rgba(0, 255, 65, 0.4); /* rgba(255, 136, 0, 0.4) for orange */
+  line-height: 1.2;
+  color: #00ff41;
+  font-family: 'Terminal', 'Courier New', monospace;
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.4);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;
-  z-index: 9999;
+  z-index: 10000;
 }
+
 
 
 .dynamic-list li:hover > .preview-img,

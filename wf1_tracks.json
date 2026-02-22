@@ -10,6 +10,7 @@
       { "id": "speedway2_inner_oval", "name": "Inner Oval", "preview": "wf1/tracks/speedway2_inner_oval.webp" },
       { "id": "speedway2_outer_oval", "name": "Outer Oval", "preview": "wf1/tracks/speedway2_outer_oval.webp" },
       { "id": "speedway2_oval_loop", "name": "Outer Oval Loop", "preview": "wf1/tracks/speedway2_oval_loop.webp" }
+	  { "id": "speedway2_time_trial1", "name": "Time Trial Circuit", "preview": "wf1/tracks/speedway2_time_trial1.webp" }
     ]
   },
   {
@@ -20,6 +21,7 @@
       { "id": "crm01_1", "name": "Race Track", "preview": "wf1/tracks/crm01_1.webp" },
       { "id": "crm01_5", "name": "Race Track Reverse", "preview": "wf1/tracks/crm01_5.webp" },
       { "id": "crm01_3", "name": "Demolition Arena", "preview": "wf1/tracks/crm01_3.webp" },
+	  { "id": "crm01_4", "name": "Race Track (Tour)", "preview": "wf1/tracks/crm01_4.webp" },
       { "id": "crm01_2", "name": "Free Roam", "preview": "wf1/tracks/crm01_2.webp" }
     ]
   },
@@ -48,7 +50,8 @@
       { "id": "sandpit3_long_loop", "name": "Main Route", "preview": "wf1/tracks/sandpit3_long_loop.webp" },
       { "id": "sandpit3_long_loop_rev", "name": "Main Route Reverse", "preview": "wf1/tracks/sandpit3_long_loop_rev.webp" },
       { "id": "sandpit3_short_loop", "name": "Short Route", "preview": "wf1/tracks/sandpit3_short_loop.webp" },
-      { "id": "sandpit3_short_loop_rev", "name": "Short Route Reverse", "preview": "wf1/tracks/sandpit3_short_loop_rev.webp" }
+      { "id": "sandpit3_short_loop_rev", "name": "Short Route Reverse", "preview": "wf1/tracks/sandpit3_short_loop_rev.webp" },
+	  { "id": "sandpit3_trial_circuit", "name": "Time Trial Circuit", "preview": "wf1/tracks/sandpit3_trial_circuit.webp" }
     ]
   },
   {
@@ -57,6 +60,8 @@
     "preview": "wf1/tracks/mixed9.webp",
     "variations": [
       { "id": "mixed9_r1", "name": "Main Circuit", "preview": "wf1/tracks/mixed9_r1.webp" },
+      { "id": "mixed9_r1_2", "name": "Time Trial Circuit", "preview": "wf1/tracks/mixed9_r1_2.webp" },
+	  { "id": "mixed9_r1_3", "name": "Time Trial Circuit", "preview": "wf1/tracks/mixed9_r1_3.webp" },
       { "id": "mixed9_r1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed9_r1_rev.webp" }
     ]
   },
@@ -82,7 +87,8 @@
     "preview": "wf1/tracks/crm02.webp",
     "variations": [
       { "id": "crm02_1", "name": "Race Track", "preview": "wf1/tracks/crm02_1.webp" },
-      { "id": "crm02_2", "name": "Free Roam", "preview": "wf1/tracks/crm02_2.webp" }
+      { "id": "crm02_2", "name": "Free Roam", "preview": "wf1/tracks/crm02_2.webp" },
+	  { "id": "crm02_3", "name": "Race Track (Tour)", "preview": "wf1/tracks/crm02_3.webp" }
     ]
   },
   {
@@ -90,6 +96,7 @@
     "name": "Dirt Devil Stadium",
     "preview": "wf1/tracks/triangle.webp",
     "variations": [
+      { "id": "triangle_3", "name": "Time Trial Circuit", "preview": "wf1/tracks/triangle_3.webp" },
       { "id": "triangle_r1", "name": "Dirt Speedway", "preview": "wf1/tracks/triangle_r1.webp" },
       { "id": "triangle_r2", "name": "Demolition Arena", "preview": "wf1/tracks/triangle_r2.webp" }
     ]
