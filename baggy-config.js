@@ -26,6 +26,12 @@ const baggyConfig = {
           url: 'https://docs.google.com/spreadsheets/d/18-g1-I68g1B-9bumvV1HxUVcuD41DBczCyUGH3rdNiQ',
           icon: 'WFchronicle.png',
           iconAlt: 'WFchronicle-alt.png'
+        },
+		{
+          text: 'STRmods WF2 Steam Guides',
+          url: 'https://steamcommunity.com/id/STRmods/myworkshopfiles/?section=guides&appid=1203190',
+          icon: 'Steam.png',
+          iconAlt: 'Steam-alt.png'
         }
       ]
     },
@@ -53,6 +59,12 @@ const baggyConfig = {
           url: 'https://github.com/MaxxWyndham/Breckfest',
           icon: 'breckfest.png',
           iconAlt: 'breckfest-alt.png'
+        },
+        {
+          text: 'VLDL Tool',
+          url: 'https://www.nexusmods.com/wreckfest2/mods/38',
+          icon: 'VLDLtool.png',
+          iconAlt: 'VLDLtool-alt.png'
         },
         {
           text: 'WF2 Blender Telemetry',

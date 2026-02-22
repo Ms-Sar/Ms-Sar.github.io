@@ -1,118 +1,85 @@
-// Click to toggle click-card sections
-document.querySelectorAll(".click-card").forEach(card => {
-  const title = card.querySelector(".click-title");
-  title.addEventListener("click", () => {
-    card.classList.toggle("open");
-  });
+document.addEventListener('click', e => {
+  const clickTitle  = e.target.closest('.click-title');
+  const infoTitle   = e.target.closest('.info-title');
+  const subToggle   = e.target.closest('.info-subtoggle');
+  const trackHeader = e.target.closest('.track-header');
+
+  if (clickTitle)       clickTitle.closest('.click-card').classList.toggle('open');
+  else if (infoTitle)   infoTitle.closest('.info-card').classList.toggle('open');
+  else if (subToggle)   handleSubToggle(subToggle);
+  else if (trackHeader) trackHeader.closest('li').classList.toggle('expanded');
 });
 
-// Click to toggle info cards
-document.querySelectorAll(".info-card").forEach(card => {
-  const title = card.querySelector(".info-title");
-  title.addEventListener("click", () => {
-    card.classList.toggle("open");
-  });
-});
+async function handleSubToggle(btn) {
+  const jsonFile = btn.dataset.json;
+  const list = btn.nextElementSibling;
+  const icon = btn.querySelector('.icon-img');
+  const iconHTML = icon ? icon.outerHTML : '';
+  const baseText = [...btn.childNodes]
+    .filter(n => n.nodeType === Node.TEXT_NODE)
+    .map(n => n.textContent)
+    .join('')
+    .replace(/[▾▴⏳]/g, '')
+    .trim();
 
-// Load JSON
-document.querySelectorAll(".info-subtoggle").forEach(btn => {
-  btn.addEventListener("click", async () => {
-    const jsonFile = btn.dataset.json;
-    const list = btn.nextElementSibling;
+  if (list.dataset.loaded === 'true') {
+    const isVisible = list.style.display === 'block';
+    list.style.display = isVisible ? 'none' : 'block';
+    btn.innerHTML = `${iconHTML} ${baseText} ${isVisible ? '▾' : '▴'}`;
+    return;
+  }
 
-    if (list.dataset.loaded === "true") {
-      const isVisible = list.style.display === "block";
-      list.style.display = isVisible ? "none" : "block";
-      btn.textContent = isVisible 
-        ? btn.textContent.replace("▴", "▾")
-        : btn.textContent.replace("▾", "▴");
-      return;
-    }
+  btn.innerHTML = `${iconHTML} ${baseText} ⏳`;
 
-    btn.textContent = btn.textContent.replace("▾", "⏳");
-    
-    try {
-      const res = await fetch(`https://ms-sar.github.io/${jsonFile}`);
-      const data = await res.json();
+  try {
+    const res = await fetch(`https://ms-sar.github.io/${jsonFile}`);
+    const data = await res.json();
+    list.innerHTML = '';
+    const hasTracks = data.some(item => item.variations);
+    const fragment = document.createDocumentFragment();
 
-      list.innerHTML = "";
-      const hasTracks = data.some(item => item.variations);
-
-      data.forEach(item => {
-        const li = document.createElement("li");
-        
-        if (hasTracks) {
-          // Track with variations
-          const trackHeader = document.createElement("div");
-          trackHeader.className = "track-header";
-          
-          const trackText = document.createTextNode(`${item.name} - ${item.id}`);
-          trackHeader.appendChild(trackText);
-          
-          if (item.preview) {
-            const img = document.createElement("img");
-            img.src = item.preview;
-            img.className = "preview-img";
-            img.alt = item.name;
-            trackHeader.appendChild(img);
-          }
-          
-          li.appendChild(trackHeader);
-          
-          // Variations list
-          if (item.variations && item.variations.length > 0) {
-            const variationsList = document.createElement("ul");
-            variationsList.className = "variations-list";
-            
-            item.variations.forEach(variation => {
-              const varLi = document.createElement("li");
-              varLi.className = "variation-item";
-              
-              const varText = document.createTextNode(`${variation.name} - ${variation.id}`);
-              varLi.appendChild(varText);
-              
-              if (variation.preview) {
-                const varImg = document.createElement("img");
-                varImg.src = variation.preview;
-                varImg.className = "preview-img";
-                varImg.alt = variation.name;
-                varLi.appendChild(varImg);
-              }
-              
-              variationsList.appendChild(varLi);
-            });
-            
-            li.appendChild(variationsList);
-          }
-          
-          // Toggle variations on click
-          trackHeader.addEventListener("click", () => {
-            li.classList.toggle("expanded");
+    data.forEach(item => {
+      const li = document.createElement('li');
+      if (hasTracks) {
+        const header = document.createElement('div');
+        header.className = 'track-header';
+        header.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
+        if (item.preview) header.appendChild(createImg(item));
+        li.appendChild(header);
+        if (item.variations?.length) {
+          const ul = document.createElement('ul');
+          ul.className = 'variations-list';
+          item.variations.forEach(v => {
+            const varLi = document.createElement('li');
+            varLi.className = 'variation-item';
+            varLi.appendChild(document.createTextNode(`${v.name} - ${v.id}`));
+            if (v.preview) varLi.appendChild(createImg(v));
+            ul.appendChild(varLi);
           });
-        } else {
-          // Vehicle (no variations)
-          const vehicleText = document.createTextNode(`${item.name} - ${item.id}`);
-          li.appendChild(vehicleText);
-          
-          if (item.preview) {
-            const img = document.createElement("img");
-            img.src = item.preview;
-            img.className = "preview-img";
-            img.alt = item.name;
-            li.appendChild(img);
-          }
+          li.appendChild(ul);
         }
+      } else {
+        li.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
+        if (item.preview) li.appendChild(createImg(item));
+      }
+      fragment.appendChild(li);
+    });
 
-        list.appendChild(li);
-      });
+    list.appendChild(fragment);
+    list.dataset.loaded = 'true';
+    list.style.display = 'block';
+    btn.innerHTML = `${iconHTML} ${baseText} ▴`;
+  } catch (err) {
+    console.error('Failed to load JSON:', err);
+    btn.innerHTML = `${iconHTML} ${baseText} ▾ (Error)`;
+  }
+}
 
-      list.dataset.loaded = "true";
-      list.style.display = "block";
-      btn.textContent = btn.textContent.replace("⏳", "▴");
-      
-    } catch (error) {
-      console.error("Failed to load JSON:", error);
-      btn.textContent = btn.textContent.replace("⏳", "▾ (Error)");
-    }
-  });
-});
+function createImg(item) {
+  const img = document.createElement('img');
+  img.src = item.preview;
+  img.className = 'preview-img';
+  img.alt = item.name;
+  img.loading = 'lazy';
+  return img;
+}
