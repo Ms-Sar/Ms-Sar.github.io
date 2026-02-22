@@ -5,8 +5,8 @@ const baggyConfig = {
     {
       id: 'links',
       title: 'Useful Links',
-      icon: 'wiki.png',
-      iconAlt: 'wiki-alt.png',
+      icon: 'UsefulLinks.png',
+      iconAlt: 'UsefulLinks-alt.png',
       type: 'click-card',
       items: [
         {
