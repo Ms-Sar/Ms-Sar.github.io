@@ -1,4 +1,5 @@
 function initializeEmbedMenu() {
+  // Click to toggle click-card sections
   document.querySelectorAll(".click-card").forEach(card => {
     const title = card.querySelector(".click-title");
     title.addEventListener("click", () => {
@@ -6,6 +7,7 @@ function initializeEmbedMenu() {
     });
   });
 
+  // Click to toggle info cards
   document.querySelectorAll(".info-card").forEach(card => {
     const title = card.querySelector(".info-title");
     title.addEventListener("click", () => {
@@ -13,6 +15,7 @@ function initializeEmbedMenu() {
     });
   });
 
+  // Load JSON
   document.querySelectorAll(".info-subtoggle").forEach(btn => {
     btn.addEventListener("click", async () => {
       const jsonFile = btn.dataset.json;
@@ -61,8 +64,6 @@ function initializeEmbedMenu() {
             trackHeader.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
 
             if (item.preview) {
-              const wrap = document.createElement("div");
-              wrap.className = "preview-wrap";
               const img = document.createElement("img");
               img.src = `https://ms-sar.github.io/${item.preview}`;
               img.className = "preview-img";
@@ -70,9 +71,8 @@ function initializeEmbedMenu() {
               const caption = document.createElement("span");
               caption.className = "preview-caption";
               caption.textContent = item.name;
-              wrap.appendChild(img);
-              wrap.appendChild(caption);
-              trackHeader.appendChild(wrap);
+              trackHeader.appendChild(img);
+              trackHeader.appendChild(caption);
             }
 
             li.appendChild(trackHeader);
@@ -87,8 +87,6 @@ function initializeEmbedMenu() {
                 varLi.appendChild(document.createTextNode(`${variation.name} - ${variation.id}`));
 
                 if (variation.preview) {
-                  const wrap = document.createElement("div");
-                  wrap.className = "preview-wrap";
                   const varImg = document.createElement("img");
                   varImg.src = `https://ms-sar.github.io/${variation.preview}`;
                   varImg.className = "preview-img";
@@ -96,9 +94,8 @@ function initializeEmbedMenu() {
                   const caption = document.createElement("span");
                   caption.className = "preview-caption";
                   caption.textContent = variation.name;
-                  wrap.appendChild(varImg);
-                  wrap.appendChild(caption);
-                  varLi.appendChild(wrap);
+                  varLi.appendChild(varImg);
+                  varLi.appendChild(caption);
                 }
 
                 variationsList.appendChild(varLi);
@@ -115,8 +112,6 @@ function initializeEmbedMenu() {
             li.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
 
             if (item.preview) {
-              const wrap = document.createElement("div");
-              wrap.className = "preview-wrap";
               const img = document.createElement("img");
               img.src = `https://ms-sar.github.io/${item.preview}`;
               img.className = "preview-img";
@@ -124,9 +119,8 @@ function initializeEmbedMenu() {
               const caption = document.createElement("span");
               caption.className = "preview-caption";
               caption.textContent = item.name;
-              wrap.appendChild(img);
-              wrap.appendChild(caption);
-              li.appendChild(wrap);
+              li.appendChild(img);
+              li.appendChild(caption);
             }
           }
 
