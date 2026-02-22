@@ -1,18 +1,14 @@
 // Load Baggy configuration and build menu
 document.addEventListener('DOMContentLoaded', () => {
-  // Build and insert Baggy menu
   const container = document.getElementById('baggy-menu-container');
   if (container) {
     container.innerHTML = buildBaggyMenu(false, 'green');
-    
-    // Re-attach event listeners after menu is built
     initializeBaggyMenu();
   }
 });
 
 // Initialize Baggy menu interactions
 function initializeBaggyMenu() {
-  // Click to toggle click-card sections (Useful Links, Tools, SteamDB)
   document.querySelectorAll(".click-card").forEach(card => {
     const title = card.querySelector(".click-title");
     title.addEventListener("click", () => {
@@ -20,7 +16,6 @@ function initializeBaggyMenu() {
     });
   });
 
-  // Click to toggle WF1/WF2 info cards
   document.querySelectorAll(".info-card").forEach(card => {
     const title = card.querySelector(".info-title");
     title.addEventListener("click", () => {
@@ -28,167 +23,159 @@ function initializeBaggyMenu() {
     });
   });
 
-// Load JSON when a sub-toggle is clicked
-document.querySelectorAll(".info-subtoggle").forEach(btn => {
-  btn.addEventListener("click", async () => {
-    const jsonFile = btn.dataset.json;
-    const list = btn.nextElementSibling;
+  document.querySelectorAll(".info-subtoggle").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const jsonFile = btn.dataset.json;
+      const list = btn.nextElementSibling;
 
-    // Store the icon and base text
-    const icon = btn.querySelector('.icon-img');
-    const iconClone = icon ? icon.cloneNode(true) : null;
-    
-    // Get text without icon
-    let textWithoutIcon = '';
-    btn.childNodes.forEach(node => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        textWithoutIcon += node.textContent;
+      const icon = btn.querySelector('.icon-img');
+      const iconClone = icon ? icon.cloneNode(true) : null;
+
+      let textWithoutIcon = '';
+      btn.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          textWithoutIcon += node.textContent;
+        }
+      });
+      const baseText = textWithoutIcon.replace(/[▾▴⏳]/g, '').trim();
+
+      if (list.dataset.loaded === "true") {
+        const isVisible = list.style.display === "block";
+        list.style.display = isVisible ? "none" : "block";
+        btn.innerHTML = '';
+        if (iconClone) btn.appendChild(iconClone);
+        btn.appendChild(document.createTextNode(' ' + baseText + (isVisible ? ' ▾' : ' ▴')));
+        return;
+      }
+
+      btn.innerHTML = '';
+      if (iconClone) btn.appendChild(iconClone);
+      btn.appendChild(document.createTextNode(' ' + baseText + ' '));
+      const loader = document.createElement('span');
+      loader.className = 'loader';
+      btn.appendChild(loader);
+
+      try {
+        const res = await fetch(jsonFile);
+        const data = await res.json();
+        list.innerHTML = "";
+
+        const hasTracks = data.some(item => item.variations);
+
+        data.forEach(item => {
+          const li = document.createElement("li");
+
+          if (hasTracks) {
+            const trackHeader = document.createElement("div");
+            trackHeader.className = "track-header";
+            trackHeader.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
+
+            if (item.preview) {
+              const previewWrap = document.createElement("div");
+              previewWrap.className = "preview-wrap";
+              const img = document.createElement("img");
+              img.src = item.preview;
+              img.className = "preview-img";
+              img.alt = item.name;
+              const caption = document.createElement("span");
+              caption.className = "preview-caption";
+              caption.textContent = item.name;
+              previewWrap.appendChild(img);
+              previewWrap.appendChild(caption);
+              trackHeader.appendChild(previewWrap);
+            }
+
+            li.appendChild(trackHeader);
+
+            if (item.variations && item.variations.length > 0) {
+              const variationsList = document.createElement("ul");
+              variationsList.className = "variations-list";
+
+              item.variations.forEach(variation => {
+                const varLi = document.createElement("li");
+                varLi.className = "variation-item";
+                varLi.appendChild(document.createTextNode(`${variation.name} - ${variation.id}`));
+
+                if (variation.preview) {
+                  const previewWrap = document.createElement("div");
+                  previewWrap.className = "preview-wrap";
+                  const varImg = document.createElement("img");
+                  varImg.src = variation.preview;
+                  varImg.className = "preview-img";
+                  varImg.alt = variation.name;
+                  const caption = document.createElement("span");
+                  caption.className = "preview-caption";
+                  caption.textContent = `${item.name} - ${variation.name}`;
+                  previewWrap.appendChild(varImg);
+                  previewWrap.appendChild(caption);
+                  varLi.appendChild(previewWrap);
+                }
+
+                variationsList.appendChild(varLi);
+              });
+
+              li.appendChild(variationsList);
+            }
+
+            trackHeader.addEventListener("click", () => {
+              li.classList.toggle("expanded");
+            });
+
+          } else {
+            li.appendChild(document.createTextNode(`${item.name} - ${item.id}`));
+
+            if (item.preview) {
+              const previewWrap = document.createElement("div");
+              previewWrap.className = "preview-wrap";
+              const img = document.createElement("img");
+              img.src = item.preview;
+              img.className = "preview-img";
+              img.alt = item.name;
+              const caption = document.createElement("span");
+              caption.className = "preview-caption";
+              caption.textContent = item.name;
+              previewWrap.appendChild(img);
+              previewWrap.appendChild(caption);
+              li.appendChild(previewWrap);
+            }
+          }
+
+          list.appendChild(li);
+        });
+
+        list.dataset.loaded = "true";
+        list.style.display = "block";
+        btn.innerHTML = '';
+        if (iconClone) btn.appendChild(iconClone);
+        btn.appendChild(document.createTextNode(' ' + baseText + ' ▴'));
+
+      } catch (error) {
+        console.error("Failed to load JSON:", error);
+        btn.innerHTML = '';
+        if (iconClone) btn.appendChild(iconClone);
+        btn.appendChild(document.createTextNode(' ' + baseText + ' ▾ (Error)'));
       }
     });
-    const baseText = textWithoutIcon.replace(/[▾▴⏳]/g, '').trim();
-
-    // If already loaded, just toggle visibility
-    if (list.dataset.loaded === "true") {
-      const isVisible = list.style.display === "block";
-      list.style.display = isVisible ? "none" : "block";
-      
-      // Rebuild button with icon
-      btn.innerHTML = '';
-      if (iconClone) btn.appendChild(iconClone);
-      btn.appendChild(document.createTextNode(' ' + baseText + (isVisible ? ' ▾' : ' ▴')));
-      return;
-    }
-
-	// Show loading state
-	btn.innerHTML = '';
-	if (iconClone) btn.appendChild(iconClone);
-	btn.appendChild(document.createTextNode(' ' + baseText + ' '));
-	const loader = document.createElement('span');
-	loader.className = 'loader';
-	btn.appendChild(loader);
-
-
-    
-    try {
-      const res = await fetch(jsonFile);
-      const data = await res.json();
-
-      list.innerHTML = "";
-
-      // Check if this is a tracks JSON (has variations)
-      const hasTracks = data.some(item => item.variations);
-
-      data.forEach(item => {
-        const li = document.createElement("li");
-        
-        if (hasTracks) {
-          // Track with variations
-          const trackHeader = document.createElement("div");
-          trackHeader.className = "track-header";
-          
-          const trackText = document.createTextNode(`${item.name} - ${item.id}`);
-          trackHeader.appendChild(trackText);
-          
-          if (item.preview) {
-            const img = document.createElement("img");
-            img.src = item.preview;
-            img.className = "preview-img";
-            img.alt = item.name;
-            trackHeader.appendChild(img);
-          }
-          
-          li.appendChild(trackHeader);
-          
-          // Variations list
-          if (item.variations && item.variations.length > 0) {
-            const variationsList = document.createElement("ul");
-            variationsList.className = "variations-list";
-            
-            item.variations.forEach(variation => {
-              const varLi = document.createElement("li");
-              varLi.className = "variation-item";
-              
-              const varText = document.createTextNode(`${variation.name} - ${variation.id}`);
-              varLi.appendChild(varText);
-              
-              if (variation.preview) {
-                const varImg = document.createElement("img");
-                varImg.src = variation.preview;
-                varImg.className = "preview-img";
-                varImg.alt = variation.name;
-                varLi.appendChild(varImg);
-              }
-              
-              variationsList.appendChild(varLi);
-            });
-            
-            li.appendChild(variationsList);
-          }
-          
-          // Toggle variations on click
-          trackHeader.addEventListener("click", () => {
-            li.classList.toggle("expanded");
-          });
-        } else {
-          // Vehicle (no variations)
-          const vehicleText = document.createTextNode(`${item.name} - ${item.id}`);
-          li.appendChild(vehicleText);
-          
-          if (item.preview) {
-            const img = document.createElement("img");
-            img.src = item.preview;
-            img.className = "preview-img";
-            img.alt = item.name;
-            li.appendChild(img);
-          }
-        }
-
-        list.appendChild(li);
-      });
-
-      list.dataset.loaded = "true";
-      list.style.display = "block";
-      
-      // Rebuild button with icon and up arrow
-      btn.innerHTML = '';
-      if (iconClone) btn.appendChild(iconClone);
-      btn.appendChild(document.createTextNode(' ' + baseText + ' ▴'));
-      
-    } catch (error) {
-      console.error("Failed to load JSON:", error);
-      
-      // Rebuild button with icon and error
-      btn.innerHTML = '';
-      if (iconClone) btn.appendChild(iconClone);
-      btn.appendChild(document.createTextNode(' ' + baseText + ' ▾ (Error)'));
-    }
   });
-});
-
 }
 
 // CRT Power-on effect
 window.addEventListener('load', () => {
-  // Page starts with black background, hide content
   document.body.style.visibility = 'hidden';
-  
-  // Create power-on overlay
+
   const powerup = document.createElement('div');
   powerup.className = 'crt-powerup';
   document.body.appendChild(powerup);
-  
-  // Create boot scanline
+
   const scanline = document.createElement('div');
   scanline.className = 'crt-scanline-boot';
   document.body.appendChild(scanline);
-  
-  // Show content and switch to normal background
+
   setTimeout(() => {
     document.body.style.visibility = 'visible';
     document.body.classList.add('powered-on');
   }, 400);
-  
-  // Remove CRT elements
+
   setTimeout(() => {
     powerup.remove();
     scanline.remove();
@@ -212,139 +199,106 @@ const asciiArtLines = [
   "   ╚══════╝···╚═╝···╚═╝··╚═╝╚═╝·····╚═╝·╚═════╝·╚═════╝·╚══════╝"
 ];
 
-// Typewriter effect - character by character for ASCII art with cursor (FAST)
 function typeWriterASCII(element, lines, charSpeed, lineDelay, callback) {
   let lineIndex = 0;
   let charIndex = 0;
   let currentText = '';
   let lastTime = performance.now();
   let accumulated = 0;
-  
-  // Create cursor element
+
   const cursor = document.createElement('span');
   cursor.className = 'typing-cursor';
-  
+
   element.innerText = '';
   element.style.opacity = '1';
   element.appendChild(cursor);
-  
+
   function typeChar(currentTime) {
     const deltaTime = currentTime - lastTime;
     lastTime = currentTime;
     accumulated += deltaTime;
-    
-    // Type multiple characters per frame if needed
+
     while (accumulated >= charSpeed && lineIndex < lines.length) {
       const currentLine = lines[lineIndex];
-      
       if (charIndex < currentLine.length) {
-        // Type next character
         currentText += currentLine[charIndex];
         charIndex++;
         accumulated -= charSpeed;
       } else {
-        // Line complete, move to next line
         currentText += '\n';
         lineIndex++;
         charIndex = 0;
         accumulated -= lineDelay;
-        break; // Wait for line delay
+        break;
       }
     }
-    
+
     element.innerText = currentText;
     element.appendChild(cursor);
-    
+
     if (lineIndex < lines.length) {
       requestAnimationFrame(typeChar);
     } else {
-      // All lines complete
-      if (callback) {
-        callback(cursor);
-      }
+      if (callback) callback(cursor);
     }
   }
-  
+
   requestAnimationFrame(typeChar);
 }
 
-// Typewriter for paragraphs with moving cursor (FAST) - preserves images and HTML
 function typeWriter(element, html, speed, cursor, callback) {
   let i = 0;
   let lastTime = performance.now();
   let accumulated = 0;
-  
-  // Store the image if it exists
+
   const img = element.querySelector('img');
-  
-  // Create a temporary div to parse HTML
+
   const temp = document.createElement('div');
   temp.innerHTML = html;
   const textContent = temp.textContent || temp.innerText;
-  
+
   element.textContent = '';
   element.style.opacity = '1';
-  
-  // Re-add the image if it existed
-  if (img) {
-    element.appendChild(img);
-  }
-  
+
+  if (img) element.appendChild(img);
   element.appendChild(cursor);
-  
+
   function type(currentTime) {
     const deltaTime = currentTime - lastTime;
     lastTime = currentTime;
     accumulated += deltaTime;
-    
-    // Type multiple characters per frame if needed
+
     while (accumulated >= speed && i < textContent.length) {
       i++;
       accumulated -= speed;
     }
-    
+
     if (i > 0) {
-      const currentText = textContent.substring(0, i);
-      
-      // Clear and rebuild with image and HTML
       element.innerHTML = '';
-      if (img) {
-        element.appendChild(img);
-      }
-      
-      // Replace line breaks in the typed portion
-      const htmlText = html.substring(0, findHTMLPosition(html, i));
+      if (img) element.appendChild(img);
       const span = document.createElement('span');
-      span.innerHTML = htmlText;
+      span.innerHTML = html.substring(0, findHTMLPosition(html, i));
       element.appendChild(span);
       element.appendChild(cursor);
     }
-    
+
     if (i < textContent.length) {
       requestAnimationFrame(type);
     } else {
-      // Remove cursor when done, set final HTML
       cursor.remove();
       element.innerHTML = '';
-      if (img) {
-        element.appendChild(img);
-      }
+      if (img) element.appendChild(img);
       const span = document.createElement('span');
       span.innerHTML = html;
       element.appendChild(span);
-      
-      if (callback) {
-        callback();
-      }
+      if (callback) callback();
     }
   }
-  
-  // Helper to find HTML position based on text position
+
   function findHTMLPosition(html, textPos) {
     let textCount = 0;
     let htmlPos = 0;
     let inTag = false;
-    
     while (htmlPos < html.length && textCount < textPos) {
       if (html[htmlPos] === '<') {
         inTag = true;
@@ -353,16 +307,12 @@ function typeWriter(element, html, speed, cursor, callback) {
         htmlPos++;
         continue;
       }
-      
-      if (!inTag) {
-        textCount++;
-      }
+      if (!inTag) textCount++;
       htmlPos++;
     }
-    
     return htmlPos;
   }
-  
+
   requestAnimationFrame(type);
 }
 
@@ -372,76 +322,52 @@ document.addEventListener('DOMContentLoaded', async () => {
   const paragraph = content.querySelector('p');
   const sections = content.querySelectorAll('section');
   const links = content.querySelectorAll('.main-link');
-  
-  // Get HTML content without the image
+
   const paragraphHTML = paragraph.innerHTML.replace(/<img[^>]*>/g, '').trim();
 
-  // Hide everything initially
   title.style.opacity = '0';
   content.style.opacity = '1';
   paragraph.style.opacity = '0';
   sections.forEach(s => s.style.opacity = '0');
   links.forEach(l => l.style.opacity = '0');
-  
-  // Start animation sequence - delayed to let CRT effect finish
+
   setTimeout(() => {
     title.style.opacity = '1';
     title.classList.add('typing');
-    
-    // Type out ASCII art character by character
+
     typeWriterASCII(title, asciiArtLines, 5, 20, (cursor) => {
-      // ASCII art done, move cursor to paragraph
       setTimeout(() => {
         paragraph.style.opacity = '1';
-        
-        // Move cursor to paragraph and start typing
         typeWriter(paragraph, paragraphHTML, 2.25, cursor, () => {
-          
-          // Show first section (My Work)
           setTimeout(() => {
             sections[0].style.opacity = '1';
             sections[0].style.animation = 'fadeInTerminal 0.3s ease forwards';
-            
-            // Glitch in the links
-            setTimeout(() => {
-              links[0].style.animation = 'glitchIn 0.6s ease forwards';
-            }, 200);
-            
-            setTimeout(() => {
-              links[1].style.animation = 'glitchIn 0.6s ease forwards';
-            }, 400);
-            
-            setTimeout(() => {
-              links[2].style.animation = 'glitchIn 0.6s ease forwards';
-            }, 600);
-            
-            // Show second section (About the Sidebar)
+            setTimeout(() => { links[0].style.animation = 'glitchIn 0.6s ease forwards'; }, 200);
+            setTimeout(() => { links[1].style.animation = 'glitchIn 0.6s ease forwards'; }, 400);
+            setTimeout(() => { links[2].style.animation = 'glitchIn 0.6s ease forwards'; }, 600);
             setTimeout(() => {
               sections[1].style.opacity = '1';
               sections[1].style.animation = 'fadeInTerminal 0.3s ease forwards';
             }, 1000);
-            
           }, 300);
         });
       }, 300);
     });
-  }, 900); // Start typing after CRT effect (900ms)
+  }, 900);
 });
 
 // ========== MOBILE BAGGY TOGGLE ==========
 const mobileBaggyBtn = document.getElementById('mobileBaggyBtn');
 const sidebar = document.querySelector('.sticky-sidebar');
 
-// Open sidebar
 mobileBaggyBtn.addEventListener('click', () => {
   sidebar.classList.add('mobile-open');
   mobileBaggyBtn.classList.add('hidden');
 });
 
-// Close sidebar - click close button (::before pseudo-element)
 sidebar.addEventListener('click', (e) => {
   const rect = sidebar.getBoundingClientRect();
-  if (e.clientY < rect.top + 50) { // Close button area (top 50px)
+  if (e.clientY < rect.top + 50) {
     sidebar.classList.remove('mobile-open');
     mobileBaggyBtn.classList.remove('hidden');
   }
@@ -458,7 +384,6 @@ const copyFeedback = document.getElementById('copyFeedback');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const themeButtons = document.querySelectorAll('.theme-btn');
 
-// Move modal to body to escape stacking context
 document.body.appendChild(embedModal);
 
 let currentTheme = 'green';
@@ -467,52 +392,39 @@ const embedCodes = {
   green: `<iframe src="https://ms-sar.github.io/baggy-embed-green.html" 
   width="400" height="600" 
   style="border: 2px solid #00ff41; border-radius: 8px; box-shadow: 0 0 20px rgba(0,255,65,0.3);"
-  title="STRmods: Baggy - WF Modding Companion">
+  title="Baggy - Wreckfest Modding Companion">
 </iframe>`,
   orange: `<iframe src="https://ms-sar.github.io/baggy-embed-orange.html" 
   width="400" height="600" 
   style="border: 2px solid #ff8800; border-radius: 8px; box-shadow: 0 0 20px rgba(255,136,0,0.3);"
-  title="STRmods: Baggy - WF Modding Companion">
+  title="Baggy - Wreckfest Modding Companion">
 </iframe>`
 };
 
-// Close modal function
 function closeModal() {
   embedModal.style.display = 'none';
 }
 
-// Open modal
 embedBtn.addEventListener('click', () => {
   embedModal.style.display = 'block';
   embedCode.value = embedCodes[currentTheme];
 });
 
-// Close on X button
 embedClose.addEventListener('click', closeModal);
-
-// Close on bottom close button
 closeModalBtn.addEventListener('click', closeModal);
 
-// Close when clicking outside the modal content
 embedModal.addEventListener('click', (e) => {
-  if (e.target === embedModal) {
-    closeModal();
-  }
+  if (e.target === embedModal) closeModal();
 });
 
-// Prevent modal content clicks from closing
 embedModalContent.addEventListener('click', (e) => {
   e.stopPropagation();
 });
 
-// Close with Escape key
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && embedModal.style.display === 'block') {
-    closeModal();
-  }
+  if (e.key === 'Escape' && embedModal.style.display === 'block') closeModal();
 });
 
-// Theme selection
 themeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     themeButtons.forEach(b => b.classList.remove('active'));
@@ -522,13 +434,9 @@ themeButtons.forEach(btn => {
   });
 });
 
-// Copy to clipboard
 copyEmbedBtn.addEventListener('click', () => {
   embedCode.select();
   document.execCommand('copy');
-  
   copyFeedback.classList.add('show');
-  setTimeout(() => {
-    copyFeedback.classList.remove('show');
-  }, 2000);
+  setTimeout(() => { copyFeedback.classList.remove('show'); }, 2000);
 });

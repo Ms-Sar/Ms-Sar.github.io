@@ -1036,18 +1036,17 @@ body::after {
 }
 
 /* ============================================
-   HOVER IMAGE PREVIEW
-   ============================================ */
+HOVER IMAGE PREVIEW
+============================================ */
 
-.preview-img {
+/* Wrapper holds both the image and caption, hidden by default */
+.preview-wrap {
   position: fixed;
   left: 65%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 220px;
-  height: auto;
-  max-width: 300px;
-  background: #072000; /* Changed from #000 */
+  background: #072000;
   border: 3px solid var(--accent);
   border-radius: 8px;
   padding: 8px;
@@ -1056,22 +1055,62 @@ body::after {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 30px var(--accent-glow);
   opacity: 0;
   transition: opacity 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.dynamic-list li:hover > .preview-img {
+.preview-wrap .preview-img {
+  position: static;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+  z-index: auto;
+  pointer-events: none;
+  box-shadow: none;
+  opacity: 1;
+  transform: none;
+}
+
+.preview-caption {
+  display: block;
+  text-align: center;
+  font-size: 0.75em;
+  color: var(--accent);
+  font-family: 'Terminal', 'Courier New', monospace;
+  text-shadow: 0 0 6px var(--accent-glow);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Show preview-wrap on hover */
+.dynamic-list li:hover > .preview-wrap {
   opacity: 1;
 }
 
-.track-header:hover > .preview-img {
+.track-header:hover > .preview-wrap {
   opacity: 1;
 }
 
-.variation-item:hover > .preview-img {
+.variation-item:hover > .preview-wrap {
   opacity: 1;
 }
 
-.dynamic-list li.expanded > .track-header:hover > .preview-img {
+/* Hide track header preview when expanded (show variation previews instead) */
+.dynamic-list li.expanded > .track-header:hover > .preview-wrap {
   opacity: 0;
+}
+
+@media (max-width: 1024px) {
+  .preview-wrap {
+    left: 50%;
+    top: 50%;
+  }
 }
 
 /* ============================================
