@@ -107,7 +107,8 @@
     "preview": "wf1/tracks/fields08.webp",
     "variations": [
       { "id": "fields08_1", "name": "Main Circuit", "preview": "wf1/tracks/fields08_1.webp" },
-      { "id": "fields08_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/fields08_1_rev.webp" }
+      { "id": "fields08_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/fields08_1_rev.webp" },
+	  { "id": "fields08_2", "name": "Time Trial Circuit", "preview": "wf1/tracks/fields08_2.webp" }
     ]
   },
   {
@@ -172,7 +173,9 @@
       { "id": "tarmac1_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/tarmac1_main_circuit.webp" },
       { "id": "tarmac1_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/tarmac1_main_circuit_rev.webp" },
       { "id": "tarmac1_short_circuit", "name": "Short Circuit", "preview": "wf1/tracks/tarmac1_short_circuit.webp" },
-      { "id": "tarmac1_short_circuit_rev", "name": "Short Circuit Reverse", "preview": "wf1/tracks/tarmac1_short_circuit_rev.webp" }
+      { "id": "tarmac1_short_circuit_rev", "name": "Short Circuit Reverse", "preview": "wf1/tracks/tarmac1_short_circuit_rev.webp" },
+	  { "id": "tarmac1_trial_circuit", "name": "Time Trial Circuit", "preview": "wf1/tracks/tarmac1_trial_circuit.webp" },
+	  { "id": "tarmac1_trial_circuit_2", "name": "Time Trial Circuit", "preview": "wf1/tracks/tarmac1_trial_circuit_2.webp" }
     ]
   },
   {
@@ -185,7 +188,9 @@
       { "id": "mixed7_r2", "name": "Rally Circuit", "preview": "wf1/tracks/mixed7_r2.webp" },
       { "id": "mixed7_r2_rev", "name": "Rally Circuit Reverse", "preview": "wf1/tracks/mixed7_r2_rev.webp" },
       { "id": "mixed7_r3", "name": "Short Circuit", "preview": "wf1/tracks/mixed7_r3.webp" },
-      { "id": "mixed7_r3_rev", "name": "Short Circuit Reverse", "preview": "wf1/tracks/mixed7_r3_rev.webp" }
+      { "id": "mixed7_r3_rev", "name": "Short Circuit Reverse", "preview": "wf1/tracks/mixed7_r3_rev.webp" },
+	  { "id": "mixed7_r4", "name": "Time Trial Circuit", "preview": "wf1/tracks/mixed7_r4.webp" },
+	  { "id": "mixed7_r5", "name": "Time Trial Circuit", "preview": "wf1/tracks/mixed7_r4.webp" }
     ]
   },
   {
@@ -210,7 +215,8 @@
     "preview": "wf1/tracks/urban08.webp",
     "variations": [
       { "id": "urban08_1", "name": "Race Track", "preview": "wf1/tracks/urban08_1.webp" },
-      { "id": "urban08_1_rev", "name": "Race Track Reverse", "preview": "wf1/tracks/urban08_1_rev.webp" }
+      { "id": "urban08_1_rev", "name": "Race Track Reverse", "preview": "wf1/tracks/urban08_1_rev.webp" },
+	  { "id": "urban08_2", "name": "Race Track (Tour)", "preview": "wf1/tracks/urban08_2.webp" }
     ]
   },
   {
@@ -256,7 +262,8 @@
     "preview": "wf1/tracks/gravel1.webp",
     "variations": [
       { "id": "gravel1_main_loop", "name": "Main Circuit", "preview": "wf1/tracks/gravel1_main_loop.webp" },
-      { "id": "gravel1_main_loop_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/gravel1_main_loop_rev.webp" }
+      { "id": "gravel1_main_loop_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/gravel1_main_loop_rev.webp" },
+	  { "id": "gravel1_trial_circuit", "name": "Time Trial Circuit", "preview": "wf1/tracks/gravel1_trial_circuit.webp" }
     ]
   },
   {
@@ -310,7 +317,11 @@
       { "id": "mixed3_short_loop", "name": "Short Circuit", "preview": "wf1/tracks/mixed3_short_loop.webp" },
       { "id": "mixed3_short_loop_rev", "name": "Short Circuit Reverse", "preview": "wf1/tracks/mixed3_short_loop_rev.webp" },
       { "id": "mixed3_r3", "name": "Rally Circuit", "preview": "wf1/tracks/mixed3_r3.webp" },
-      { "id": "mixed3_r3_rev", "name": "Rally Circuit Reverse", "preview": "wf1/tracks/mixed3_r3_rev.webp" }
+      { "id": "mixed3_r3_rev", "name": "Rally Circuit Reverse", "preview": "wf1/tracks/mixed3_r3_rev.webp" },
+	  { "id": "mixed3_r5", "name": "Time Trial Circuit", "preview": "wf1/tracks/mixed3_r5.webp" },
+	  { "id": "mixed3_r6", "name": "Time Trial Circuit 2", "preview": "wf1/tracks/mixed3_r6.webp" },
+	  { "id": "mixed3_r7", "name": "Time Trial Circuit 3", "preview": "wf1/tracks/mixed3_r7.webp" },
+	  { "id": "mixed3_r8", "name": "Time Trial Circuit 4", "preview": "wf1/tracks/mixed3_r9.webp" },
     ]
   },
   {
@@ -335,7 +346,8 @@
     "name": "Rockfield Roughspot",
     "preview": "wf1/tracks/fields09.webp",
     "variations": [
-      { "id": "fields09_1", "name": "Dirt Oval", "preview": "wf1/tracks/fields09_1.webp" }
+      { "id": "fields09_1", "name": "Dirt Oval", "preview": "wf1/tracks/fields09_1.webp" },
+	  { "id": "fields09_2", "name": "Wasteland Oval (Tour)", "preview": "wf1/tracks/fields09_2.webp" }
     ]
   },
   {
@@ -344,7 +356,8 @@
     "preview": "wf1/tracks/mixed4.webp",
     "variations": [
       { "id": "mixed4_main_circuit", "name": "Main Circuit", "preview": "wf1/tracks/mixed4_main_circuit.webp" },
-      { "id": "mixed4_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed4_main_circuit_rev.webp" }
+      { "id": "mixed4_main_circuit_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/mixed4_main_circuit_rev.webp" },
+	  { "id": "mixed4_trial_circuit", "name": "Time Trial Circuit", "preview": "wf1/tracks/mixed4_trial_circuit.webp" }
     ]
   },
   {
@@ -368,7 +381,8 @@
       { "id": "sandpit2_full_circuit", "name": "Main Route", "preview": "wf1/tracks/sandpit2_full_circuit.webp" },
       { "id": "sandpit2_full_circuit_rev", "name": "Main Route Reverse", "preview": "wf1/tracks/sandpit2_full_circuit_rev.webp" },
       { "id": "sandpit2_2", "name": "Short Route", "preview": "wf1/tracks/sandpit2_2.webp" },
-      { "id": "sandpit2_2_rev", "name": "Short Route Reverse", "preview": "wf1/tracks/sandpit2_2_rev.webp" }
+      { "id": "sandpit2_2_rev", "name": "Short Route Reverse", "preview": "wf1/tracks/sandpit2_2_rev.webp" },
+	  { "id": "sandpit2_3", "name": "Time Trial Circuit", "preview": "wf1/tracks/sandpit2_3.webp" },
     ]
   },
   {
@@ -405,7 +419,8 @@
     "variations": [
       { "id": "forest12_1", "name": "Main Circuit", "preview": "wf1/tracks/forest12_1.webp" },
       { "id": "forest12_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/forest12_1_rev.webp" },
-      { "id": "forest12_2", "name": "Wild Circuit", "preview": "wf1/tracks/forest12_2.webp" }
+      { "id": "forest12_2", "name": "Wild Circuit", "preview": "wf1/tracks/forest12_2.webp" },
+	  { "id": "forest12_3", "name": "Winter Circuit (Tour)", "preview": "wf1/tracks/forest12_3.webp" }
     ]
   },
   {
@@ -416,7 +431,9 @@
       { "id": "forest11_1", "name": "Main Circuit", "preview": "wf1/tracks/forest11_1.webp" },
       { "id": "forest11_1_rev", "name": "Main Circuit Reverse", "preview": "wf1/tracks/forest11_1_rev.webp" },
       { "id": "forest11_2", "name": "Short Circuit", "preview": "wf1/tracks/forest11_2.webp" },
-      { "id": "forest11_2_rev", "name": "Short Circuit Reverse", "preview": "wf1/tracks/forest11_2_rev.webp" }
+      { "id": "forest11_2_rev", "name": "Short Circuit Reverse", "preview": "wf1/tracks/forest11_2_rev.webp" },
+	  { "id": "forest11_3", "name": "Time Trial Circuit", "preview": "wf1/tracks/forest11_3.webp" },
+	  { "id": "forest11_4", "name": "Time Trial Circuit", "preview": "wf1/tracks/forest11_4.webp" }
     ]
   },
   {
@@ -433,7 +450,8 @@
     "name": "Wrecking Playground",
     "preview": "wf1/tracks/wrecker01.webp",
     "variations": [
-      { "id": "wrecker01_1", "name": "Main Area", "preview": "wf1/tracks/wrecker01_1.webp" }
+      { "id": "wrecker01_1", "name": "Main Area", "preview": "wf1/tracks/wrecker01_1.webp" },
+	  { "id": "wrecker01_2 - *_10", "name": "Main Area (Tour)", "preview": "wf1/tracks/wrecker01_10.webp" }
     ]
   }
 ]
