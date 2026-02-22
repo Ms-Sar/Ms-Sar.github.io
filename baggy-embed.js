@@ -1,5 +1,4 @@
-function initializeEmbedMenu(theme) {
-  // Click to toggle click-card sections
+function initializeEmbedMenu() {
   document.querySelectorAll(".click-card").forEach(card => {
     const title = card.querySelector(".click-title");
     title.addEventListener("click", () => {
@@ -7,7 +6,6 @@ function initializeEmbedMenu(theme) {
     });
   });
 
-  // Click to toggle info cards
   document.querySelectorAll(".info-card").forEach(card => {
     const title = card.querySelector(".info-title");
     title.addEventListener("click", () => {
@@ -15,7 +13,6 @@ function initializeEmbedMenu(theme) {
     });
   });
 
-  // Load JSON when a sub-toggle is clicked
   document.querySelectorAll(".info-subtoggle").forEach(btn => {
     btn.addEventListener("click", async () => {
       const jsonFile = btn.dataset.json;
@@ -98,7 +95,7 @@ function initializeEmbedMenu(theme) {
                   varImg.alt = variation.name;
                   const caption = document.createElement("span");
                   caption.className = "preview-caption";
-                  caption.textContent = `${item.name} - ${variation.name}`;
+                  caption.textContent = variation.name;
                   previewWrap.appendChild(varImg);
                   previewWrap.appendChild(caption);
                   varLi.appendChild(previewWrap);

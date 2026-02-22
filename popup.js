@@ -105,7 +105,7 @@ function initializeBaggyMenu() {
                   varImg.alt = variation.name;
                   const caption = document.createElement("span");
                   caption.className = "preview-caption";
-                  caption.textContent = `${item.name} - ${variation.name}`;
+                  caption.textContent = variation.name;
                   previewWrap.appendChild(varImg);
                   previewWrap.appendChild(caption);
                   varLi.appendChild(previewWrap);

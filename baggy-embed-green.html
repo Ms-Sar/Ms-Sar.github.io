@@ -252,11 +252,12 @@ body {
   color: #00ff41;
 }
 
+/* Preview wrap - fixed in viewport centre */
 .preview-wrap {
-  position: absolute;
-  left: calc(100% + 10px);
-  top: 50%;
-  transform: translateY(-50%);
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
   width: 200px;
   background: #072000;
   border: 3px solid #00ff41;
@@ -307,6 +308,7 @@ body {
 .dynamic-list li.expanded > .track-header:hover > .preview-wrap {
   opacity: 0;
 }
+
 
 /* Loading animation */
 .loader {
