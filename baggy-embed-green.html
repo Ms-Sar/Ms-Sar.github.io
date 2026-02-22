@@ -48,13 +48,13 @@ body {
 
 .title-group .title {
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #00ff41;
   text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
 }
 
 .title-group .subtitle {
-  font-size: 0.85em;
+  font-size: 1.2em;
   color: #0f0;
 }
 
@@ -74,7 +74,7 @@ body {
   border: 1px solid #0a4000;
   color: #00ff41;
   font-family: 'Terminal', monospace;
-  font-size: 0.95em;
+  font-size: 1em;
 }
 
 .search::placeholder { color: #0a5000; }
@@ -97,7 +97,7 @@ body {
 .card-title {
   margin: 0 0 10px;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1.2em;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -138,7 +138,7 @@ body {
   border-radius: 4px;
   text-decoration: none;
   color: #0f0;
-  font-size: 0.9em;
+  font-size: 1em;
   transition: all 0.15s ease;
 }
 
@@ -159,7 +159,7 @@ body {
   border: 1px solid #0a4000;
   cursor: pointer;
   font-family: 'Terminal', monospace;
-  font-size: 0.9em;
+  font-size: 1.1em;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -182,7 +182,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   color: #0f0;
-  font-size: 0.85em;
+  font-size: 1em;
   position: relative;
 }
 
@@ -195,7 +195,7 @@ body {
   text-align: center;
   padding: 10px;
   color: #0f0;
-  font-size: 0.85em;
+  font-size: 1em;
   border-top: 1px solid #0a4000;
   background: #051800;
 }
@@ -239,7 +239,7 @@ body {
 
 .variation-item {
   padding: 3px 6px;
-  font-size: 0.8em;
+  font-size: 1em;
   color: #0f0;
   border-left: 2px solid #0a4000;
   margin: 2px 0;
@@ -275,11 +275,11 @@ body {
 .preview-caption {
   position: absolute;
   left: 20%;
-  top: calc(50% + 45px);
+  top: calc(50% + 40px);
   width: 200px;
   padding: 0 8px;
   text-align: center;
-  font-size: 0.75em;
+  font-size: 1em;
   line-height: 1.2;
   color: #00ff41;
   font-family: 'Terminal', 'Courier New', monospace;
@@ -378,12 +378,9 @@ body {
     const container = document.getElementById('baggy-menu-container');
     if (container) {
       container.innerHTML = buildBaggyMenu(true, 'green');
-      initializeEmbedMenu();
+      initializeEmbedMenu('green');
     }
   });
 </script>
-
-
-
 </body>
 </html>

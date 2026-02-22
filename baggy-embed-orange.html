@@ -43,13 +43,13 @@ body {
 
 .title-group .title {
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #ff8800;
   text-shadow: 0 0 8px rgba(255, 136, 0, 0.4);
 }
 
 .title-group .subtitle {
-  font-size: 0.85em;
+  font-size: 1.2em;
   color: #ddd;
 }
 
@@ -69,7 +69,7 @@ body {
   border: 1px solid #333;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.95em;
+  font-size: 1em;
 }
 
 .search::placeholder { color: #666; }
@@ -92,7 +92,7 @@ body {
 .card-title {
   margin: 0 0 10px;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1.2em;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -115,7 +115,7 @@ body {
   display: none;
   margin-top: 8px;
   padding: 8px;
-  background: #1a1a1a;
+  background: #111;
   border-radius: 4px;
   border: 1px solid #222;
 }
@@ -133,7 +133,7 @@ body {
   border-radius: 4px;
   text-decoration: none;
   color: #fff;
-  font-size: 0.9em;
+  font-size: 1em;
   transition: all 0.15s ease;
 }
 
@@ -154,7 +154,7 @@ body {
   border: 1px solid #333;
   cursor: pointer;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.9em;
+  font-size: 1.1em;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -178,7 +178,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   color: #fff;
-  font-size: 0.85em;
+  font-size: 1em;
   position: relative;
 }
 
@@ -191,9 +191,9 @@ body {
   text-align: center;
   padding: 10px;
   color: #fff;
-  font-size: 0.85em;
+  font-size: 1em;
   border-top: 1px solid #333;
-  background: #1a1a1a;
+  background: #111;
 }
 
 .footer a {
@@ -206,11 +206,11 @@ body {
 }
 
 .sidebar-content::-webkit-scrollbar { width: 8px; }
-.sidebar-content::-webkit-scrollbar-track { background: #1a1a1a; }
+.sidebar-content::-webkit-scrollbar-track { background: #111; }
 .sidebar-content::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 .sidebar-content::-webkit-scrollbar-thumb:hover { background: #ff8800; }
 
-.track-header { 
+.track-header {
   cursor: pointer;
   position: relative;
 }
@@ -235,7 +235,7 @@ body {
 
 .variation-item {
   padding: 3px 6px;
-  font-size: 0.8em;
+  font-size: 1em;
   color: #fff;
   border-left: 2px solid #333;
   margin: 2px 0;
@@ -248,10 +248,10 @@ body {
   color: #ff8800;
 }
 
-/* Preview images - shown on hover, shifted right of list */
+/* Preview images */
 .preview-img {
   position: absolute;
-  left: calc(100% + 15px);
+  left: 20%;
   top: 50%;
   transform: translateY(-50%);
   width: 200px;
@@ -260,24 +260,26 @@ body {
   background: #1a1a1a;
   border: 3px solid #ff8800;
   border-radius: 8px;
-  padding: 8px;
+  padding: 8px 8px 26px 8px;
   z-index: 9999;
   pointer-events: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 136, 0, 0.4);
   opacity: 0;
   transition: opacity 0.15s ease;
+  display: block;
 }
 
 .preview-caption {
   position: absolute;
-  left: calc(100% + 15px);
-  top: calc(50% + 110px);
-  transform: translateY(-50%);
+  left: 20%;
+  top: calc(50% + 40px);
   width: 200px;
+  padding: 0 8px;
   text-align: center;
-  font-size: 0.75em;
+  font-size: 1em;
+  line-height: 1.2;
   color: #ff8800;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   text-shadow: 0 0 6px rgba(255, 136, 0, 0.4);
   white-space: nowrap;
   overflow: hidden;
@@ -285,7 +287,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;
-  z-index: 9999;
+  z-index: 10000;
 }
 
 .dynamic-list li:hover > .preview-img,
@@ -319,14 +321,14 @@ body {
   color: #0000;
   display: inline-block;
   vertical-align: middle;
-  text-shadow: 
+  text-shadow:
     calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,
     calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff;
   animation: l20 2s infinite linear;
 }
 .loader:before { content: "Loading..."; }
 @keyframes l20 {
-  9.09% {text-shadow: calc(0*var(--w)) -10px #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
+  9.09%  {text-shadow: calc(0*var(--w)) -10px #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
   18.18% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) -10px #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
   27.27% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) -10px #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
   36.36% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) -10px #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) 0 #fff}
@@ -337,7 +339,6 @@ body {
   81.81% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) -10px #fff,calc(-9*var(--w)) 0 #fff}
   90.90% {text-shadow: calc(0*var(--w)) 0 #fff,calc(-1*var(--w)) 0 #fff,calc(-2*var(--w)) 0 #fff,calc(-3*var(--w)) 0 #fff,calc(-4*var(--w)) 0 #fff,calc(-5*var(--w)) 0 #fff,calc(-6*var(--w)) 0 #fff,calc(-7*var(--w)) 0 #fff,calc(-8*var(--w)) 0 #fff,calc(-9*var(--w)) -10px #fff}
 }
-
 </style>
 </head>
 <body>
@@ -371,162 +372,9 @@ body {
     const container = document.getElementById('baggy-menu-container');
     if (container) {
       container.innerHTML = buildBaggyMenu(true, 'orange');
-      
-      // Initialize all event listeners after menu is built
-      initializeEmbedMenu();
+      initializeEmbedMenu('orange');
     }
   });
-  
-  function initializeEmbedMenu() {
-    // Click to toggle click-card sections
-    document.querySelectorAll(".click-card").forEach(card => {
-      const title = card.querySelector(".click-title");
-      title.addEventListener("click", () => {
-        card.classList.toggle("open");
-      });
-    });
-
-    // Click to toggle info cards
-    document.querySelectorAll(".info-card").forEach(card => {
-      const title = card.querySelector(".info-title");
-      title.addEventListener("click", () => {
-        card.classList.toggle("open");
-      });
-    });
-
-    // Load JSON when a sub-toggle is clicked
-    document.querySelectorAll(".info-subtoggle").forEach(btn => {
-      btn.addEventListener("click", async () => {
-        const jsonFile = 'https://ms-sar.github.io/' + btn.dataset.json;
-        const list = btn.nextElementSibling;
-
-        // Store the icon and base text
-        const icon = btn.querySelector('.icon-img');
-        const iconClone = icon ? icon.cloneNode(true) : null;
-        
-        let textWithoutIcon = '';
-        btn.childNodes.forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            textWithoutIcon += node.textContent;
-          }
-        });
-        const baseText = textWithoutIcon.replace(/[▾▴⏳]/g, '').trim();
-
-        // If already loaded, just toggle visibility
-        if (list.dataset.loaded === "true") {
-          const isVisible = list.style.display === "block";
-          list.style.display = isVisible ? "none" : "block";
-          
-          btn.innerHTML = '';
-          if (iconClone) btn.appendChild(iconClone);
-          btn.appendChild(document.createTextNode(' ' + baseText + (isVisible ? ' ▾' : ' ▴')));
-          return;
-        }
-
-		// Show loading state
-		btn.innerHTML = '';
-		if (iconClone) btn.appendChild(iconClone);
-		btn.appendChild(document.createTextNode(' ' + baseText + ' '));
-		const loader = document.createElement('span');
-		loader.className = 'loader';
-		btn.appendChild(loader);
-        
-        try {
-          const res = await fetch(jsonFile);
-          const data = await res.json();
-
-          list.innerHTML = "";
-
-          // Check if this is a tracks JSON (has variations)
-          const hasTracks = data.some(item => item.variations);
-
-          data.forEach(item => {
-            const li = document.createElement("li");
-            
-            if (hasTracks) {
-              // Track with variations
-              const trackHeader = document.createElement("div");
-              trackHeader.className = "track-header";
-              
-              const trackText = document.createTextNode(`${item.name} - ${item.id}`);
-              trackHeader.appendChild(trackText);
-              
-              if (item.preview) {
-                const img = document.createElement("img");
-                img.src = item.preview;
-                img.className = "preview-img";
-                img.alt = item.name;
-                trackHeader.appendChild(img);
-              }
-              
-              li.appendChild(trackHeader);
-              
-              // Variations list
-              if (item.variations && item.variations.length > 0) {
-                const variationsList = document.createElement("ul");
-                variationsList.className = "variations-list";
-                
-                item.variations.forEach(variation => {
-                  const varLi = document.createElement("li");
-                  varLi.className = "variation-item";
-                  
-                  const varText = document.createTextNode(`${variation.name} - ${variation.id}`);
-                  varLi.appendChild(varText);
-                  
-                  if (variation.preview) {
-                    const varImg = document.createElement("img");
-                    varImg.src = variation.preview;
-                    varImg.className = "preview-img";
-                    varImg.alt = variation.name;
-                    varLi.appendChild(varImg);
-                  }
-                  
-                  variationsList.appendChild(varLi);
-                });
-                
-                li.appendChild(variationsList);
-              }
-              
-              // Toggle variations on click
-              trackHeader.addEventListener("click", () => {
-                li.classList.toggle("expanded");
-              });
-            } else {
-              // Vehicle (no variations)
-              const vehicleText = document.createTextNode(`${item.name} - ${item.id}`);
-              li.appendChild(vehicleText);
-              
-              if (item.preview) {
-                const img = document.createElement("img");
-                img.src = item.preview;
-                img.className = "preview-img";
-                img.alt = item.name;
-                li.appendChild(img);
-              }
-            }
-
-            list.appendChild(li);
-          });
-
-          list.dataset.loaded = "true";
-          list.style.display = "block";
-          
-          btn.innerHTML = '';
-          if (iconClone) btn.appendChild(iconClone);
-          btn.appendChild(document.createTextNode(' ' + baseText + ' ▴'));
-          
-        } catch (error) {
-          console.error("Failed to load JSON:", error);
-          
-          btn.innerHTML = '';
-          if (iconClone) btn.appendChild(iconClone);
-          btn.appendChild(document.createTextNode(' ' + baseText + ' ▾ (Error)'));
-        }
-      });
-    });
-  }
 </script>
-
-
 </body>
 </html>

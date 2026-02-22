@@ -1,5 +1,10 @@
-function initializeEmbedMenu() {
-  // Click to toggle click-card sections
+function initializeEmbedMenu(theme = 'green') {
+
+  function previewSrc(path) {
+    const full = `https://ms-sar.github.io/${path}`;
+    return theme === 'orange' ? full.replace('.webp', '-alt.webp') : full;
+  }
+
   document.querySelectorAll(".click-card").forEach(card => {
     const title = card.querySelector(".click-title");
     title.addEventListener("click", () => {
@@ -7,7 +12,6 @@ function initializeEmbedMenu() {
     });
   });
 
-  // Click to toggle info cards
   document.querySelectorAll(".info-card").forEach(card => {
     const title = card.querySelector(".info-title");
     title.addEventListener("click", () => {
@@ -15,7 +19,6 @@ function initializeEmbedMenu() {
     });
   });
 
-  // Load JSON
   document.querySelectorAll(".info-subtoggle").forEach(btn => {
     btn.addEventListener("click", async () => {
       const jsonFile = btn.dataset.json;
@@ -65,7 +68,7 @@ function initializeEmbedMenu() {
 
             if (item.preview) {
               const img = document.createElement("img");
-              img.src = `https://ms-sar.github.io/${item.preview}`;
+              img.src = previewSrc(item.preview);
               img.className = "preview-img";
               img.alt = item.name;
               const caption = document.createElement("span");
@@ -88,7 +91,7 @@ function initializeEmbedMenu() {
 
                 if (variation.preview) {
                   const varImg = document.createElement("img");
-                  varImg.src = `https://ms-sar.github.io/${variation.preview}`;
+                  varImg.src = previewSrc(variation.preview);
                   varImg.className = "preview-img";
                   varImg.alt = variation.name;
                   const caption = document.createElement("span");
@@ -113,7 +116,7 @@ function initializeEmbedMenu() {
 
             if (item.preview) {
               const img = document.createElement("img");
-              img.src = `https://ms-sar.github.io/${item.preview}`;
+              img.src = previewSrc(item.preview);
               img.className = "preview-img";
               img.alt = item.name;
               const caption = document.createElement("span");
