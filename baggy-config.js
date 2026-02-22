@@ -61,7 +61,7 @@ const baggyConfig = {
           iconAlt: 'breckfest-alt.png'
         },
         {
-          text: 'VLDL Tool',
+          text: 'WF2 VLDL Tool',
           url: 'https://www.nexusmods.com/wreckfest2/mods/38',
           icon: 'VLDLtool.png',
           iconAlt: 'VLDLtool-alt.png'
