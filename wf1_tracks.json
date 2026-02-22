@@ -321,7 +321,7 @@
 	  { "id": "mixed3_r5", "name": "Time Trial Circuit", "preview": "wf1/tracks/mixed3_r5.webp" },
 	  { "id": "mixed3_r6", "name": "Time Trial Circuit 2", "preview": "wf1/tracks/mixed3_r6.webp" },
 	  { "id": "mixed3_r7", "name": "Time Trial Circuit 3", "preview": "wf1/tracks/mixed3_r7.webp" },
-	  { "id": "mixed3_r8", "name": "Time Trial Circuit 4", "preview": "wf1/tracks/mixed3_r9.webp" },
+	  { "id": "mixed3_r8", "name": "Time Trial Circuit 4", "preview": "wf1/tracks/mixed3_r9.webp" }
     ]
   },
   {
@@ -382,7 +382,7 @@
       { "id": "sandpit2_full_circuit_rev", "name": "Main Route Reverse", "preview": "wf1/tracks/sandpit2_full_circuit_rev.webp" },
       { "id": "sandpit2_2", "name": "Short Route", "preview": "wf1/tracks/sandpit2_2.webp" },
       { "id": "sandpit2_2_rev", "name": "Short Route Reverse", "preview": "wf1/tracks/sandpit2_2_rev.webp" },
-	  { "id": "sandpit2_3", "name": "Time Trial Circuit", "preview": "wf1/tracks/sandpit2_3.webp" },
+	  { "id": "sandpit2_3", "name": "Time Trial Circuit", "preview": "wf1/tracks/sandpit2_3.webp" }
     ]
   },
   {
