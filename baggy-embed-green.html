@@ -252,13 +252,15 @@ body {
   color: #00ff41;
 }
 
-/* Preview wrap - fixed in viewport centre */
-.preview-wrap {
-  position: fixed;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+/* Preview images - overlay the list */
+.preview-img {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 200px;
+  height: auto;
+  max-width: 280px;
   background: #072000;
   border: 3px solid #00ff41;
   border-radius: 8px;
@@ -268,47 +270,45 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 255, 65, 0.4);
   opacity: 0;
   transition: opacity 0.15s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.preview-wrap .preview-img {
-  position: static;
-  width: 100%;
-  height: auto;
-  background: none;
-  border: none;
-  border-radius: 4px;
-  padding: 0;
-  box-shadow: none;
-  opacity: 1;
-  transform: none;
-  pointer-events: none;
 }
 
 .preview-caption {
-  display: block;
+  position: absolute;
+  left: 20%;
+  top: calc(50% + 110px);
+  transform: translateY(-50%);
+  width: 200px;
   text-align: center;
   font-size: 0.75em;
-  color: #00ff41;
-  font-family: 'Terminal', 'Courier New', monospace;
-  text-shadow: 0 0 6px rgba(0, 255, 65, 0.4);
+  color: #00ff41; /* #ff8800 for orange */
+  font-family: 'Terminal', 'Courier New', monospace; /* sans-serif for orange */
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.4); /* rgba(255, 136, 0, 0.4) for orange */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 9999;
 }
 
-.dynamic-list li:hover > .preview-wrap,
-.track-header:hover > .preview-wrap,
-.variation-item:hover > .preview-wrap {
+
+.dynamic-list li:hover > .preview-img,
+.track-header:hover > .preview-img,
+.variation-item:hover > .preview-img {
   opacity: 1;
 }
 
-.dynamic-list li.expanded > .track-header:hover > .preview-wrap {
-  opacity: 0;
+.dynamic-list li:hover > .preview-caption,
+.track-header:hover > .preview-caption,
+.variation-item:hover > .preview-caption {
+  opacity: 1;
 }
 
+.dynamic-list li.expanded > .track-header:hover > .preview-img,
+.dynamic-list li.expanded > .track-header:hover > .preview-caption {
+  opacity: 0;
+}
 
 /* Loading animation */
 .loader {
