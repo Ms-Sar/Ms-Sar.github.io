@@ -4,31 +4,15 @@
     {
       "version": "1.0.0.0",
       "changes": [
-        "Initial public release",
-        "WF1 and Stuntfest tool build support",
-		"WF2 and RRU texture conversion from WF1 tools",
-		"Breckfest Imposter mode for Blender WF Toolbox",
-		"Build/Dump with PNG/TGA/DDS (WF1 tools for PNG/DDS)",
-		"Auto Tune Benchmark for optimal worker theads",
-		"Quick access with right click context/send to",
-		"Asset Info analysis with extra info for BMAP and CAVS",
-		"Support for WF2 skyboxes (DDS for full support)",
-		"-output and -nowait arguments for special use"
+	"Support for WF2 skyboxes (DDS for full support)",
+	"-output and -nowait arguments for special use"
       ]
     },
     {
       "version": "0.5.0.0",
       "changes": [
-        "Initial public release",
-        "WF1 and Stuntfest tool build support",
-		"WF2 and RRU texture conversion from WF1 tools",
-		"Breckfest Imposter mode for Blender WF Toolbox",
-		"Build/Dump with PNG/TGA/DDS (WF1 tools for PNG/DDS)",
-		"Auto Tune Benchmark for optimal worker theads",
-		"Quick access with right click context/send to",
-		"Asset Info analysis with extra info for BMAP and CAVS",
-		"Support for WF2 skyboxes (DDS for full support)",
-		"-output and -nowait arguments for special use"
+	"Quick access with right click context/send to",
+	"Asset Info analysis with extra info for BMAP and CAVS"
       ]
     },
     {
@@ -39,11 +23,7 @@
 		"WF2 and RRU texture conversion from WF1 tools",
 		"Breckfest Imposter mode for Blender WF Toolbox",
 		"Build/Dump with PNG/TGA/DDS (WF1 tools for PNG/DDS)",
-		"Auto Tune Benchmark for optimal worker theads",
-		"Quick access with right click context/send to",
-		"Asset Info analysis with extra info for BMAP and CAVS",
-		"Support for WF2 skyboxes (DDS for full support)",
-		"-output and -nowait arguments for special use"
+		"Auto Tune Benchmark for optimal worker theads"
       ]
     }
   ]
