@@ -1,0 +1,203 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|c:\\users\\strmods\\source\\repos\\wf2suspensionedit\\services\\suspensionfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:services\\suspensionfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\services\\suspensionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:services\\suspensionmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\models\\suspensiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:models\\suspensiondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|c:\\users\\strmods\\source\\repos\\wf2suspensionedit\\services\\suspensiongeometryfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:services\\suspensiongeometryfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|c:\\users\\strmods\\source\\repos\\wf2suspensionedit\\services\\suspensiongeometrymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:services\\suspensiongeometrymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|c:\\users\\strmods\\source\\repos\\wf2suspensionedit\\models\\suspensiongeometrydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:models\\suspensiongeometrydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\services\\binaryreaderutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:services\\binaryreaderutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\models\\suspensionfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:models\\suspensionfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\decompressor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668B6A98-C73F-4279-972C-329668DBBB1A}|WF2suspensionEdit.csproj|solutionrelative:decompressor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SuspensionGeometryData.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Models\\SuspensionGeometryData.cs",
+              "RelativeDocumentMoniker": "Models\\SuspensionGeometryData.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Models\\SuspensionGeometryData.cs",
+              "RelativeToolTip": "Models\\SuspensionGeometryData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T20:03:03.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAACwFAAAAAAAAAAAowFAFAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:20:12.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SuspensionFileService.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionFileService.cs",
+              "RelativeDocumentMoniker": "Services\\SuspensionFileService.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionFileService.cs",
+              "RelativeToolTip": "Services\\SuspensionFileService.cs",
+              "ViewState": "AgIAAOQAAAAAAAAAAAAowAgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:20:04.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SuspensionData.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Models\\SuspensionData.cs",
+              "RelativeDocumentMoniker": "Models\\SuspensionData.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Models\\SuspensionData.cs",
+              "RelativeToolTip": "Models\\SuspensionData.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:19:45.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SuspensionMapper.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionMapper.cs",
+              "RelativeDocumentMoniker": "Services\\SuspensionMapper.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionMapper.cs",
+              "RelativeToolTip": "Services\\SuspensionMapper.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAowHEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:19:13.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SuspensionGeometryMapper.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionGeometryMapper.cs",
+              "RelativeDocumentMoniker": "Services\\SuspensionGeometryMapper.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionGeometryMapper.cs",
+              "RelativeToolTip": "Services\\SuspensionGeometryMapper.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowDUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T20:03:11.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SuspensionGeometryFileService.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionGeometryFileService.cs",
+              "RelativeDocumentMoniker": "Services\\SuspensionGeometryFileService.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\SuspensionGeometryFileService.cs",
+              "RelativeToolTip": "Services\\SuspensionGeometryFileService.cs",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAowCABAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T20:02:55.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BinaryReaderUtil.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\BinaryReaderUtil.cs",
+              "RelativeDocumentMoniker": "Services\\BinaryReaderUtil.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Services\\BinaryReaderUtil.cs",
+              "RelativeToolTip": "Services\\BinaryReaderUtil.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAADwv0MAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:19:51.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SuspensionField.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Models\\SuspensionField.cs",
+              "RelativeDocumentMoniker": "Models\\SuspensionField.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Models\\SuspensionField.cs",
+              "RelativeToolTip": "Models\\SuspensionField.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:18:10.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Decompressor.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Decompressor.cs",
+              "RelativeDocumentMoniker": "Decompressor.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Decompressor.cs",
+              "RelativeToolTip": "Decompressor.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAADwv3MAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:17:51.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\STRmods\\source\\repos\\WF2suspensionEdit\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T19:17:17.276Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

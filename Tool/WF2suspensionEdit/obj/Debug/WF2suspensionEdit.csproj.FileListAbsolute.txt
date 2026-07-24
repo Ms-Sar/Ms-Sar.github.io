@@ -1,0 +1,10 @@
+C:\Users\STRmods\source\repos\WF2suspensionEdit\obj\Debug\WF2suspensionEdit.csproj.AssemblyReference.cache
+C:\Users\STRmods\source\repos\WF2suspensionEdit\obj\Debug\WF2suspensionEdit.Properties.Resources.resources
+C:\Users\STRmods\source\repos\WF2suspensionEdit\obj\Debug\WF2suspensionEdit.csproj.GenerateResource.cache
+C:\Users\STRmods\source\repos\WF2suspensionEdit\obj\Debug\WF2suspensionEdit.csproj.CoreCompileInputs.cache
+C:\Users\STRmods\source\repos\WF2suspensionEdit\bin\Debug\WF2suspensionEdit.exe.config
+C:\Users\STRmods\source\repos\WF2suspensionEdit\bin\Debug\WF2suspensionEdit.exe
+C:\Users\STRmods\source\repos\WF2suspensionEdit\bin\Debug\WF2suspensionEdit.pdb
+C:\Users\STRmods\source\repos\WF2suspensionEdit\obj\Debug\WF2suspensionEdit.exe
+C:\Users\STRmods\source\repos\WF2suspensionEdit\obj\Debug\WF2suspensionEdit.pdb
+C:\Users\STRmods\source\repos\WF2suspensionEdit\obj\Debug\WF2suspensionEdit.exe.config
